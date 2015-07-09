@@ -96,11 +96,10 @@ class FParser:
     PATERN_DIRECTIVE = "^([^\\t\\s][^:]+):([\\t\\s]*$)"
     TRANSITIONS = set(["FADE OUT.", "CUT TO BLACK.", "FADE TO BLACK."])
 
-    def __init__(self, iodev):
-        self.iodev = iodev
+    def __init__(self, txt):
         self.titlePage = {}
         self.elms = []
-        self.parseString(self.iodev.read())
+        self.parseString(txt)
 
     def parseString(self, s):
         # remove starting whitespace
@@ -108,8 +107,8 @@ class FParser:
 
         # use linux line endings
         s = re.sub("^\\s*", "", s)
-        s = re.sub("\\r\\n", "\n", s)
-        s = re.sub("\\n\\r", "\n", s)
+        s = s.replace("\\r\\n", "\n")
+        s = s.replace("\\n\\r", "\n")
 
         s = s+"\n\n"
 
@@ -380,12 +379,3 @@ class FParser:
                 self.elms.append(newElmAction(line))
                 newlinesBefore = 0
                 continue
-
-        for e in self.elms:
-            print(e.elmType + "///" + e.elmText)
-
-
-
-
-
-x = FParser(open("examples/Big-Fish.fountain", "r", encoding="utf-8"))

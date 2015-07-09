@@ -1,0 +1,11 @@
+CASHIER
+WORDS: 7
+WORDS (V.O.): 0
+WORDS (O.S.): 0
+LINES: 1
+LINES (V.O.): 0
+LINES (O.S.): 0
+
+
+Never seen her before.  Pretty, though.
+

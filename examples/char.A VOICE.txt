@@ -1,0 +1,12 @@
+A VOICE
+WORDS: 3
+WORDS (V.O.): 0
+WORDS (O.S.): 3
+LINES: 1
+LINES (V.O.): 0
+LINES (O.S.): 1
+
+
+O.S.
+I'll do it.
+

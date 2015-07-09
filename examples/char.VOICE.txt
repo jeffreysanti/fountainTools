@@ -1,0 +1,12 @@
+VOICE
+WORDS: 2
+WORDS (V.O.): 0
+WORDS (O.S.): 2
+LINES: 1
+LINES (V.O.): 0
+LINES (O.S.): 1
+
+
+O.S.
+GO AWAY!
+
