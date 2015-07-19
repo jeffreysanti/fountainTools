@@ -19,7 +19,7 @@ class Font:
         self.pointsize = 12
         self.heightEM = 1.2
         self.lineHeight = (self.pointsize*self.heightEM)
-        self.charsPerInch = 10
+        self.charsPerInch = 9
 
 class Page:
     def __init__(self):
@@ -33,7 +33,7 @@ class Page:
 
     def usableHeight(self):
         #return (self.height - self.marginTop - self.marginBottom)*72.0
-        return 45
+        return 47
 
 
 def inchesForElement(elm):
@@ -54,6 +54,12 @@ def lineHeightForString(text, font, maxInches):
     s = textwrap.wrap(text, maxchars)
     return len(s)
 
+def wordWrapString(text, font, maxInches):
+    maxchars = math.floor(maxInches * font.charsPerInch)
+    if maxchars <= 0:
+        return 0
+    return textwrap.wrap(text, maxchars)
+
 def lineBeforeElement(elm, font):
     s = set(["Action", "General", "Character", "Transition"])
     if elm.elmType == "Scene Heading":
@@ -62,234 +68,6 @@ def lineBeforeElement(elm, font):
         return 1
     return 0
 
-'''
-def split(elms):
-
-    page = Page()
-    font = Font()
-
-    peTmp = []
-    pe = []
-    pages = []
-
-    ypos = 0
-    blockHeight = 0
-
-    previousDualDialogueBlockHeight = -1
-
-    ie = -1
-    while ie in range(-1, len(elms)-1):
-        ie = ie + 1
-        e = elms[ie]
-
-        if len(pages) == 72 and e.elmText == "EDWARD (CONT'D)":
-            print(e.elmText + " elm " + str(len(pe)))
-            print(str(ypos))
-
-        if e.elmType == "Page Break":
-            for x in peTmp:
-                pe.append(x)
-            peTmp = []
-
-            pe.append(e)
-            pages.append(pe)
-
-            pe = []
-            ypos = 0
-            continue
-
-        spaceBefore = ptBeforeElement(e, font)
-        elmWidth = inchesForElement(e)
-        elmHeight = ptHeightForString(e.elmText, font, elmWidth)
-
-        if elmHeight <= 0:
-            continue
-
-        blockHeight = blockHeight + elmHeight
-        #if len(pe) > 0: # Need spacing first
-        blockHeight = blockHeight + spaceBefore
-
-        if e.elmType == "Scene Heading" and ie+1 < len(elms):
-            enext = elms[ie+1]
-            nextWidth = inchesForElement(enext)
-            nextHeight = ptHeightForString(enext.elmText, font, nextWidth)
-            nextHeight = nextHeight + ptBeforeElement(enext, font)
-
-            if blockHeight + ypos + nextHeight >= page.usableHeight() and nextHeight >= font.lineHeight:
-                peTmp.append(parser.newElmPageBreak(""))
-
-            peTmp.append(e)
-            continue
-        if e.elmType == "Character" and ie+1 < len(elms):
-            s = set(["Dialogue", "Parenthetical"])
-            j = ie
-            enext = e
-            while ie == j or (j < len(elms) and enext.elmType in s):
-                peTmp.append(enext)
-                blockHeight = blockHeight + ptHeightForString(enext.elmText, font, inchesForElement(enext))
-                blockHeight = blockHeight + ptBeforeElement(enext, font)
-                j = j + 1
-                enext = elms[j]
-            ie = j - 1
-
-            if e.dualDlg and previousDualDialogueBlockHeight < 0:
-                previousDualDialogueBlockHeight = blockHeight;
-            elif e.dualDlg:
-                blockHeight = abs(previousDualDialogueBlockHeight - blockHeight)
-                previousDualDialogueBlockHeight = -1
-        else:
-            peTmp.append(e)
-
-        totalHeightInUse = blockHeight + ypos
-
-        if totalHeightInUse <= page.usableHeight(): # All is good
-            ypos = ypos + blockHeight
-        else:
-            if len(peTmp) > 0 and peTmp[0].elmType == "Character" and totalHeightInUse - page.usableHeight() >= font.lineHeight * 4:
-                bi = -1
-                maxTmpElements = len(peTmp)
-                partialHeight = 0
-                pageOverflow  = totalHeightInUse - page.usableHeight()
-
-                while partialHeight < pageOverflow and bi < maxTmpElements - 1:
-                    bi = bi + 1
-                    h  = ptHeightForString(peTmp[bi].elmText, font, inchesForElement(peTmp[bi]))
-                    s  = ptBeforeElement(peTmp[bi], font)
-                    if len(pages) == 72 and e.elmText == "EDWARD (CONT'D)":
-                        print("BI / "+str(bi)+" h: "+str(h)+" s: "+str(s))
-                    partialHeight += h + s;
-
-                if len(pages) == 72 and e.elmText == "EDWARD (CONT'D)":
-                    print(pageOverflow)
-                    print(bi)
-
-                if bi > 0: # We have an element which we may be able to squeze in
-                    spiller = peTmp[bi]
-                    if spiller.elmType == "Parenthetical":
-                        if bi > 1:
-                            for z in range(0, bi):
-                                pe.append(peTmp[z])
-
-                            # Add (MORE) note
-                            pe.append(parser.newElmCharacter("(MORE)"))
-
-                            # Close page
-                            pages.append(pe)
-                            pe = []
-                            blockHeight = 0
-
-                            # Continue on next page
-                            characterCueElm = copy.copy(peTmp[0])
-                            characterCueElm.elmText = characterCueElm.elmText + " (CONT'D)"
-                            blockHeight = blockHeight + ptHeightForString(characterCueElm.elmText, font, inchesForElement(characterCueElm))
-                            blockHeight = blockHeight + ptBeforeElement(characterCueElm, font)
-                            pe.append(characterCueElm)
-
-                            # Remaining temp Elements
-                            for z in range(bi, maxTmpElements):
-                                pe.append(peTmp[z])
-                                blockHeight = blockHeight + ptHeightForString(peTmp[z].elmText, font, inchesForElement(peTmp[z]))
-                                blockHeight = blockHeight + ptBeforeElement(peTmp[z], font)
-                            ypos = blockHeight
-                            peTmp = []
-                    else:
-                        distanceToBottom  = page.usableHeight() - ypos - (font.lineHeight * 2)
-                        if distanceToBottom < font.lineHeight * 5: # Don't bother - not enough lines left
-                            pages.append(pe)
-                            pe = []
-                            ypos = blockHeight - spaceBefore;
-                            blockHeight = 0
-                            continue
-
-                        heightBeforeDialogue = 0
-                        for z in range(0, bi):
-                            heightBeforeDialogue = heightBeforeDialogue + ptBeforeElement(peTmp[z], font)
-                            heightBeforeDialogue = heightBeforeDialogue + ptHeightForString(peTmp[z].elmText, font, inchesForElement(peTmp[z]))
-                        dialogueHeight = heightBeforeDialogue
-                        sentenceIndex = -1
-                        sentences = [m.group(1) for m in re.finditer("(.+?[\\.\\?\\!]+\\s*)", spiller.elmText) if m]
-                        maxSentences = len(sentences)
-
-                        dialogueBeforeBreak = ""
-                        while dialogueHeight < distanceToBottom and sentenceIndex < maxSentences - 1:
-                            sentenceIndex = sentenceIndex + 1
-                            text = dialogueBeforeBreak + sentences[sentenceIndex]
-                            dialogueHeight = ptHeightForString(text, font, inchesForElement(peTmp[bi]))
-                            dialogueHeight = dialogueHeight + ptBeforeElement(parser.newElmDialogue(text), font)
-
-                            if dialogueHeight < distanceToBottom:
-                                dialogueBeforeBreak = dialogueBeforeBreak + sentences[sentenceIndex]
-
-                        # Break sentences up
-                        preBreakDialogue = parser.newElmDialogue(dialogueBeforeBreak)
-                        if preBreakDialogue.elmText == "":
-                            pages.append(pe)
-                            pe = []
-                            for z in range(1, bi):
-                                pe.append(peTmp[z])
-                        else:
-                            for z in range(0, bi):
-                                pe.append(peTmp[z])
-
-                            # Add Dialog & (MORE) note
-                            pe.append(preBreakDialogue)
-                            pe.append(parser.newElmCharacter("(MORE)"))
-
-                            # Close page
-                            pages.append(pe)
-                            pe = []
-
-                        # Finish page, and start next
-                        blockHeight = 0
-                        characterCueElm = copy.copy(peTmp[0])
-                        characterCueElm.elmText = characterCueElm.elmText + " (CONT'D)"
-                        blockHeight = blockHeight + ptHeightForString(characterCueElm.elmText, font, inchesForElement(characterCueElm))
-                        blockHeight = blockHeight + ptBeforeElement(characterCueElm, font)
-                        pe.append(characterCueElm)
-
-                        # Add remaining sentences
-                        if sentenceIndex < 0:
-                            sentenceIndex = 0
-                        dialogueAfterBreak = ""
-                        for z in range(sentenceIndex, maxSentences):
-                            dialogueAfterBreak = dialogueAfterBreak + sentences[z]
-                        postBreakDialogue = parser.newElmDialogue(dialogueAfterBreak)
-                        pe.append(postBreakDialogue)
-                        blockHeight = blockHeight + ptBeforeElement(postBreakDialogue, font)
-                        blockHeight = blockHeight + ptHeightForString(postBreakDialogue.elmText, font, inchesForElement(postBreakDialogue))
-
-                        # Remaining temp Elements
-                        for z in range(bi+1, maxTmpElements):
-                            pe.append(peTmp[z])
-                            blockHeight = blockHeight + ptBeforeElement(peTmp[z], font)
-                            blockHeight = blockHeight + ptHeightForString(peTmp[z].elmText, font, inchesForElement(peTmp[z]))
-                        ypos = blockHeight
-                        peTmp = []
-
-                else: # Nothing else can fit
-                    pages.append(pe)
-                    pe = []
-                    ypos = blockHeight - spaceBefore;
-            else:
-                pages.append(pe)
-                pe = []
-                ypos = blockHeight - spaceBefore;
-                blockHeight = 0
-
-        blockHeight = 0
-        for x in peTmp:
-            pe.append(x)
-        peTmp = []
-
-    for x in peTmp:
-        pe.append(x)
-
-    if len(pe) > 0:
-        pages.append(pe)
-
-    return pages
-
-'''
 
 def htmlTitlePage(parse):
     html = "<div id='script-title'>\n"
@@ -327,14 +105,20 @@ def htmlTitlePage(parse):
     html = html + "</div>\n"
     return html
 
-def processText(elm):
+def processText(elm, font):
+    ww = wordWrapString(elm.elmText, font, inchesForElement(elm))
+    newElmText = ""
+    for w in ww:
+        newElmText = newElmText + w + "<br/>"
+    newElmText = newElmText[:-5]
+
     text = ""
     if elm.elmType == "Scene Heading" and elm.sceneNo >= 0:
         text = text + "<span class='scene-number-left'>"+str(elm.sceneNo)+"</span>"
-        text = text + elm.elmText
+        text = text + newElmText
         text = text + "<span class='scene-number-right'>"+str(elm.sceneNo)+"</span>"
     else:
-        text = text + elm.elmText
+        text = text + newElmText
 
     if elm.elmType == "Character" and elm.dualDlg:
         text = text.replace("^", "")
@@ -350,13 +134,13 @@ def processText(elm):
     if elm.elmType == "Action":
         text = re.sub("^\\!", "", text) # Remove starting bang
 
-    text = re.sub(parse.PATTERN_BOLD_ITALIC_UNDERLINE, "<strong><em><u>\2</strong></em></u>", text)
-    text = re.sub(parse.PATTERN_BOLD_ITALIC, "<strong><em>\2</strong></em>", text)
-    text = re.sub(parse.PATTERN_BOLD_UNDERLINE, "<strong><u>\2</strong></u>", text)
-    text = re.sub(parse.PATTERN_ITALIC_UNDERLINE, "<em><u>\2</em></u>", text)
-    text = re.sub(parse.PATTERN_BOLD, "<strong>\2</strong>", text)
-    text = re.sub(parse.PATTERN_ITALIC, "<em>\2</em>", text)
-    text = re.sub(parse.PATTERN_UNDERLINE, "<u>\2</u>", text)
+    text = re.sub(parse.PATTERN_BOLD_ITALIC_UNDERLINE, r"<strong><em><u>\2</strong></em></u>", text)
+    text = re.sub(parse.PATTERN_BOLD_ITALIC, r"<strong><em>\2</strong></em>", text)
+    text = re.sub(parse.PATTERN_BOLD_UNDERLINE, r"<strong><u>\2</strong></u>", text)
+    text = re.sub(parse.PATTERN_ITALIC_UNDERLINE, r"<em><u>\2</em></u>", text)
+    text = re.sub(parse.PATTERN_BOLD, r"<strong>\2</strong>", text)
+    text = re.sub(parse.PATTERN_ITALIC, r"<em>\2</em>", text)
+    text = re.sub(parse.PATTERN_UNDERLINE, r"<u>\2</u>", text)
 
     # Strip comments [[...]]
     text = re.sub("\\[{2}(.*?)\\]{2}", "", text)
@@ -378,7 +162,7 @@ def htmlBody(parse):
         html = html + htmlTitlePage(parse)
         pi = pi + 1
         html = html + "<p class='page-break'>"+str(pi)+".</p>\n"
-        
+
 
     dialogueTypes = set(["Character", "Dialogue", "Parenthetical"]);
     ignoringTypes = set(["Boneyard", "Comment", "Synopsis", "Section Heading"])
@@ -393,6 +177,9 @@ def htmlBody(parse):
 
     ie = -1
     while ie in range(-1, len(elms)-1):
+
+        html = html + "<!-- "+ str(ypos) +" -->"
+
         ie = ie + 1
         e = elms[ie]
 
@@ -410,258 +197,144 @@ def htmlBody(parse):
         if e.elmType == "Character":
             spaceBefore = lineBeforeElement(e, font)
             elmHeight = lineHeightForString(e.elmText, font, inchesForElement(e))
+
+            # Initial character tag
+            spaceBefore = lineBeforeElement(e, font)
+            elmHeight = lineHeightForString(e.elmText, font, inchesForElement(e))
             blockHeight = elmHeight
             if elmno > 0: # Need spacing first
                 blockHeight = blockHeight + spaceBefore
 
-            # Add dialog height:
+            if ypos + blockHeight + 3 >= page.usableHeight():
+                # new page
+                html = html + "</section>\n<section>\n"
+                pi = pi + 1
+                elmno = 0
+                ypos = 0
+                html = html + "<p class='page-break'>"+str(pi)+".</p>\n"
+                blockHeight = elmHeight # First element now
+
+            # Now, add character cue
+            if elmno > 0:
+                for z in range(0, spaceBefore):
+                    html = html + "<br class='padding' />\n"
+            text = processText(e, font)
+            html = html + text
+            ypos = ypos + blockHeight
+            elmno = elmno + 1
+
+            # Absord entire cue's contents:
             s = set(["Dialogue", "Parenthetical"])
             j = ie
             enext = e
             queue = []
             while ie == j or (j < len(elms) and enext.elmType in s):
-                queue.append(enext)
-                blockHeight = blockHeight + lineHeightForString(enext.elmText, font, inchesForElement(enext))
-                blockHeight = blockHeight + lineBeforeElement(enext, font)
+                queue.append(copy.copy(enext))
                 j = j + 1
                 enext = elms[j]
             ie = j - 1
 
-            if e.dualDlg and previousDualDialogueBlockHeight < 0:
-                previousDualDialogueBlockHeight = blockHeight;
-            elif e.dualDlg:
-                blockHeight = abs(previousDualDialogueBlockHeight - blockHeight)
-                previousDualDialogueBlockHeight = -1
+            dei = 0
+            while dei+1 < len(queue):
+                dei = dei + 1
+                de = queue[dei]
+                spaceAvail = page.usableHeight() - ypos
 
-            # Now add Elements
-            if blockHeight + ypos >= page.usableHeight():
-                if ypos + blockHeight - page.usableHeight() >= 4: # At least 4 lines spill over
-                    bi = -1
-                    maxTmpElements = len(queue)
-                    partialHeight = 0
-                    pageOverflow  = blockHeight + ypos - page.usableHeight()
+                height_needed = lineHeightForString(de.elmText, font, inchesForElement(de))
+                if elmno > 0:
+                    height_needed = height_needed + lineBeforeElement(de, font)
 
-                    # Fit as many elements as possible
-                    while partialHeight < pageOverflow and bi < maxTmpElements - 1:
-                        bi = bi + 1
-                        h  = lineHeightForString(queue[bi].elmText, font, inchesForElement(queue[bi]))
-                        s  = lineBeforeElement(queue[bi], font)
-                        partialHeight += h + s;
+                if spaceAvail < 3 or (spaceAvail < 3+height_needed and de.elmType == "Parenthetical"):
+                    html = html + processText(parser.newElmCharacter("(MORE)"), font)
 
-                    if bi > 0: # We have an element which we may be able to squeze in
-                        spiller = queue[bi]
-                        if spiller.elmType == "Parenthetical":
-                            if bi > 1:
-                                for z in range(0, bi):
-                                    html = html + processText(queue[z])
-
-                                # Add (MORE) note without padding before
-                                html = html + processText(parser.newElmCharacter("(MORE)"))
-
-                                # Close page
-                                html = html + "</section>\n<section>\n"
-                                pi = pi + 1
-                                ypos = 0
-                                blockHeight = 0
-                                html = html + "<p class='page-break'>"+str(pi)+".</p>\n"
-
-                                # Continue on next page
-                                characterCueElm = copy.copy(queue[0])
-                                characterCueElm.elmText = characterCueElm.elmText + " (CONT'D)"
-                                blockHeight = lineHeightForString(characterCueElm.elmText, font, inchesForElement(characterCueElm))
-                                html = html + processText(characterCueElm)
-                                elmno = 1
-
-                                # Remaining temp Elements
-                                for z in range(bi, maxTmpElements):
-                                    padding = lineBeforeElement(queue[z], font)
-                                    if elmno > 0 and padding > 0:
-                                        blockHeight = blockHeight + padding
-                                        for z in range(0, padding):
-                                            html = html + "<br class='padding' />\n"
-                                    text = processText(te)
-                                    html = html + text
-                                    elmno = elmno + 1
-                                    blockHeight = blockHeight + lineHeightForString(queue[z].elmText, font, inchesForElement(queue[z]))
-
-                                ypos = blockHeight
-                            else:
-                                # new line
-                                html = html + "</section>\n<section>\n"
-                                pi = pi + 1
-                                elmno = 0
-                                ypos = 0
-                                html = html + "<p class='page-break'>"+str(pi)+".</p>\n"
-
-                                # place
-                                for te in queue:
-                                    padding = lineBeforeElement(te, font)
-                                    if elmno > 0 and padding > 0:
-                                        for z in range(0, padding):
-                                            html = html + "<br class='padding' />\n"
-                                    text = processText(te)
-                                    html = html + text
-                                    elmno = elmno + 1
-                                ypos = ypos + blockHeight
-                        else:
-                            distanceToBottom  = page.usableHeight() - ypos - 2
-                            if distanceToBottom < 5: # Don't bother - not enough lines left
-                                # new line
-                                html = html + "</section>\n<section>\n"
-                                pi = pi + 1
-                                elmno = 0
-                                ypos = 0
-                                html = html + "<p class='page-break'>"+str(pi)+".</p>\n"
-
-                                # place
-                                for te in queue:
-                                    padding = lineBeforeElement(te, font)
-                                    if elmno > 0 and padding > 0:
-                                        for z in range(0, padding):
-                                            html = html + "<br class='padding' />\n"
-                                    text = processText(te)
-                                    html = html + text
-                                    elmno = elmno + 1
-                                ypos = ypos + blockHeight
-                                continue
-
-                            heightBeforeDialogue = 0
-                            for z in range(0, bi):
-                                heightBeforeDialogue = heightBeforeDialogue + lineBeforeElement(queue[z], font)
-                                heightBeforeDialogue = heightBeforeDialogue + lineHeightForString(queue[z].elmText, font, inchesForElement(queue[z]))
-                            dialogueHeight = heightBeforeDialogue
-                            sentenceIndex = -1
-                            sentences = [m.group(1) for m in re.finditer("(.+?[\\.\\?\\!]+\\s*)", spiller.elmText) if m]
-                            maxSentences = len(sentences)
-
-                            dialogueBeforeBreak = ""
-                            while dialogueHeight < distanceToBottom and sentenceIndex < maxSentences - 1:
-                                sentenceIndex = sentenceIndex + 1
-                                text = dialogueBeforeBreak + sentences[sentenceIndex]
-                                dialogueHeight = lineHeightForString(text, font, inchesForElement(queue[bi]))
-                                dialogueHeight = dialogueHeight + lineBeforeElement(parser.newElmDialogue(text), font)
-
-                                if dialogueHeight < distanceToBottom:
-                                    dialogueBeforeBreak = dialogueBeforeBreak + sentences[sentenceIndex]
-
-                            # Break sentences up
-                            preBreakDialogue = parser.newElmDialogue(dialogueBeforeBreak)
-                            if preBreakDialogue.elmText == "":
-                                # new line
-                                html = html + "</section>\n<section>\n"
-                                pi = pi + 1
-                                elmno = 0
-                                ypos = 0
-                                html = html + "<p class='page-break'>"+str(pi)+".</p>\n"
-
-                                # place
-                                for te in queue:
-                                    padding = lineBeforeElement(te, font)
-                                    if elmno > 0 and padding > 0:
-                                        for z in range(0, padding):
-                                            html = html + "<br class='padding' />\n"
-                                    text = processText(te)
-                                    html = html + text
-                                    elmno = elmno + 1
-                                ypos = ypos + blockHeight
-                                continue
-                            else:
-                                for z in range(0, bi):
-                                    padding = lineBeforeElement(queue[z], font)
-                                    if elmno > 0 and padding > 0:
-                                        for z in range(0, padding):
-                                            html = html + "<br class='padding' />\n"
-                                    text = processText(queue[z])
-                                    html = html + text
-                                    elmno = elmno + 1
-
-                                # Add Dialog & (MORE) note
-                                html = html + processText(preBreakDialogue)
-                                html = html + processText(parser.newElmCharacter("(MORE)"))
-
-                                # Close page
-                                html = html + "</section>\n<section>\n"
-                                pi = pi + 1
-                                elmno = 0
-                                ypos = 0
-                                html = html + "<p class='page-break'>"+str(pi)+".</p>\n"
-
-                            blockHeight = 0
-                            characterCueElm = copy.copy(queue[0])
-                            characterCueElm.elmText = characterCueElm.elmText + " (CONT'D)"
-                            blockHeight = blockHeight + lineHeightForString(characterCueElm.elmText, font, inchesForElement(characterCueElm))
-                            html = html + processText(characterCueElm)
-
-                            # Add remaining sentences
-                            if sentenceIndex < 0:
-                                sentenceIndex = 0
-                            dialogueAfterBreak = ""
-                            for z in range(sentenceIndex, maxSentences):
-                                dialogueAfterBreak = dialogueAfterBreak + sentences[z]
-                            postBreakDialogue = parser.newElmDialogue(dialogueAfterBreak)
-                            html = html + processText(postBreakDialogue)
-                            blockHeight = blockHeight + lineBeforeElement(postBreakDialogue, font)
-                            blockHeight = blockHeight + lineHeightForString(postBreakDialogue.elmText, font, inchesForElement(postBreakDialogue))
-
-                            # Remaining temp Elements
-                            for z in range(bi+1, maxTmpElements):
-                                padding = lineBeforeElement(queue[z], font)
-                                if elmno > 0 and padding > 0:
-                                    for z in range(0, padding):
-                                        html = html + "<br class='padding' />\n"
-                                text = processText(queue[z])
-                                html = html + text
-                                elmno = elmno + 1
-                                blockHeight = blockHeight + lineBeforeElement(queue[z], font)
-                                blockHeight = blockHeight + lineHeightForString(queue[z].elmText, font, inchesForElement(queue[z]))
-                            ypos = blockHeight
-                    else:
-                        # new line
-                        html = html + "</section>\n<section>\n"
-                        pi = pi + 1
-                        elmno = 0
-                        ypos = 0
-                        html = html + "<p class='page-break'>"+str(pi)+".</p>\n"
-
-                        # place
-                        for te in queue:
-                            padding = lineBeforeElement(te, font)
-                            if elmno > 0 and padding > 0:
-                                for z in range(0, padding):
-                                    html = html + "<br class='padding' />\n"
-                            text = processText(te)
-                            html = html + text
-                            elmno = elmno + 1
-                        ypos = ypos + blockHeight
-                else:
-                    # new line
+                    # new page
                     html = html + "</section>\n<section>\n"
                     pi = pi + 1
                     elmno = 0
                     ypos = 0
                     html = html + "<p class='page-break'>"+str(pi)+".</p>\n"
 
-                    # place
-                    for te in queue:
-                        padding = lineBeforeElement(te, font)
-                        if elmno > 0 and spaceBefore > 0:
-                            for z in range(0, padding):
-                                html = html + "<br class='padding' />\n"
-                        text = processText(te)
-                        html = html + text
-                        elmno = elmno + 1
-                    ypos = ypos + blockHeight
-            else:
-                # Safe - place it all :D
-                for te in queue:
-                    padding = lineBeforeElement(te, font)
-                    if elmno > 0 and spaceBefore > 0:
-                        for z in range(0, padding):
+                    # (CONT'D)
+                    characterCueElm = copy.copy(queue[0])
+                    characterCueElm.elmText = characterCueElm.elmText + " (CONT'D)"
+                    ypos = lineHeightForString(characterCueElm.elmText, font, inchesForElement(characterCueElm))
+                    html = html + processText(characterCueElm, font)
+                    elmno = 1
+
+                spaceAvail = page.usableHeight() - ypos
+                height_needed = lineHeightForString(de.elmText, font, inchesForElement(de))
+                if elmno > 0:
+                    height_needed = height_needed + lineBeforeElement(de, font)
+
+                if de.elmType == "Parenthetical": # Just Dump It!
+                    if elmno > 0:
+                        for z in range(0, lineBeforeElement(de, font)):
                             html = html + "<br class='padding' />\n"
-                    text = processText(te)
+                    text = processText(de, font)
                     html = html + text
+                    ypos = ypos + height_needed
                     elmno = elmno + 1
-                ypos = ypos + blockHeight
+                else:
+                    isLastElm = (de == queue[:-1])
+                    usableLines = spaceAvail - 1
+                    if elmno > 0:
+                        for z in range(0, lineBeforeElement(de, font)):
+                            html = html + "<br class='padding' />\n"
+                            usableLines = usableLines - 1
+
+                    # Split by Sentence
+                    sentences = [m.group(1) for m in re.finditer("(.+?[\\.\\?\\!]+\\s*)", de.elmText) if m]
+                    maxSentences = len(sentences)
+
+                    # Count Sentences We can Fit
+                    dialogueBeforeBreak = ""
+                    dialogueHeight = 0
+                    sentenceIndex = -1
+                    while sentenceIndex < maxSentences - 1:
+                        sentenceIndex = sentenceIndex + 1
+                        text = dialogueBeforeBreak + sentences[sentenceIndex]
+                        dialogueHeight = lineHeightForString(text, font, inchesForElement(de))
+                        dialogueHeight = dialogueHeight + lineBeforeElement(parser.newElmDialogue(text), font)
+
+                        if dialogueHeight < usableLines:
+                            dialogueBeforeBreak = dialogueBeforeBreak + sentences[sentenceIndex]
+                        else:
+                            break
+
+                    # Prepare rest of dialog -> we want to redo this element with updated text
+                    if sentenceIndex < 0:
+                        sentenceIndex = 0
+                    dialogueAfterBreak = ""
+                    if sentenceIndex < maxSentences - 1:
+                        for z in range(sentenceIndex, maxSentences):
+                            dialogueAfterBreak = dialogueAfterBreak + sentences[z]
+                    queue[dei].elmText = dialogueAfterBreak
+
+                    # Add Dialog:
+                    preBreakDialogue = parser.newElmDialogue(dialogueBeforeBreak)
+                    html = html + processText(preBreakDialogue, font)
+                    ypos = ypos + lineHeightForString(dialogueBeforeBreak, font, inchesForElement(de))
+                    ypos = ypos + lineBeforeElement(preBreakDialogue, font)
+
+                    if queue[dei].elmText != "": # Need to continue this block
+                        html = html + processText(parser.newElmCharacter("(MORE)"), font)
+
+                        # new page
+                        html = html + "</section>\n<section>\n"
+                        pi = pi + 1
+                        elmno = 0
+                        ypos = 0
+                        html = html + "<p class='page-break'>"+str(pi)+".</p>\n"
+
+                        # (CONT'D)
+                        characterCueElm = copy.copy(queue[0])
+                        characterCueElm.elmText = characterCueElm.elmText + " (CONT'D)"
+                        ypos = lineHeightForString(characterCueElm.elmText, font, inchesForElement(characterCueElm))
+                        html = html + processText(characterCueElm, font)
+                        elmno = 1
+
+                        dei = dei - 1
+
             continue
 
         # All other types:
@@ -726,10 +399,15 @@ def htmlBody(parse):
                 html = html + "<br class='padding' />\n"
 
         # Now -- The Element
-        text = processText(e)
+        text = processText(e, font)
         html = html + text
         ypos = ypos + blockHeight
         elmno = elmno + 1
+
+
+    # Strip last page added
+    #print(html)
+    #html = html[:html.rfind("<section>")]
 
     return html
 

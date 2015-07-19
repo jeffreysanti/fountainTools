@@ -139,19 +139,19 @@ hr {
 	padding-left: 40px;
 }
 p.page-break {
+		display: block;
     text-align: right;
-    border-bottom: 1px solid #ccc;
+    /*border-bottom: 1px solid #ccc;*/
 		page-break-before: always;
-		padding-top: 10pt;
-		margin-bottom: 10pt;
-		margin-top: 1pt;
+		padding-bottom: 21pt;
+		padding-top: 18pt;
 }
 .padding {
     margin-bottom: 1.2em;
 }
 
 @page {
-    margin-top: 0.3in;
+    margin-top: 0.25in;
     margin-bottom: 1in;
     margin-left: 1.5in;
     margin-right: 1in;
