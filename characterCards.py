@@ -1,6 +1,6 @@
 #!/bin/python
 
-import parser
+import fparser
 import sys
 import re
 
@@ -89,5 +89,5 @@ def characterCards(elms):
         fl.close()
 
 s = sys.argv[1]
-parse = parser.FParser(open(s, "r", encoding="utf-8").read())
+parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
 characterCards(parse.elms)

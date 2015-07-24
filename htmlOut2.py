@@ -5,62 +5,12 @@
 
 
 
-import parser
+import fparser
 import sys
-import re
-import textwrap
-import math
 import os
 import copy
 
-class Font:
-    def __init__(self):
-        self.name = "Courier"
-        self.pointsize = 12
-        self.heightEM = 1.2
-        self.lineHeight = (self.pointsize*self.heightEM)
-        self.charsPerInch = 10
-
-class Page:
-    def __init__(self):
-        self.name = "Letter"
-        self.width = 8.5
-        self.height = 11
-        self.marginTop = 1
-        self.marginBottom = 1
-        self.marginRight = 1
-        self.marginLeft = 1
-
-    def usableHeight(self):
-        #return (self.height - self.marginTop - self.marginBottom)*72.0
-        return 45
-
-
-def inchesForElement(elm):
-    if elm.elmType == "Action" or elm.elmType == "General" or elm.elmType == "Scene Heading":
-        return 6
-    if elm.elmType == "Character" or elm.elmType == "Dialogue":
-        return 3.3
-    if elm.elmType == "Parenthetical":
-        return 2
-    if elm.elmType == "Transition":
-        return 1.5
-    return 0
-
-def lineHeightForString(text, font, maxInches):
-    maxchars = math.floor(maxInches * font.charsPerInch)
-    if maxchars <= 0:
-        return 0
-    s = textwrap.wrap(text, maxchars)
-    return len(s)
-
-def lineBeforeElement(elm, font):
-    s = set(["Action", "General", "Character", "Transition"])
-    if elm.elmType == "Scene Heading":
-        return 2
-    if elm.elmType in s:
-        return 1
-    return 0
+from outGeneral import *
 
 
 def htmlTitlePage(parse):
@@ -228,7 +178,7 @@ def htmlBody(parse):
                                     html = html + processText(queue[z])
 
                                 # Add (MORE) note without padding before
-                                html = html + processText(parser.newElmCharacter("(MORE)"))
+                                html = html + processText(fparser.newElmCharacter("(MORE)"))
 
                                 # Close page
                                 html = html + "</section>\n<section>\n"
@@ -311,13 +261,13 @@ def htmlBody(parse):
                                 sentenceIndex = sentenceIndex + 1
                                 text = dialogueBeforeBreak + sentences[sentenceIndex]
                                 dialogueHeight = lineHeightForString(text, font, inchesForElement(queue[bi]))
-                                dialogueHeight = dialogueHeight + lineBeforeElement(parser.newElmDialogue(text), font)
+                                dialogueHeight = dialogueHeight + lineBeforeElement(fparser.newElmDialogue(text), font)
 
                                 if dialogueHeight < distanceToBottom:
                                     dialogueBeforeBreak = dialogueBeforeBreak + sentences[sentenceIndex]
 
                             # Break sentences up
-                            preBreakDialogue = parser.newElmDialogue(dialogueBeforeBreak)
+                            preBreakDialogue = fparser.newElmDialogue(dialogueBeforeBreak)
                             if preBreakDialogue.elmText == "":
                                 # new line
                                 html = html + "</section>\n<section>\n"
@@ -349,7 +299,7 @@ def htmlBody(parse):
 
                                 # Add Dialog & (MORE) note
                                 html = html + processText(preBreakDialogue)
-                                html = html + processText(parser.newElmCharacter("(MORE)"))
+                                html = html + processText(fparser.newElmCharacter("(MORE)"))
 
                                 # Close page
                                 html = html + "</section>\n<section>\n"
@@ -370,7 +320,7 @@ def htmlBody(parse):
                             dialogueAfterBreak = ""
                             for z in range(sentenceIndex, maxSentences):
                                 dialogueAfterBreak = dialogueAfterBreak + sentences[z]
-                            postBreakDialogue = parser.newElmDialogue(dialogueAfterBreak)
+                            postBreakDialogue = fparser.newElmDialogue(dialogueAfterBreak)
                             html = html + processText(postBreakDialogue)
                             blockHeight = blockHeight + lineBeforeElement(postBreakDialogue, font)
                             blockHeight = blockHeight + lineHeightForString(postBreakDialogue.elmText, font, inchesForElement(postBreakDialogue))
@@ -507,72 +457,6 @@ def htmlBody(parse):
 
 
 
-
-
-'''
-    for pi in range(0, maxPages):
-        html = html + "<p class='page-break'>"+str(pi+1)+".</p>\n"
-
-        for elm in pages[pi]:
-            if elm.elmType in ignoringTypes:
-                continue
-
-            if elm.elmType == "Page Break":
-                html = html + "</section>\n<section>\n"
-                continue
-
-            if elm.elmType == "Character" and elm.dualDlg:
-                dualDialogueCharacterCount = dualDialogueCharacterCount + 1
-                if dualDialogueCharacterCount == 1:
-                    html = html + "<div class='dual-dialogue'>\n"
-                    html = html + "<div class='dual-dialogue-left'>\n"
-                else:
-                    html = html + "</div>\n<div class='dual-dialogue-right'>\n"
-            if dualDialogueCharacterCount >= 2 and not elm.elmType in dialogueTypes:
-                dualDialogueCharacterCount = 0
-                html = html + "</div>\n</div>\n"
-
-            text = ""
-            if elm.elmType == "Scene Heading" and elm.sceneNo >= 0:
-                text = text + "<span class='scene-number-left'>"+str(elm.sceneNo)+"</span>"
-                text = text + elm.elmText
-                text = text + "<span class='scene-number-right'>"+str(elm.sceneNo)+"</span>"
-            else:
-                text = text + elm.elmText
-
-            if elm.elmType == "Character" and elm.dualDlg:
-                text = text.replace("^", "")
-            if elm.elmType == "Character":
-                text = re.sub("^@", "", text) # Remove starting hash
-
-            if elm.elmType == "Scene Heading":
-                text = re.sub("^\\.", "", text) # Remove starting dot
-
-            if elm.elmType == "Lyrics":
-                text = re.sub("^~", "", text) # Remove starting ~
-
-            if elm.elmType == "Action":
-                text = re.sub("^\\!", "", text) # Remove starting bang
-
-            text = re.sub(parse.PATTERN_BOLD_ITALIC_UNDERLINE, "<strong><em><u>\2</strong></em></u>", text)
-            text = re.sub(parse.PATTERN_BOLD_ITALIC, "<strong><em>\2</strong></em>", text)
-            text = re.sub(parse.PATTERN_BOLD_UNDERLINE, "<strong><u>\2</strong></u>", text)
-            text = re.sub(parse.PATTERN_ITALIC_UNDERLINE, "<em><u>\2</em></u>", text)
-            text = re.sub(parse.PATTERN_BOLD, "<strong>\2</strong>", text)
-            text = re.sub(parse.PATTERN_ITALIC, "<em>\2</em>", text)
-            text = re.sub(parse.PATTERN_UNDERLINE, "<u>\2</u>", text)
-
-            # Strip comments [[...]]
-            text = re.sub("\\[{2}(.*?)\\]{2}", "", text)
-
-            if text != "":
-                html = html + "<p class='"
-                html = html + elm.elmType.lower().replace(" ","-")
-                if elm.centered:
-                    html = html + " center"
-                html = html + "'>" + text + "</p>\n"
-'''
-
 def htmlout(parse):
 
     cssDir = os.path.dirname(os.path.realpath(sys.argv[0])) + "/"
@@ -594,7 +478,7 @@ def htmlout(parse):
 
 
 s = sys.argv[1]
-parse = parser.FParser(open(s, "r", encoding="utf-8").read())
+parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
 html = htmlout(parse)
 
 fl = open(s+".html", "w")
