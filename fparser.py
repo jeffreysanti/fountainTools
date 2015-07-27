@@ -5,6 +5,14 @@
 
 import re
 
+PATTERN_BOLD_ITALIC_UNDERLINE  = "(_\\*{3}|\\*{3}_)([^<>]+)(_\\*{3}|\\*{3}_)"
+PATTERN_BOLD_ITALIC            = "(\\*{3})([^<>]+)(\\*{3})"
+PATTERN_BOLD_UNDERLINE         = "(_\\*{2}|\\*{2}_)([^<>]+)(_\\*{2}|\\*{2}_)"
+PATTERN_ITALIC_UNDERLINE       = "(_\\*{1}|\\*{1}_)([^<>]+)(_\\*{1}|\\*{1}_)"
+PATTERN_BOLD                   = "(\\*{2})([^<>]+)(\\*{2})"
+PATTERN_ITALIC                 = "(?<!\\\\)(\\*{1})([^<>]+)(\\*{1})"
+PATTERN_UNDERLINE              = "(_)([^<>_]+)(_)"
+
 class FElement:
     def __init__(self):
         self.elmType = ""
@@ -91,14 +99,6 @@ def newElmParenthetical(t):
 
 
 class FParser:
-
-    PATTERN_BOLD_ITALIC_UNDERLINE  = "(_\\*{3}|\\*{3}_)([^<>]+)(_\\*{3}|\\*{3}_)"
-    PATTERN_BOLD_ITALIC            = "(\\*{3})([^<>]+)(\\*{3})"
-    PATTERN_BOLD_UNDERLINE         = "(_\\*{2}|\\*{2}_)([^<>]+)(_\\*{2}|\\*{2}_)"
-    PATTERN_ITALIC_UNDERLINE       = "(_\\*{1}|\\*{1}_)([^<>]+)(_\\*{1}|\\*{1}_)"
-    PATTERN_BOLD                   = "(\\*{2})([^<>]+)(\\*{2})"
-    PATTERN_ITALIC                 = "(?<!\\\\)(\\*{1})([^<>]+)(\\*{1})"
-    PATTERN_UNDERLINE              = "(_)([^<>_]+)(_)"
 
     PATERN_INLINE = "^([^\\t\\s][^:]+):\\s*([^\\t\\s].*$)"
     PATERN_DIRECTIVE = "^([^\\t\\s][^:]+):([\\t\\s]*$)"
