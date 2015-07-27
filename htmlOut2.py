@@ -15,11 +15,11 @@ import copy
 
 class Font:
     def __init__(self):
-        self.name = "Courier"
+        self.name = "Courier-New"
         self.pointsize = 12
         self.heightEM = 1.2
         self.lineHeight = (self.pointsize*self.heightEM)
-        self.charsPerInch = 9
+        self.charsPerInch = 10
 
 class Page:
     def __init__(self):
