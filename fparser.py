@@ -98,6 +98,13 @@ def newElmParenthetical(t):
     return e
 
 
+def fromTypeTextToElm(type, text):
+     e = FElement()
+     e.elmType = type
+     e.elmText = text
+     return e
+
+
 class FParser:
 
     PATERN_INLINE = "^([^\\t\\s][^:]+):\\s*([^\\t\\s].*$)"
@@ -133,7 +140,7 @@ class FParser:
                 if key != "":
                     self.titlePage[key] = vals
 
-                key = re.match(self.PATERN_DIRECTIVE, line).group(1)
+                key = re.match(self.PATERN_DIRECTIVE, line).group(1).lower()
                 if key == "author":
                     key = "authors"
             elif re.match(self.PATERN_INLINE, line) != None:

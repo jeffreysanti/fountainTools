@@ -6,7 +6,6 @@
 
 
 import fparser
-
 from outGeneral import *
 
 
@@ -43,15 +42,24 @@ def htmlTitlePage(parse):
         contact = "<br />".join(parse.titlePage["contact"]) + "<br />"
         html = html + "<p class='contact'>"+contact+"</p>\n"
 
+    if "notes" in parse.titlePage:
+        notes = "<br />".join(parse.titlePage["notes"]) + "<br />"
+        html = html + "<p class='notes'>"+notes+"</p>\n"
+
+    if "copyright" in parse.titlePage:
+        copyright = "<br />".join(parse.titlePage["copyright"]) + "<br />"
+        html = html + "<p class='copyright'>"+copyright+"</p>\n"
+
     html = html + "</div>\n"
+    print(parse.titlePage)
     return html
 
 def processHTMLLine(type, text):
 
-    text = re.sub("("+CHAR_BOLDITALUNDER+")([^/]+)(/"+CHAR_BOLDITALUNDER+")", r"<strong><em><u>\2</strong></em></u>", text)
-    text = re.sub("("+CHAR_BOLDITAL+")([^/]+)(/"+CHAR_BOLDITAL+")", r"<strong><em>\2</strong></em>", text)
-    text = re.sub("("+CHAR_BOLDUNDER+")([^/]+)(/"+CHAR_BOLDUNDER+")", r"<strong><u>\2</strong></u>", text)
-    text = re.sub("("+CHAR_ITALUNDER+")([^/]+)(/"+CHAR_ITALUNDER+")", r"<em><u>\2</em></u>", text)
+    text = re.sub("("+CHAR_BOLDITALUNDER+")([^/]+)(/"+CHAR_BOLDITALUNDER+")", r"<strong><em><u>\2</u></em></strong>", text)
+    text = re.sub("("+CHAR_BOLDITAL+")([^/]+)(/"+CHAR_BOLDITAL+")", r"<strong><em>\2</em></strong>", text)
+    text = re.sub("("+CHAR_BOLDUNDER+")([^/]+)(/"+CHAR_BOLDUNDER+")", r"<strong><u>\2</u></strong>", text)
+    text = re.sub("("+CHAR_ITALUNDER+")([^/]+)(/"+CHAR_ITALUNDER+")", r"<em><u>\2</u></em>", text)
     text = re.sub("("+CHAR_BOLD+")([^/]+)(/"+CHAR_BOLD+")", r"<strong>\2</strong>", text)
     text = re.sub("("+CHAR_ITAL+")([^/]+)(/"+CHAR_ITAL+")", r"<em>\2</em>", text)
     text = re.sub("("+CHAR_UNDER+")([^/]+)(/"+CHAR_UNDER+")", r"<u>\2</u>", text)
@@ -80,15 +88,16 @@ def htmlBody(parse):
         html = html + "<p class='page-break'></p>\n"
 
     for pgno in range(0, len(pgs)):
+
         if pgno > 0:
-            html = html + "<p class='page-break'>"+str(pgno+1)+".</p>\n"
+            html = html + "<br /><br />\n"
 
         for e in pgs[pgno]:
             html = html + processHTMLLine(e[0], e[1])
 
         # Strip off last <br />
-        if len(pgs[pgno]) > 0:
-            html = html[:-6]
+        #if len(pgs[pgno]) > 0:
+        #    html = html[:-6]
 
     return html
 

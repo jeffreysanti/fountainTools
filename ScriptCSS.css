@@ -34,7 +34,7 @@ body {
 	color: #3e3e3e;
 	font-family: 'courier-prime';
 	font-size: 12pt;
-	line-height: 1.2em;
+	line-height: 1.0em;
 	padding: 0;
 	margin: 0;
 }
@@ -116,12 +116,16 @@ body > p:first-child {
 #script-title .authors {
 	text-align: center;
 }
+#script-title .copyright {
+	text-align: center;
+}
 #script-title .source {
 	text-align: center;
 	padding-top: 1.2em;
 }
 #script-title .notes {
 	padding-top: 2.4em;
+	padding-bottom: 2.4em;
 }
 #script-title .notes {
 	white-space: pre-line !important;shape-rendering
@@ -134,24 +138,7 @@ hr {
     border: none;
     border-bottom: 1px solid #ccc;
 }
-.dual-dialogue {
-	overflow: hidden;
-}
-.dual-dialogue .dual-dialogue-left,
-.dual-dialogue .dual-dialogue-right {
-	width: 228px;
-	float: left;
-}
-.dual-dialogue p {
-	width: auto;
-}
-.dual-dialogue .character {
-	xtext-align: center;
-	padding-left: 40px;
-}
-.dual-dialogue .parenthetical {
-	padding-left: 40px;
-}
+
 p.page-break {
 		display: block;
     text-align: right;
@@ -161,12 +148,12 @@ p.page-break {
 		padding-top: 18pt;
 }
 .padding {
-    margin-bottom: 1.2em;
+    margin-bottom: 1.0em;
 }
 
 @page {
-    margin-top: 0.25in;
-    margin-bottom: 1in;
+    margin-top: 0.75in;
+    margin-bottom: 0.75in;
     margin-left: 1.5in;
     margin-right: 1in;
 }

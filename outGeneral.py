@@ -21,7 +21,7 @@ class Font:
     def __init__(self):
         self.name = "Courier-New"
         self.pointsize = 12
-        self.heightEM = 1.2
+        self.heightEM = 1.0
         self.lineHeight = (self.pointsize*self.heightEM)
         self.charsPerInch = 10
 
@@ -30,11 +30,14 @@ class Page:
         self.name = "Letter"
         self.width = 8.5
         self.height = 11
-        self.textLines = 45
+        self.marginLeft = 1.5
+        self.marginRight = 1
+        self.marginTop = 0.7
+        self.marginBottom = 0.7
 
-    def usableHeight(self):
-        #return (self.height - self.marginTop - self.marginBottom)*72.0
-        return self.textLines
+    def usableHeight(self, font):
+        m = math.floor((self.height - self.marginTop - self.marginBottom)*72 / (font.lineHeight * font.heightEM))
+        return m
 
 
 def inchesForElement(elm):
@@ -44,6 +47,22 @@ def inchesForElement(elm):
         return 3.3
     if elm.elmType == "Parenthetical":
         return 2
+    if elm.elmType == "Transition":
+        return 1.5
+    return 0
+
+def leftMarginForElement(elm):
+    if elm.elmType == "Action" or elm.elmType == "General" or elm.elmType == "Scene Heading":
+        return 1.5
+    if elm.elmType == "Character":
+        return 4.2
+    if elm.elmType == "Dialogue":
+        return 2.9
+    if elm.elmType == "Parenthetical":
+        return 3.6
+    return 0
+
+def rightMarginForElement(elm):
     if elm.elmType == "Transition":
         return 1.5
     return 0
@@ -150,7 +169,7 @@ def splitScriptText(parse, page, font):
             if elmno > 0: # Need spacing first
                 blockHeight = blockHeight + spaceBefore
 
-            if ypos + blockHeight + 3 >= page.usableHeight():
+            if ypos + blockHeight + 3 >= page.usableHeight(font):
                 # new page
                 retpgs.append(retln)
                 retln = []
@@ -182,7 +201,7 @@ def splitScriptText(parse, page, font):
             while dei+1 < len(queue):
                 dei = dei + 1
                 de = queue[dei]
-                spaceAvail = page.usableHeight() - ypos
+                spaceAvail = page.usableHeight(font) - ypos
 
                 height_needed = lineHeightForElm(de, font)
                 if elmno > 0:
@@ -205,7 +224,7 @@ def splitScriptText(parse, page, font):
                     pushElement(retln, characterCueElm, font)
                     elmno = 1
 
-                spaceAvail = page.usableHeight() - ypos
+                spaceAvail = page.usableHeight(font) - ypos
                 height_needed = lineHeightForElm(de, font)
                 if elmno > 0:
                     height_needed = height_needed + lineBeforeElement(de, font)
@@ -299,13 +318,13 @@ def splitScriptText(parse, page, font):
             nextHeight = lineHeightForElm(enext, font)
             nextHeight = nextHeight + lineBeforeElement(enext, font)
 
-            if blockHeight + ypos + nextHeight >= page.usableHeight() and nextHeight >= 1:
+            if blockHeight + ypos + nextHeight >= page.usableHeight(font) and nextHeight >= 1:
                 retpgs.append(retln)
                 retln = []
                 pi = pi + 1
                 elmno = 0
                 ypos = 0
-            elif enext.elmType == "Character" and blockHeight + ypos + nextHeight + 8 >= page.usableHeight():
+            elif enext.elmType == "Character" and blockHeight + ypos + nextHeight + 8 >= page.usableHeight(font):
                 retpgs.append(retln)
                 retln = []
                 pi = pi + 1
@@ -322,7 +341,7 @@ def splitScriptText(parse, page, font):
             blockHeight = blockHeight + spaceBefore
 
         # Check if we are overflowing - if so, next page:
-        if blockHeight + ypos >= page.usableHeight():
+        if blockHeight + ypos >= page.usableHeight(font):
             retpgs.append(retln)
             retln = []
             pi = pi + 1

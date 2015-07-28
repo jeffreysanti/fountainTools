@@ -38,7 +38,7 @@ body {
 	color: #3e3e3e;
 	font-family: 'courier-prime';
 	font-size: 12pt;
-	line-height: 1.2em;
+	line-height: 1.0em;
 	padding: 0;
 	margin: 0;
 }
@@ -120,12 +120,16 @@ body > p:first-child {
 #script-title .authors {
 	text-align: center;
 }
+#script-title .copyright {
+	text-align: center;
+}
 #script-title .source {
 	text-align: center;
 	padding-top: 1.2em;
 }
 #script-title .notes {
 	padding-top: 2.4em;
+	padding-bottom: 2.4em;
 }
 #script-title .notes {
 	white-space: pre-line !important;shape-rendering
@@ -138,24 +142,7 @@ hr {
     border: none;
     border-bottom: 1px solid #ccc;
 }
-.dual-dialogue {
-	overflow: hidden;
-}
-.dual-dialogue .dual-dialogue-left,
-.dual-dialogue .dual-dialogue-right {
-	width: 228px;
-	float: left;
-}
-.dual-dialogue p {
-	width: auto;
-}
-.dual-dialogue .character {
-	xtext-align: center;
-	padding-left: 40px;
-}
-.dual-dialogue .parenthetical {
-	padding-left: 40px;
-}
+
 p.page-break {
 		display: block;
     text-align: right;
@@ -165,12 +152,12 @@ p.page-break {
 		padding-top: 18pt;
 }
 .padding {
-    margin-bottom: 1.2em;
+    margin-bottom: 1.0em;
 }
 
 @page {
-    margin-top: 0.25in;
-    margin-bottom: 1in;
+    margin-top: 0.75in;
+    margin-bottom: 0.75in;
     margin-left: 1.5in;
     margin-right: 1in;
 }
@@ -182,11 +169,13 @@ p.page-break {
 <p class='credit'>written by<br /></p>
 <p class='authors'>John August<br /></p>
 <p class='source'>based on the novel by Daniel Wallace<br /></p>
+<p class='notes'>FINAL PRODUCTION DRAFT<br />includes post-production dialogue<br />and omitted scenes<br /></p>
+<p class='copyright'>(c) 2003 Columbia Pictures<br /></p>
 </div>
 <p class='page-break'></p>
 <span class='action'>This is a Southern story, full of lies and</span>
 <br /><span class='action'>fabrications, but truer for their inclusion.</span>
-<p class='page-break'>2.</p>
+<br /><br /><br />
 <span class='action'><strong>FADE IN:</strong></span>
 <br /><br /><span class='action'>A RIVER.</span>
 <br /><br /><span class='action'>We're underwater, watching a fat catfish swim along.</span>
@@ -216,8 +205,7 @@ p.page-break {
 <br /><span class='dialogue'>Others claimed he was a</span>
 <br /><span class='dialogue'>lesser dinosaur, left over</span>
 <br /><span class='dialogue'>from the Cretaceous period.</span>
-<p class='page-break'>3.</p>
-<span class='scene-heading'>INT.  WILL'S BEDROOM - NIGHT (1973)</span>
+<br /><br /><br /><span class='scene-heading'>INT.  WILL'S BEDROOM - NIGHT (1973)</span>
 <br /><br /><span class='action'>WILL BLOOM, AGE 3, listens wide-eyed as his father</span>
 <br /><span class='action'>EDWARD BLOOM, 40's and handsome, tells the story.  In</span>
 <br /><span class='action'>every gesture, Edward is bigger than life, describing</span>
@@ -233,7 +221,8 @@ p.page-break {
 <br /><span class='dialogue'>And on the day you were born,</span>
 <br /><span class='dialogue'>that was the day I finally</span>
 <br /><span class='dialogue'>caught him.</span>
-<br /><br /><br /><span class='scene-heading'>EXT.  CAMPFIRE - NIGHT (1977)</span>
+<br /><br /><br />
+<span class='scene-heading'>EXT.  CAMPFIRE - NIGHT (1977)</span>
 <br /><br /><span class='action'>A few years later, and Will sits with the other INDIAN</span>
 <br /><span class='action'>GUIDES as Edward continues telling the story to the</span>
 <br /><span class='action'>tribe.</span>
@@ -250,8 +239,7 @@ p.page-break {
 <br /><span class='dialogue'>desired.</span>
 <br /><br /><span class='action'>Edward points to his wedding band, glinting in the</span>
 <br /><span class='action'>firelight.</span>
-<p class='page-break'>4.</p>
-<span class='character'>LITTLE BRAVE</span>
+<br /><br /><span class='character'>LITTLE BRAVE</span>
 <br /><span class='parenthetical'>(confused)</span>
 <br /><span class='dialogue'>Your finger?</span>
 <br /><br /><span class='action'>Edward slips his ring off.</span>
@@ -276,12 +264,12 @@ p.page-break {
 <br /><span class='dialogue'>even hit the water.  And just</span>
 <br /><span class='dialogue'>as fast, he snapped clean</span>
 <br /><span class='dialogue'>through that line.</span>
-<br /><br /><span class='action'>WILL, now 17 with braces, is fuming and ready to</span>
+<br /><br /><br />
+<span class='action'>WILL, now 17 with braces, is fuming and ready to</span>
 <br /><span class='action'>leave.  His mother SANDRA -- from whom he gets his</span>
 <br /><span class='action'>good looks and practicality -- stands with him at the</span>
 <br /><span class='action'>door.</span>
-<p class='page-break'>5.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>You can see my predicament.</span>
 <br /><span class='dialogue'>My wedding ring, the symbol</span>
 <br /><span class='dialogue'>of fidelity to my wife, soon</span>
@@ -310,8 +298,7 @@ p.page-break {
 <br /><span class='dialogue'>looked him straight in the</span>
 <br /><span class='dialogue'>eye.  And I made a remarkable</span>
 <br /><span class='dialogue'>discovery.</span>
-<p class='page-break'>6.</p>
-<span class='scene-heading'>INT.  TINY PARIS RESTAURANT (LA RUE 14°) - NIGHT</span>
+<br /><br /><br /><span class='scene-heading'>INT.  TINY PARIS RESTAURANT (LA RUE 14°) - NIGHT</span>
 <br /><span class='scene-heading'>(1998)</span>
 <br /><br /><span class='action'>WILL, now 28, sits with his gorgeous bride JOSEPHINE.</span>
 <br /><span class='action'>This is their wedding reception, crowded with their</span>
@@ -319,7 +306,8 @@ p.page-break {
 <br /><span class='action'>is furious.</span>
 <br /><br /><span class='action'>Edward has the floor, ostensibly for a toast.  The</span>
 <br /><span class='action'>room is cozy and drunk.</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>This fish, the Beast.  The</span>
 <br /><span class='dialogue'>whole time we were calling it</span>
 <br /><span class='dialogue'>a him, when in fact it was a</span>
@@ -344,9 +332,10 @@ p.page-break {
 <br /><span class='dialogue'>Did I want to deprive my</span>
 <br /><span class='dialogue'>soon-to-be-born son the</span>
 <br /><span class='dialogue'>chance to catch a fish like</span>
-<br /><span class='dialogue'>this of his own?</span>
-<p class='page-break'>7.</p>
-<span class='action'>As he leaves, Will mutters in perfect unison with his</span>
+<br /><span class='dialogue'>this of his own?  This lady</span>
+<br /><span class='dialogue'>fish and I, well, we had the</span>
+<br /><span class='dialogue'>same destiny.</span>
+<br /><br /><span class='action'>As he leaves, Will mutters in perfect unison with his</span>
 <br /><span class='action'>father--</span>
 <br /><br /><span class='character'>EDWARD AND WILL</span>
 <br /><span class='dialogue'>We were part of the same</span>
@@ -363,6 +352,9 @@ p.page-break {
 <br /><span class='dialogue'>strike so quick on gold when</span>
 <br /><span class='dialogue'>nothing else would attract</span>
 <br /><span class='dialogue'>it?</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='parenthetical'>(closer; he holds</span>
 <br /><span class='parenthetical'>up his ring)</span>
 <br /><span class='dialogue'>That was the lesson I learned</span>
@@ -378,8 +370,7 @@ p.page-break {
 <br /><br /><span class='action'>Edward motions for Sandra to get up here with him.  As</span>
 <br /><span class='action'>she crosses, we can see that thirty years of marriage</span>
 <br /><span class='action'>has not lessened their affection for each other.</span>
-<p class='page-break'>8.</p>
-<span class='action'>As they kiss, Edward tweaks her chin a special little</span>
+<br /><br /><span class='action'>As they kiss, Edward tweaks her chin a special little</span>
 <br /><span class='action'>way.  The crowd APPLAUDS.</span>
 <br /><br /><span class='action'>Edward toasts the happy couple.  Josephine covers well</span>
 <br /><span class='action'>for her absent husband, a smile as warm as summer.</span>
@@ -404,14 +395,14 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='parenthetical'>(shaking his head)</span>
 <br /><span class='dialogue'>Jesus Christ.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>Friend of yours?  Did you</span>
 <br /><span class='dialogue'>help him out of a bind?</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Come on, Will.  Everyone</span>
 <br /><span class='dialogue'>likes that story.</span>
-<p class='page-break'>9.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>No Dad, they don't.  <u>I</u> do</span>
 <br /><span class='dialogue'>not like the story.  Not</span>
 <br /><span class='dialogue'>anymore, not after a</span>
@@ -444,12 +435,12 @@ p.page-break {
 <br /><span class='dialogue'>After that night, I didn't</span>
 <br /><span class='dialogue'>speak to my father again for</span>
 <br /><span class='dialogue'>three years.</span>
-<p class='page-break'>10.</p>
-<span class='scene-heading'>INT.  A.P. NEWSROOM (PARIS) - DAY</span>
+<br /><br /><br /><span class='scene-heading'>INT.  A.P. NEWSROOM (PARIS) - DAY</span>
 <br /><br /><span class='action'>A typically busy day.  On hold with the phone cradled</span>
 <br /><span class='action'>under an ear, Will sorts through a bundle of mail</span>
 <br /><span class='action'>dropped on his desk.</span>
-<br /><br /><span class='character'>WILL (ON PHONE)</span>
+<br /><br /><br />
+<span class='character'>WILL (ON PHONE)</span>
 <br /><span class='parenthetical'>(without pauses)</span>
 <br /><span class='dialogue'>William Bloom with the</span>
 <br /><span class='dialogue'>Associated Press if I could</span>
@@ -474,8 +465,7 @@ p.page-break {
 <br /><span class='dialogue'>about our not talking.</span>
 <br /><br /><br /><span class='scene-heading'>INT.  BLOOM HOUSE MASTER BEDROOM - NIGHT</span>
 <br /><br /><span class='action'>Sandra stands by the window, watching as...</span>
-<p class='page-break'>11.</p>
-<span class='scene-heading'>EXT.  BLOOM BACK YARD - NIGHT [CONTINUOUS]</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  BLOOM BACK YARD - NIGHT [CONTINUOUS]</span>
 <br /><br /><span class='action'>Edward swims laps in the family pool.  He's born to</span>
 <br /><span class='action'>the water.</span>
 <br /><br /><span class='character'>WILL (V.O.)</span>
@@ -488,7 +478,8 @@ p.page-break {
 <br /><span class='dialogue'>well.</span>
 <br /><br /><br /><span class='scene-heading'>EXT.  RIVER - DAY</span>
 <br /><br /><span class='action'>Edward stares intently into the water, a lion in wait.</span>
-<br /><br /><span class='character'>WILL (V.O.)</span>
+<br /><br /><br />
+<span class='character'>WILL (V.O.)</span>
 <br /><span class='dialogue'>In telling the story of my</span>
 <br /><span class='dialogue'>father's life, it's</span>
 <br /><span class='dialogue'>impossible to separate the</span>
@@ -505,10 +496,12 @@ p.page-break {
 <br /><span class='action'>forces of the natural world had conspired to create</span>
 <br /><span class='action'>him.</span>
 <br /><br /><span class='character'>WILL (V.O.) (CONT'D)</span>
+<br /><span class='dialogue'>It doesn't always make sense,</span>
+<br /><span class='dialogue'>and most of it never</span>
+<br /><span class='dialogue'>happened.</span>
 <br /><br /><span class='action'>Suddenly, this Edward thrusts both hands into the</span>
 <br /><span class='action'>water, grabbing hold of</span>
-<p class='page-break'>12.</p>
-<span class='action'>THE BEAST.</span>
+<br /><br /><span class='action'>THE BEAST.</span>
 <br /><br /><span class='action'>He brings the catfish up to his face.  Looks it right</span>
 <br /><span class='action'>in the eye.  A beat, then the Beast spits out Edward's</span>
 <br /><span class='action'>gold ring.</span>
@@ -527,7 +520,8 @@ p.page-break {
 <br /><span class='dialogue'>Now, Mrs. Bloom, I'll need</span>
 <br /><span class='dialogue'>you to give me one good push.</span>
 <br /><span class='dialogue'>On three.  One...</span>
-<br /><br /><span class='action'>Suddenly, we hear a POP as a slimy mass of human being</span>
+<br /><br /><br />
+<span class='action'>Suddenly, we hear a POP as a slimy mass of human being</span>
 <br /><span class='action'>rockets into the doctor's unprepared hands.  Bennett</span>
 <br /><span class='action'>tries to hold tight, but the infant is slippery like a</span>
 <br /><span class='action'>fish.  It shoots up into air.</span>
@@ -538,8 +532,7 @@ p.page-break {
 <br /><br /><span class='action'>As it falls, the newborn knocks over a tray, which</span>
 <br /><span class='action'>provides it a ramp to slide right out of the room.</span>
 <br /><span class='action'>Everyone races after it.</span>
-<p class='page-break'>13.</p>
-<span class='scene-heading'>INT.  HOSPITAL HALLWAY - DAY</span>
+<br /><br /><br /><span class='scene-heading'>INT.  HOSPITAL HALLWAY - DAY</span>
 <br /><br /><span class='action'>Bursting through the doors --</span>
 <br /><br /><span class='character'>YOUNG DR. BENNETT</span>
 <br /><span class='dialogue'>Grab that baby!</span>
@@ -567,11 +560,11 @@ p.page-break {
 <br /><span class='action'>get the phone.</span>
 <br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>Allo oui?</span>
-<br /><br /><span class='action'>Will begins stripping out of his wet clothes, each</span>
+<br /><br /><br />
+<span class='action'>Will begins stripping out of his wet clothes, each</span>
 <br /><span class='action'>layer unleashing a new drizzle.  He plays it up,</span>
 <br /><span class='action'>trying to get a reaction out of Josephine.</span>
-<p class='page-break'>14.</p>
-<span class='character'>JOSEPHINE (CONT'D)</span>
+<br /><br /><span class='character'>JOSEPHINE (CONT'D)</span>
 <br /><span class='parenthetical'>(on phone)</span>
 <br /><span class='dialogue'>Yes, he's here.</span>
 <br /><br /><span class='action'>She hands the phone to Will, concerned.</span>
@@ -601,12 +594,12 @@ p.page-break {
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Probably tonight.</span>
 <br /><br /><span class='action'>A beat.</span>
-<p class='page-break'>15.</p>
-<span class='character'>JOSEPHINE</span>
+<br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>I'm going with you.</span>
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>You don't have to.</span>
-<br /><br /><span class='character'>JOSEPHINE</span>
+<br /><br /><br />
+<span class='character'>JOSEPHINE</span>
 <br /><span class='parenthetical'>(a simple fact)</span>
 <br /><span class='dialogue'>I'm going with you.</span>
 <br /><br /><br /><span class='scene-heading'>INT.  AIR FRANCE 747 - NIGHT</span>
@@ -630,8 +623,7 @@ p.page-break {
 <br /><span class='action'>is pretty good, making a convincing bird, a passable</span>
 <br /><span class='action'>monkey, and finally a dog.</span>
 <br /><br /><span class='action'>We PUSH IN on the silhouettes.</span>
-<p class='page-break'>16.</p>
-<span class='character'>EDWARD (O.S., PRELAP)</span>
+<br /><br /><span class='character'>EDWARD (O.S., PRELAP)</span>
 <br /><span class='dialogue'>So which one's it gonna be?</span>
 <br /><span class='dialogue'>The Monkey in the Barn, the</span>
 <br /><span class='dialogue'>Dog in the Road?</span>
@@ -642,7 +634,8 @@ p.page-break {
 <br /><br /><span class='action'>Will (6) sits in his pajamas on the floor next to him.</span>
 <br /><span class='action'>The endtable lamp lies between them, its shade off to</span>
 <br /><span class='action'>cast big shadows on the wall.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>The one about the witch.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Your mom says I can't tell</span>
@@ -658,9 +651,6 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>This all happened in the</span>
 <br /><span class='dialogue'>swamp outside of Ashton.</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>17.</p>
-<span class='character'>EDWARD (CONT'D) (CONT'D)</span>
 <br /><span class='dialogue'>Kids weren't supposed to go</span>
 <br /><span class='dialogue'>out in the swamp, on account</span>
 <br /><span class='dialogue'>of the snakes and spiders and</span>
@@ -685,11 +675,11 @@ p.page-break {
 <br /><br /><span class='action'>Five kids walk past in silhouette.  Four have</span>
 <br /><span class='action'>flashlights on.  The fifth keeps tripping, crashing</span>
 <br /><span class='action'>into YOUNG EDWARD (10).</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Zacky, turn your flashlight</span>
 <br /><span class='dialogue'>on!</span>
-<p class='page-break'>18.</p>
-<span class='character'>ZACKY</span>
+<br /><br /><span class='character'>ZACKY</span>
 <br /><span class='dialogue'>I don't got any batteries!</span>
 <br /><span class='dialogue'>Nope!</span>
 <br /><br /><span class='action'>Red-headed ZACKY PRICE is 10.  His brother DON PRICE</span>
@@ -718,14 +708,14 @@ p.page-break {
 <br /><br /><span class='character'>RUTHIE</span>
 <br /><span class='dialogue'>You shouldn't swear.  There's</span>
 <br /><span class='dialogue'>ladies present.</span>
-<p class='page-break'>19.</p>
-<span class='character'>DON PRICE</span>
+<br /><br /><span class='character'>DON PRICE</span>
 <br /><span class='dialogue'>Shit.</span>
 <br /><br /><span class='character'>ZACKY</span>
 <br /><span class='dialogue'>Damn.</span>
 <br /><br /><span class='character'>WILBUR FREELY</span>
 <br /><span class='dialogue'>Screw.</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='parenthetical'>(whispering)</span>
 <br /><span class='dialogue'>Turn off your flashlights!</span>
 <br /><span class='dialogue'>She'll see 'em.</span>
@@ -748,8 +738,7 @@ p.page-break {
 <br /><span class='action'>the dirt.  Even bats are afraid to fly over it.</span>
 <br /><br /><span class='action'>In the moonlight, the house is especially sinister.</span>
 <br /><span class='action'>Who knows what is lurking in the shadows?</span>
-<p class='page-break'>20.</p>
-<span class='character'>ADULT EDWARD (V.O.)(CONT'D)</span>
+<br /><br /><span class='character'>ADULT EDWARD (V.O.)(CONT'D)</span>
 <br /><span class='dialogue'>Yet of the all the witches in</span>
 <br /><span class='dialogue'>Alabama, there was one who</span>
 <br /><span class='dialogue'>was the most feared.  For she</span>
@@ -770,7 +759,8 @@ p.page-break {
 <br /><span class='dialogue'>go in and get that eye?  I</span>
 <br /><span class='dialogue'>heard she keeps it in a box</span>
 <br /><span class='dialogue'>on her nighttable.</span>
-<br /><br /><span class='action'>Edward looks back at the spooky house.</span>
+<br /><br /><br />
+<span class='action'>Edward looks back at the spooky house.</span>
 <br /><br /><span class='character'>DON PRICE (CONT'D)</span>
 <br /><span class='dialogue'>Or are you too scared?</span>
 <br /><br /><span class='character'>EDWARD</span>
@@ -780,8 +770,7 @@ p.page-break {
 <br /><span class='dialogue'>Then do it.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Fine, I will.</span>
-<p class='page-break'>21.</p>
-<span class='character'>DON PRICE</span>
+<br /><br /><span class='character'>DON PRICE</span>
 <br /><span class='dialogue'>Fine, you do it.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Fine, I'm doing it.</span>
@@ -810,7 +799,7 @@ p.page-break {
 <br /><span class='action'>look like horns.  Yet Edward extends his hand,</span>
 <br /><span class='action'>reaching closer and closer before he finally</span>
 <br /><br /><span class='action'>RINGS THE DOORBELL.</span>
-<p class='page-break'>22.</p>
+<br /><br /><br />
 <span class='action'>Impossibly fast, the door opens, revealing an OLD</span>
 <br /><span class='action'>WOMAN with a patch over her left eye.  She looks like</span>
 <br /><span class='action'>she's been dead for years, but too stubborn to lie</span>
@@ -837,8 +826,7 @@ p.page-break {
 <br /><span class='action'>hits her left eye, it shines with a hellish glow.</span>
 <br /><br /><span class='action'>We RUSH IN on Zacky, who is paralyzed by what he sees.</span>
 <br /><br /><span class='transition'>CUT TO:</span>
-<p class='page-break'>23.</p>
-<span class='scene-heading'>EXT.  FRONT PORCH OF HOUSE - DAY</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  FRONT PORCH OF HOUSE - DAY</span>
 <br /><br /><span class='action'>An OLD MAN -- Zacky -- stands on a wobbly stepladder,</span>
 <br /><span class='action'>changing a lightbulb.  Suddenly, the ladder gives way</span>
 <br /><span class='action'>and he falls.  Dead.</span>
@@ -848,7 +836,8 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>INT.  FRATERNITY HOUSE BATHROOM - DAY</span>
 <br /><br /><span class='action'>Twenty-year old Don Price falls face-forward on the</span>
 <br /><span class='action'>tile, face mushed in the grout.  Very much dead.</span>
-<br /><br /><br /><span class='scene-heading'>EXT.  AT THE GATE - NIGHT</span>
+<br /><br /><br />
+<span class='scene-heading'>EXT.  AT THE GATE - NIGHT</span>
 <br /><br /><span class='action'>Don and Zacky both tremble with fear.  The latter has</span>
 <br /><span class='action'>tears in his eyes.</span>
 <br /><br /><span class='character'>ZACKY</span>
@@ -861,8 +850,7 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>EXT.  AT THE OLD WOMAN'S DOOR - NIGHT</span>
 <br /><br /><span class='action'>Edward helps her back inside.  He could leave now, but</span>
 <br /><span class='action'>curiosity gets the better of him.</span>
-<p class='page-break'>24.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I was thinking about death</span>
 <br /><span class='dialogue'>and all.  About seeing how</span>
 <br /><span class='dialogue'>you're gonna die.</span>
@@ -889,12 +877,12 @@ p.page-break {
 <br /><span class='action'>perplexed and amused.  Whatever he sees, it's not as</span>
 <br /><span class='action'>dire as the other boys.  His future has something</span>
 <br /><span class='action'>strange in store.</span>
-<br /><br /><span class='character'>EDWARD (CONT'D)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>Huh.  That's how I go?</span>
 <br /><br /><span class='action'>The Old Woman nods.  Still a little overwhelmed,</span>
 <br /><span class='action'>Edward turns and leaves.</span>
-<p class='page-break'>25.</p>
-<span class='character'>ADULT EDWARD (V.O.)</span>
+<br /><br /><span class='character'>ADULT EDWARD (V.O.)</span>
 <br /><span class='dialogue'>From that moment on, I no</span>
 <br /><span class='dialogue'>longer feared death.  And for</span>
 <br /><span class='dialogue'>that, I was as good as</span>
@@ -922,14 +910,14 @@ p.page-break {
 <br /><br /><span class='action'>A beat.  Starting over...</span>
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Hi, Mom.</span>
-<p class='page-break'>26.</p>
-<span class='action'>He leans in and hugs her.  She surrenders, squeezing</span>
+<br /><br /><span class='action'>He leans in and hugs her.  She surrenders, squeezing</span>
 <br /><span class='action'>her son tight.  Will and his mother are cut from the</span>
 <br /><span class='action'>same cloth -- strong-willed but practical.  They've</span>
 <br /><span class='action'>always been close.</span>
 <br /><br /><span class='character'>SANDRA</span>
 <br /><span class='dialogue'>I'm so glad you're here.</span>
-<br /><br /><span class='action'>That hug finished, Sandra pushes past her son to her</span>
+<br /><br /><br />
+<span class='action'>That hug finished, Sandra pushes past her son to her</span>
 <br /><span class='action'>daughter-in-law.  Seeing the size of her belly --</span>
 <br /><br /><span class='character'>SANDRA</span>
 <br /><span class='dialogue'>You shouldn't have flown.</span>
@@ -954,8 +942,7 @@ p.page-break {
 <br /><span class='action'>the first time:  an older suburban home, three</span>
 <br /><span class='action'>bedrooms, big for the neighborhood, and nicely grown</span>
 <br /><span class='action'>into the lot.  KIDS are playing on the street.</span>
-<p class='page-break'>27.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Is that Dr. Bennett's car?</span>
 <br /><br /><span class='character'>SANDRA</span>
 <br /><span class='dialogue'>He's up with your father.</span>
@@ -968,7 +955,8 @@ p.page-break {
 <br /><span class='dialogue'>eat, he gets weaker.  And</span>
 <br /><span class='dialogue'>because he's weaker, he</span>
 <br /><span class='dialogue'>doesn't want to eat.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>How much time does he have</span>
 <br /><span class='dialogue'>left?</span>
 <br /><br /><span class='character'>SANDRA</span>
@@ -982,8 +970,7 @@ p.page-break {
 <br /><span class='action'>physician.</span>
 <br /><br /><span class='character'>DR. BENNETT</span>
 <br /><span class='dialogue'>Will.</span>
-<p class='page-break'>28.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Dr. Bennett.  It's good to</span>
 <br /><span class='dialogue'>see you.</span>
 <br /><span class='parenthetical'>(they shake)</span>
@@ -1005,13 +992,13 @@ p.page-break {
 <br /><br /><span class='character'>SANDRA</span>
 <br /><span class='dialogue'>You don't think he looks any</span>
 <br /><span class='dialogue'>worse.</span>
-<br /><br /><span class='character'>DR. BENNETT</span>
+<br /><br /><br />
+<span class='character'>DR. BENNETT</span>
 <br /><span class='dialogue'>No.  I would say he's the</span>
 <br /><span class='dialogue'>same.</span>
 <br /><br /><span class='action'>And in the silence that follows, a lot is said.  It</span>
 <br /><span class='action'>wasn't the upbeat reply Sandra was hoping for.</span>
-<p class='page-break'>29.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Can I see him?</span>
 <br /><br /><span class='character'>DR. BENNETT</span>
 <br /><span class='dialogue'>Absolutely.  Be good for you</span>
@@ -1037,14 +1024,14 @@ p.page-break {
 <br /><span class='action'>running a hand along the wallpaper.</span>
 <br /><br /><span class='action'>Almost at the door, he stops for a beat.  Gets his</span>
 <br /><span class='action'>breath.  Then goes inside.</span>
-<p class='page-break'>30.</p>
-<span class='scene-heading'>INT.  GUEST ROOM - DAY</span>
+<br /><br /><br /><span class='scene-heading'>INT.  GUEST ROOM - DAY</span>
 <br /><br /><span class='action'>Edward Bloom, 61, lies asleep on the bed.  Although</span>
 <br /><span class='action'>he's not the vibrant man we've seen before, it's not</span>
 <br /><span class='action'>as bad we feared.  The illness has been quick, and</span>
 <br /><span class='action'>left him largely intact.</span>
 <br /><br /><span class='action'>There are no I.V.'s, no monitors, nothing.</span>
-<br /><br /><span class='action'>Coming up to the bed --</span>
+<br /><br /><br />
+<span class='action'>Coming up to the bed --</span>
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Dad?</span>
 <br /><br /><span class='action'>Edward cracks open an eye, a beat before he focuses.</span>
@@ -1066,8 +1053,7 @@ p.page-break {
 <br /><span class='dialogue'>everything.  I mean, there's</span>
 <br /><span class='dialogue'>the diapers and the burping</span>
 <br /><span class='dialogue'>and the midnight feedings...</span>
-<p class='page-break'>31.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Did you do any of that?</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>No, but I hear it's terrible.</span>
@@ -1085,6 +1071,9 @@ p.page-break {
 <br /><span class='action'>recoils.</span>
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Just drink half the can.</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>WILL (CONT'D)</span>
 <br /><span class='dialogue'>I'll tell her you drank the</span>
 <br /><span class='dialogue'>whole thing.  Everyone wins.</span>
 <br /><br /><span class='action'>A beat, then Edward rolls his eyes.  Fine.  Will</span>
@@ -1098,8 +1087,7 @@ p.page-break {
 <br /><span class='dialogue'>Really.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Truly.  I saw it in The Eye.</span>
-<p class='page-break'>32.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>The Old Lady by the swamp.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>She was a witch.</span>
@@ -1125,13 +1113,15 @@ p.page-break {
 <br /><span class='dialogue'>coffee shop near the office.</span>
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Okay.</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>And every day I gave him a</span>
 <br /><span class='dialogue'>quarter.  Every day.  Then I</span>
 <br /><span class='dialogue'>got sick and was out for a</span>
-<br /><span class='dialogue'>couple of weeks.</span>
-<p class='page-break'>33.</p>
-<span class='character'>WILL</span>
+<br /><span class='dialogue'>couple of weeks.  And when I</span>
+<br /><span class='dialogue'>went back there, you know</span>
+<br /><span class='dialogue'>what he said?</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>What did he say?</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>You owe me three-fifty.</span>
@@ -1159,10 +1149,13 @@ p.page-break {
 <br /><span class='dialogue'>Same thing.</span>
 <br /><br /><span class='action'>Will won't commit to Edward's assessment.</span>
 <br /><br /><span class='character'>WILL</span>
-<p class='page-break'>34.</p>
-<span class='character'>EDWARD</span>
+<br /><span class='dialogue'>Dad, I'm hoping we can talk</span>
+<br /><span class='dialogue'>about some things while I'm</span>
+<br /><span class='dialogue'>here.</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>You mean, while <u>I'm</u> here.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>I'd just like to know the</span>
 <br /><span class='dialogue'>true versions of things.</span>
 <br /><span class='dialogue'>Events.  Stories.  You.</span>
@@ -1193,8 +1186,7 @@ p.page-break {
 <br /><span class='dialogue'>Being stuck in bed.  Dying is</span>
 <br /><span class='dialogue'>the worst thing that ever</span>
 <br /><span class='dialogue'>happened to me.</span>
-<p class='page-break'>35.</p>
-<span class='action'>He smiles at his joke.</span>
+<br /><br /><span class='action'>He smiles at his joke.</span>
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>I thought you weren't dying.</span>
 <br /><br /><span class='character'>EDWARD</span>
@@ -1205,7 +1197,8 @@ p.page-break {
 <br /><br /><span class='action'>Shutting the door behind himself, Will drinks the rest</span>
 <br /><span class='action'>of the Ensure himself.  Edward was right.  It tastes</span>
 <br /><span class='action'>horrible.</span>
-<br /><br /><span class='action'>Heading for the stairs, Will walks past an open door.</span>
+<br /><br /><br />
+<span class='action'>Heading for the stairs, Will walks past an open door.</span>
 <br /><span class='action'>As he leaves frame, we STAY BEHIND to look inside...</span>
 <br /><br /><br /><span class='scene-heading'>INT.  WILL'S BEDROOM - DAY  [FLASHBACK]</span>
 <br /><br /><span class='action'>...where an eight-year old Will is propped up in bed,</span>
@@ -1221,8 +1214,7 @@ p.page-break {
 <br /><span class='dialogue'>years.</span>
 <br /><br /><span class='character'>YOUNG WILL</span>
 <br /><span class='dialogue'>Did you have chicken pox?</span>
-<p class='page-break'>36.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I wish.</span>
 <br /><br /><span class='transition'>CUT TO:</span>
 <br /><br /><br /><span class='scene-heading'>INT.  TINY CHURCH - DAY</span>
@@ -1243,13 +1235,13 @@ p.page-break {
 <br /><br /><span class='action'>ON HIS SHOES</span>
 <br /><br /><span class='action'>As we watch, Edward's pant cuffs rise inch by inch --</span>
 <br /><span class='action'>that's how fast he's growing.</span>
-<br /><br /><span class='character'>EDWARD (V.O.)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>Truth is, no one quite knew</span>
 <br /><span class='dialogue'>what was wrong.  Most times,</span>
 <br /><span class='dialogue'>a person grows up gradually.</span>
 <br /><span class='dialogue'>I found myself in a hurry.</span>
-<p class='page-break'>37.</p>
-<span class='scene-heading'>INT.  YOUNG EDWARD'S BEDROOM - DAY</span>
+<br /><br /><br /><span class='scene-heading'>INT.  YOUNG EDWARD'S BEDROOM - DAY</span>
 <br /><br /><span class='action'>Young Edward lies in bed, his limbs connected to</span>
 <br /><span class='action'>various pulleys and levers to support his weight.  He</span>
 <br /><span class='action'>has a dozen encyclopedias around him, and another</span>
@@ -1281,16 +1273,14 @@ p.page-break {
 <br /><span class='dialogue'>quadruple its size.</span>
 <br /><br /><span class='action'>Young Edward thinks this through.</span>
 <br /><br /><span class='character'>EDWARD (V.O.)</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>38.</p>
-<span class='character'>EDWARD (V.O.) (CONT'D)</span>
 <br /><span class='dialogue'>It occurred to me then, that</span>
 <br /><span class='dialogue'>perhaps the reason for my</span>
 <br /><span class='dialogue'>growth was that I was</span>
 <br /><span class='dialogue'>intended for larger things.</span>
 <br /><span class='dialogue'>After all, a giant man can't</span>
 <br /><span class='dialogue'>have an ordinary-sized life.</span>
-<br /><br /><br /><span class='scene-heading'>EXT.  BASEBALL FIELD - DAY</span>
+<br /><br /><br />
+<span class='scene-heading'>EXT.  BASEBALL FIELD - DAY</span>
 <br /><br /><span class='action'>The CRACK of a bat announces the game-winning home</span>
 <br /><span class='action'>run.  The crowd CHEERS the swing, and especially the</span>
 <br /><span class='action'>batter as he rounds the bases.</span>
@@ -1311,8 +1301,7 @@ p.page-break {
 <br /><span class='dialogue'>Edward Bloom!</span>
 <br /><br /><span class='action'>The other GIRLS SQUEAL in agreement.  Don Price looks</span>
 <br /><span class='action'>over, glowers.</span>
-<p class='page-break'>39.</p>
-<span class='scene-heading'>EXT.  NEIGHBORHOOD - DAY</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  NEIGHBORHOOD - DAY</span>
 <br /><br /><span class='action'>SINGLE SHOT:  A lawnmower ROARS along the grass.  We</span>
 <br /><span class='action'>LOOK UP to see who's pushing it, but it's not Edward.</span>
 <br /><span class='action'>It's one of his teenage EMPLOYEES.</span>
@@ -1327,14 +1316,14 @@ p.page-break {
 <br /><span class='action'>only teammate who doesn't mob him.</span>
 <br /><br /><br /><span class='scene-heading'>EXT.  TOWN - DAY</span>
 <br /><br /><span class='action'>Edward carries a dog out of a burning house.</span>
-<br /><br /><br /><span class='scene-heading'>INT.  SCIENCE FAIR - DAY</span>
+<br /><br /><br />
+<span class='scene-heading'>INT.  SCIENCE FAIR - DAY</span>
 <br /><br /><span class='action'>Edward wins a blue ribbon for his invention, a machine</span>
 <br /><span class='action'>labelled "Perpetual Motion."  He and the JUDGE pose</span>
 <br /><span class='action'>for a photograph.  A FLASH.</span>
 <br /><br /><span class='action'>Pissed, Don Price throws his crappy lima bean plants</span>
 <br /><span class='action'>in the trash.</span>
-<p class='page-break'>40.</p>
-<span class='scene-heading'>INT.  HIGH SCHOOL STAGE - DAY</span>
+<br /><br /><br /><span class='scene-heading'>INT.  HIGH SCHOOL STAGE - DAY</span>
 <br /><br /><span class='action'>A dashingly handsome Edward leads the CAST out for a</span>
 <br /><span class='action'>curtain call.  He's the star of the show.  Off to the</span>
 <br /><span class='action'>side, we see Don Price is the ass-end of a horse</span>
@@ -1359,11 +1348,11 @@ p.page-break {
 <br /><br /><span class='action'>reach in and scoop them up.  Their protests continue</span>
 <br /><span class='action'>as they're carried away, one under each arm.  We still</span>
 <br /><span class='action'>haven't seen the full stranger.</span>
-<p class='page-break'>41.</p>
-<span class='scene-heading'>EXT.  COURT HOUSE - DAY</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  COURT HOUSE - DAY</span>
 <br /><br /><span class='action'>A MOB of about 50 have gathered, many of them with</span>
 <br /><span class='action'>shotguns.  Amid the crowd we see Don Price.</span>
-<br /><br /><span class='character'>SHARECROPPER</span>
+<br /><br /><br />
+<span class='character'>SHARECROPPER</span>
 <br /><span class='dialogue'>He ate an entire cornfield!</span>
 <br /><br /><span class='character'>LITTLE GIRL</span>
 <br /><span class='dialogue'>He ate my dog!</span>
@@ -1387,8 +1376,7 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I'll talk to him.  See if I</span>
 <br /><span class='dialogue'>can get him to move on.</span>
-<p class='page-break'>42.</p>
-<span class='character'>MAYOR</span>
+<br /><br /><span class='character'>MAYOR</span>
 <br /><span class='dialogue'>Son, that creature could</span>
 <br /><span class='dialogue'>crush you without trying.</span>
 <br /><br /><span class='character'>EDWARD</span>
@@ -1402,7 +1390,8 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Hello!</span>
 <br /><br /><span class='action'>There's no answer.</span>
-<br /><br /><span class='character'>EDWARD  (CONT'D)</span>
+<br /><br /><br />
+<span class='character'>EDWARD  (CONT'D)</span>
 <br /><span class='dialogue'>My name is Edward Bloom!  I</span>
 <br /><span class='dialogue'>want to talk to you!</span>
 <br /><br /><span class='action'>From deep in a cave, a thunderous voice:</span>
@@ -1416,8 +1405,7 @@ p.page-break {
 <br /><br /><span class='action'>A beat, then we hear a RUMBLE, like a train coming.</span>
 <br /><span class='action'>Edward braces himself, fists ready for a fight, if</span>
 <br /><span class='action'>that's what it's going to take.</span>
-<p class='page-break'>43.</p>
-<span class='action'>As the RUMBLE gets louder, the ground starts to shake.</span>
+<br /><br /><span class='action'>As the RUMBLE gets louder, the ground starts to shake.</span>
 <br /><span class='action'>Even Edward starts to worry.  Just how big is this</span>
 <br /><span class='action'>guy?</span>
 <br /><br /><span class='character'>EDWARD (V.O.)(CONT'D)</span>
@@ -1443,13 +1431,13 @@ p.page-break {
 <br /><br /><span class='character'>KARL</span>
 <br /><span class='dialogue'>Why are you here?</span>
 <br /><br /><span class='action'>Edward ponders the best response, settling on...</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>So you can eat me.  The town</span>
 <br /><span class='dialogue'>decided to send a human</span>
 <br /><span class='dialogue'>sacrifice, and I volunteered.</span>
 <br /><br /><span class='action'>Karl's eyes narrow, confused.  Edward stands up.</span>
-<p class='page-break'>44.</p>
-<span class='character'>EDWARD (CONT'D)</span>
+<br /><br /><span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>My arms are a little stringy,</span>
 <br /><span class='dialogue'>but there's some good eating</span>
 <br /><span class='dialogue'>on my legs.  I mean, I'd be</span>
@@ -1483,13 +1471,15 @@ p.page-break {
 <br /><span class='dialogue'>I'm too big.</span>
 <br /><br /><span class='action'>And that's the sad truth.  Karl is less a monster than</span>
 <br /><span class='action'>a freak -- a giant man, but in the end, just a man.</span>
-<p class='page-break'>45.</p>
-<span class='action'>Edward takes a seat beside him.</span>
+<br /><br /><span class='action'>Edward takes a seat beside him.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Did you ever think maybe</span>
-<br /><span class='dialogue'>you're not too big?  Maybe</span>
-<br /><span class='dialogue'>this town's just too small.</span>
-<br /><span class='dialogue'>I mean, look at it.</span>
+<br /><span class='dialogue'>you're not too big?</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (CONT'D)</span>
+<br /><span class='dialogue'>Maybe this town's just too</span>
+<br /><span class='dialogue'>small.  I mean, look at it.</span>
 <br /><br /><span class='action'>Circling behind them, we look down at Ashton -- a tiny</span>
 <br /><span class='action'>town in a tiny valley.</span>
 <br /><br /><span class='character'>EDWARD (CONT'D)</span>
@@ -1514,8 +1504,7 @@ p.page-break {
 <br /><span class='dialogue'>the big city.</span>
 <br /><br /><span class='action'>Karl smiles, but then it fades.  A certain sad</span>
 <br /><span class='action'>suspicion --</span>
-<p class='page-break'>46.</p>
-<span class='character'>KARL</span>
+<br /><br /><span class='character'>KARL</span>
 <br /><span class='dialogue'>You're just trying to get me</span>
 <br /><span class='dialogue'>to leave, aren't you?  That's</span>
 <br /><span class='dialogue'>why they sent you here.</span>
@@ -1529,6 +1518,9 @@ p.page-break {
 <br /><span class='dialogue'>leave, Karl.  But I want to</span>
 <br /><span class='dialogue'>leave with you.</span>
 <br /><span class='parenthetical'>(closer)</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>You think this town is too</span>
 <br /><span class='dialogue'>small for you, well, it's too</span>
 <br /><span class='dialogue'>small for a man of my</span>
@@ -1548,8 +1540,7 @@ p.page-break {
 <br /><br /><span class='action'>Karl thinks a moment.  Then --</span>
 <br /><br /><span class='character'>KARL</span>
 <br /><span class='dialogue'>Okay.</span>
-<p class='page-break'>47.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Okay.</span>
 <br /><br /><span class='action'>They shake on it.</span>
 <br /><br /><span class='character'>EDWARD (CONT'D)</span>
@@ -1569,19 +1560,15 @@ p.page-break {
 <br /><span class='parenthetical'>crowd)</span>
 <br /><span class='dialogue'>Edward Bloom, first son of</span>
 <br /><span class='dialogue'>Ashton, it's with a heavy</span>
-<br /><span class='dialogue'>heart we see you go.  But</span>
-<br /><span class='dialogue'>take with you this Key to the</span>
-<br /><span class='dialogue'>City, and know that any time</span>
-<br /><span class='dialogue'>you want to come back, all</span>
-<br /><span class='dialogue'>our doors are open to you.</span>
-<br /><br /><span class='action'>Edward ducks a bit so the Mayor can put the key around</span>
+<br /><span class='dialogue'>heart we see you go.</span>
+<br /><br /><br />
+<span class='action'>Edward ducks a bit so the Mayor can put the key around</span>
 <br /><span class='action'>his neck.  The crowd CHEERS.  And with that, Edward</span>
 <br /><span class='action'>and Karl start walking, waving as they go.</span>
 <br /><br /><span class='action'>Only DON PRICE, smoking on the corner, isn't sad to</span>
 <br /><span class='action'>see Edward go.  He crushes his cigarette under his</span>
 <br /><span class='action'>heel.  He wishes he could crush Edward.</span>
-<p class='page-break'>48.</p>
-<span class='action'>Many of the townfolk come onto the street to hug</span>
+<br /><br /><span class='action'>Many of the townfolk come onto the street to hug</span>
 <br /><span class='action'>Edward or shake his hand.</span>
 <br /><br /><span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>That afternoon as I left</span>
@@ -1612,10 +1599,10 @@ p.page-break {
 <br /><span class='dialogue'>Okay.  Thanks.</span>
 <br /><br /><span class='action'>Edward and Karl keep walking.  The Old Woman shuffles</span>
 <br /><span class='action'>off, somehow knowing her advice will go unheeded.</span>
-<p class='page-break'>49.</p>
-<span class='character'>KARL</span>
+<br /><br /><span class='character'>KARL</span>
 <br /><span class='dialogue'>What did she say?</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Beats me.</span>
 <br /><br /><br /><span class='scene-heading'>EXT.  ROAD - DAY</span>
 <br /><br /><span class='action'>We TILT UP from the road to reveal Edward and Karl</span>
@@ -1643,8 +1630,7 @@ p.page-break {
 <br /><br /><span class='character'>KARL</span>
 <br /><span class='dialogue'>You know anyone's who's taken</span>
 <br /><span class='dialogue'>it?</span>
-<p class='page-break'>50.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>That poet, Norther Winslow</span>
 <br /><span class='dialogue'>did.  He was going to Paris,</span>
 <br /><span class='dialogue'>France.  He must have liked</span>
@@ -1659,7 +1645,8 @@ p.page-break {
 <br /><br /><span class='character'>KARL</span>
 <br /><span class='dialogue'>You're not trying to run</span>
 <br /><span class='dialogue'>away?</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Just to be sure, you can take</span>
 <br /><span class='dialogue'>my pack.</span>
 <br /><br /><span class='action'>Karl perks up, even though it means more for him to</span>
@@ -1673,8 +1660,7 @@ p.page-break {
 <br /><br /><span class='action'>The road has narrowed to a rough path.  Spikes of</span>
 <br /><span class='action'>sunlight break through the thick canopy, catching</span>
 <br /><span class='action'>particles in the air.  Still, Edward WHISTLES.</span>
-<p class='page-break'>51.</p>
-<span class='action'>Coming around a bend, his PITCH DROPS as he sees</span>
+<br /><br /><span class='action'>Coming around a bend, his PITCH DROPS as he sees</span>
 <br /><span class='action'>thick, thorny vines growing across the path.  He</span>
 <br /><span class='action'>stops.  For the first time, he realizes the birds have</span>
 <br /><span class='action'>stopped singing.  The forest is dead quiet.</span>
@@ -1696,14 +1682,14 @@ p.page-break {
 <br /><br /><span class='action'>Edward high-tails it, each step still precarious.</span>
 <br /><br /><br /><span class='scene-heading'>EXT.  THE DARK FOREST - DAY [LATER]</span>
 <br /><br /><span class='action'>Edward is bruised, battered and bee-stung.</span>
-<br /><br /><span class='action'>A half-broken sign lies in the road.  Edward picks it</span>
+<br /><br /><br />
+<span class='action'>A half-broken sign lies in the road.  Edward picks it</span>
 <br /><span class='action'>up.  Reads it:</span>
 <br /><br /><span class='action'>WARNING!</span>
 <br /><br /><span class='action'>JUMPING SPIDERS!</span>
 <br /><br /><span class='action'>Sure enough, up ahead he sees the path is overgrown</span>
 <br /><span class='action'>with thick cobwebs, heavy from the rain.</span>
-<p class='page-break'>52.</p>
-<span class='character'>EDWARD (V.O.)</span>
+<br /><br /><span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>There comes a point where a</span>
 <br /><span class='dialogue'>reasonable man will swallow</span>
 <br /><span class='dialogue'>his pride and admit he's made</span>
@@ -1731,15 +1717,15 @@ p.page-break {
 <br /><span class='action'>feed it.  Dangling from the line above he sees two</span>
 <br /><span class='action'>dozen pairs of shoes, their laces tied together.</span>
 <br /><br /><span class='action'>He passes a sign that reads "Welcome To Spectre!"</span>
-<p class='page-break'>53.</p>
-<span class='scene-heading'>EXT.  THE TOWN OF SPECTRE   - DAY</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  THE TOWN OF SPECTRE   - DAY</span>
 <br /><br /><span class='action'>It's a main street with stores on each side:  Cole's</span>
 <br /><span class='action'>Pharmacy, Talbot's Five and Dime, Al's Country Store.</span>
 <br /><span class='action'>Everything is old, but this isn't a ghost town.  In</span>
 <br /><span class='action'>fact, there's a group of about 20 CITIZENS spilling</span>
 <br /><span class='action'>out to see Edward approach.  Most are smiling.  There</span>
 <br /><span class='action'>are even a few tears of joy.</span>
-<br /><br /><span class='action'>What's more, all of these people are barefoot.</span>
+<br /><br /><br />
+<span class='action'>What's more, all of these people are barefoot.</span>
 <br /><br /><span class='character'>MAN'S VOICE</span>
 <br /><span class='dialogue'>Friend!</span>
 <br /><br /><span class='action'>A forty-year old man named BEAMEN comes out of the</span>
@@ -1762,8 +1748,7 @@ p.page-break {
 <br /><span class='dialogue'>Edward Bloom.  We weren't</span>
 <br /><span class='dialogue'>expecting you yet.</span>
 <br /><br /><span class='action'>Still confused...</span>
-<p class='page-break'>54.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>You were expecting me?</span>
 <br /><br /><span class='character'>BEAMEN</span>
 <br /><span class='dialogue'>Not yet.</span>
@@ -1778,7 +1763,8 @@ p.page-break {
 <br /><span class='dialogue'>you.  And truthfully, the</span>
 <br /><span class='dialogue'>long way <u>is</u> easier, but</span>
 <br /><span class='dialogue'>it's longer.</span>
-<br /><br /><span class='character'>MILDRED</span>
+<br /><br /><br />
+<span class='character'>MILDRED</span>
 <br /><span class='dialogue'>Much longer.</span>
 <br /><br /><span class='character'>BEAMEN</span>
 <br /><span class='dialogue'>And you're here now, and</span>
@@ -1794,8 +1780,7 @@ p.page-break {
 <br /><span class='dialogue'>right?  Last person we had</span>
 <br /><span class='dialogue'>from Ashton was Norther</span>
 <br /><span class='dialogue'>Winslow.</span>
-<p class='page-break'>55.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>The poet?  What ever happened</span>
 <br /><span class='dialogue'>to him?</span>
 <br /><br /><span class='character'>BEAMEN</span>
@@ -1820,13 +1805,13 @@ p.page-break {
 <br /><br /><span class='character'>BEAMEN</span>
 <br /><span class='dialogue'>Now tell me if that isn't the</span>
 <br /><span class='dialogue'>best pie you ever ate.</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>It truly is.</span>
 <br /><br /><span class='action'>UNDER THE TABLE</span>
 <br /><br /><span class='action'>Young Jenny is stealthily untying the laces on</span>
 <br /><span class='action'>Edward's shoes.</span>
-<p class='page-break'>56.</p>
-<span class='character'>NORTHER WINSLOW</span>
+<br /><br /><span class='character'>NORTHER WINSLOW</span>
 <br /><span class='dialogue'>Everything here tastes</span>
 <br /><span class='dialogue'>better.  Even the water is</span>
 <br /><span class='dialogue'>sweet.  Never gets too hot,</span>
@@ -1855,13 +1840,13 @@ p.page-break {
 <br /><br /><span class='character'>NORTHER WINSLOW</span>
 <br /><span class='dialogue'>There is no softer ground</span>
 <br /><span class='dialogue'>than town.</span>
-<p class='page-break'>57.</p>
-<span class='character'>MILDRED</span>
+<br /><br /><span class='character'>MILDRED</span>
 <br /><span class='dialogue'>That rhymes!</span>
 <br /><br /><span class='character'>BEAMEN</span>
 <br /><span class='dialogue'>He is our poet laureate.</span>
 <br /><br /><span class='action'>The townsfolk continue to congratulate Edward...</span>
-<br /><br /><span class='character'>EDWARD (V.O.)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>Sometimes in a dream, you'll</span>
 <br /><span class='dialogue'>visit places that seem</span>
 <br /><span class='dialogue'>instantly familiar, filled</span>
@@ -1886,8 +1871,7 @@ p.page-break {
 <br /><span class='dialogue'>There's a lot of expectation.</span>
 <br /><span class='dialogue'>I don't want to disappoint my</span>
 <br /><span class='dialogue'>fans.</span>
-<p class='page-break'>58.</p>
-<span class='action'>A beat.</span>
+<br /><br /><span class='action'>A beat.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>It's only three lines long.</span>
 <br /><br /><span class='action'>Norther grabs his notebook back.</span>
@@ -1900,7 +1884,8 @@ p.page-break {
 <br /><br /><span class='character'>NORTHER WINSLOW</span>
 <br /><span class='dialogue'>I can't imagine any place</span>
 <br /><span class='dialogue'>better than here.</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>You're a poet.  You oughta be</span>
 <br /><span class='dialogue'>able to.  And maybe if you'd</span>
 <br /><span class='dialogue'>seen more, you could.</span>
@@ -1914,8 +1899,7 @@ p.page-break {
 <br /><br /><span class='action'>It's then that a WOMAN emerges at the far side of the</span>
 <br /><span class='action'>river.  No telling where she came from -- she must</span>
 <br /><span class='action'>have been swimming underwater.  We never see her face.</span>
-<p class='page-break'>59.</p>
-<span class='action'>She stands in the river with her bare back to Edward,</span>
+<br /><br /><span class='action'>She stands in the river with her bare back to Edward,</span>
 <br /><span class='action'>squeezing the water out of her golden hair, oblivious</span>
 <br /><span class='action'>to his presence.  Edward is breathless.  It's the</span>
 <br /><span class='action'>first woman he's seen in her natural state, and he</span>
@@ -1939,13 +1923,13 @@ p.page-break {
 <br /><br /><span class='action'>While Edward ponders his mistake, he looks around to</span>
 <br /><span class='action'>discover that the Girl in the River is gone.  He never</span>
 <br /><span class='action'>even saw her face.</span>
-<br /><br /><span class='character'>EDWARD (CONT'D)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>Wait!  I'm sorry.  Hello?!</span>
 <br /><br /><span class='action'>Edward keeps expecting her to surface, somewhere, but</span>
 <br /><span class='action'>she never does.  He stands alone in the river,</span>
 <br /><span class='action'>wondering what tricks his eyes are playing on him.</span>
-<p class='page-break'>60.</p>
-<span class='scene-heading'>EXT. BY THE RIVER - NIGHT - CONTINUOUS</span>
+<br /><br /><br /><span class='scene-heading'>EXT. BY THE RIVER - NIGHT - CONTINUOUS</span>
 <br /><br /><span class='character'>A GIRL'S VOICE (O.S.)</span>
 <br /><span class='dialogue'>There's leeches in there!</span>
 <br /><br /><span class='action'>Edward looks to the bank, where young Jenny Hill is</span>
@@ -1975,11 +1959,11 @@ p.page-break {
 <br /><span class='dialogue'>said it looked like the coon</span>
 <br /><span class='dialogue'>dog he had when he was kid,</span>
 <br /><span class='dialogue'>back from the dead.</span>
-<p class='page-break'>61.</p>
-<span class='action'>Edward climbs up onto the shore, completely drenched.</span>
+<br /><br /><span class='action'>Edward climbs up onto the shore, completely drenched.</span>
 <br /><span class='action'>He pulls up his pant legs to reveal three shiny</span>
 <br /><span class='action'>leeches clinging to his skin.</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Shoot.</span>
 <br /><br /><span class='action'>He starts to work pulling them off.</span>
 <br /><br /><br /><span class='scene-heading'>EXT.  PATH BACK TO TOWN - NIGHT</span>
@@ -2005,8 +1989,7 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Sure is a lot now, though,</span>
 <br /><span class='dialogue'>huh?</span>
-<p class='page-break'>62.</p>
-<span class='scene-heading'>EXT.  MAIN STREET - NIGHT</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  MAIN STREET - NIGHT</span>
 <br /><br /><span class='action'>As Edward and Jenny approach Main Street, they find</span>
 <br /><span class='action'>"downtown" has been transformed.  Lanterns and</span>
 <br /><span class='action'>streamers hang on cables across the street, and a</span>
@@ -2016,7 +1999,8 @@ p.page-break {
 <br /><span class='action'>citizen, Edward Bloom.  Before he can protest, two</span>
 <br /><span class='action'>WOMEN have grabbed him by the arms, pulling him in to</span>
 <br /><span class='action'>dance with them.</span>
-<br /><br /><span class='action'>The resulting dance number seems both choreographed</span>
+<br /><br /><br />
+<span class='action'>The resulting dance number seems both choreographed</span>
 <br /><span class='action'>and complete chaos.  From FARMER to BAKER'S WIFE,</span>
 <br /><span class='action'>everyone wants to dance with Edward, who finds himself</span>
 <br /><span class='action'>tossed around like a stick caught in a whirlpool.</span>
@@ -2036,8 +2020,7 @@ p.page-break {
 <br /><br /><span class='action'>Edward stops dancing.  A beat, then he heads for the</span>
 <br /><span class='action'>edge of the crowd.  Beamen is there, with Jenny on his</span>
 <br /><span class='action'>shoulders.</span>
-<p class='page-break'>63.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I have to leave.  Tonight.</span>
 <br /><br /><span class='character'>BEAMEN</span>
 <br /><span class='dialogue'>Why?</span>
@@ -2059,7 +2042,8 @@ p.page-break {
 <br /><span class='action'>townspeople stop dancing, disbelieving, some shaking</span>
 <br /><span class='action'>their heads.</span>
 <br /><br /><span class='action'>Poor Edward Bloom's gone crazy.</span>
-<br /><br /><span class='character'>BEAMEN</span>
+<br /><br /><br />
+<span class='character'>BEAMEN</span>
 <br /><span class='parenthetical'>(calling after</span>
 <br /><span class='parenthetical'>him)</span>
 <br /><span class='dialogue'>You won't find a better</span>
@@ -2067,8 +2051,7 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I don't expect to.</span>
 <br /><br /><span class='action'>Jenny runs to him.  She'd tackle him if she could.</span>
-<p class='page-break'>64.</p>
-<span class='character'>JENNY</span>
+<br /><br /><span class='character'>JENNY</span>
 <br /><span class='dialogue'>Promise me you'll come back.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I promise.  Someday.  When</span>
@@ -2099,11 +2082,11 @@ p.page-break {
 <br /><span class='action'>to the City gets caught.  He's almost strangled, but</span>
 <br /><span class='action'>the chain finally breaks.  The silver key disappears</span>
 <br /><span class='action'>into the mud.</span>
-<p class='page-break'>65.</p>
-<span class='action'>Scrambling forward, he looks for a way out.  But the</span>
+<br /><br /><span class='action'>Scrambling forward, he looks for a way out.  But the</span>
 <br /><span class='action'>trees have encircled him, their spiky crowns bending</span>
 <br /><span class='action'>down to crush him.</span>
-<br /><br /><span class='action'>He SCREAMS up at the night, until his breath is gone.</span>
+<br /><br /><br />
+<span class='action'>He SCREAMS up at the night, until his breath is gone.</span>
 <br /><br /><span class='character'>EDWARD (V.O.) (CONT'D)</span>
 <br /><span class='dialogue'>And then I realized, this</span>
 <br /><span class='dialogue'>wasn't the end of my life.</span>
@@ -2125,8 +2108,7 @@ p.page-break {
 <br /><br /><span class='character'>KARL</span>
 <br /><span class='dialogue'>What happened to your shoes?</span>
 <br /><br /><span class='action'>Edward looks down at his muddy, bloody feet.</span>
-<p class='page-break'>66.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>They got ahead of me.</span>
 <br /><br /><span class='action'>With that, the men start walking down the larger road.</span>
 <br /><br /><span class='transition'>CROSSFADE TO:</span>
@@ -2140,7 +2122,8 @@ p.page-break {
 <br /><br /><span class='action'>The other three eat awkwardly, each CLINK and SCRAPE</span>
 <br /><span class='action'>of a knife or fork resonating.  Will finally breaks</span>
 <br /><span class='action'>the silence.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>I don't know if you've seen</span>
 <br /><span class='dialogue'>it, but Josephine has some</span>
 <br /><span class='dialogue'>photos in the most recent</span>
@@ -2155,8 +2138,7 @@ p.page-break {
 <br /><span class='dialogue'>We'll have to pick up a copy.</span>
 <br /><br /><span class='action'>A beat.  As Will scoops out another serving of</span>
 <br /><span class='action'>potatoes, Edward suddenly speaks:</span>
-<p class='page-break'>67.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I don't know if you're aware</span>
 <br /><span class='dialogue'>of this, Josephine, but</span>
 <br /><span class='dialogue'>African parrots, in their</span>
@@ -2185,11 +2167,11 @@ p.page-break {
 <br /><span class='dialogue'>religion.  You never know who</span>
 <br /><span class='dialogue'>you're going to offend.</span>
 <br /><br /><span class='action'>A beat.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>Josephine actually went to</span>
 <br /><span class='dialogue'>the Congo last year.</span>
-<p class='page-break'>68.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Oh, so you know.</span>
 <br /><br /><br /><span class='scene-heading'>INT.  GROCERY STORE - NIGHT</span>
 <br /><br /><span class='action'>Will shakes a shopping cart free from the pile-up</span>
@@ -2219,13 +2201,13 @@ p.page-break {
 <br /><span class='dialogue'>Yes, Will, I do.  And don't</span>
 <br /><span class='dialogue'>presume things you don't</span>
 <br /><span class='dialogue'>know.</span>
-<p class='page-break'>69.</p>
-<span class='action'>She's more amused than annoyed, but Will is entering</span>
+<br /><br /><span class='action'>She's more amused than annoyed, but Will is entering</span>
 <br /><span class='action'>dangerous territory.</span>
 <br /><br /><span class='character'>SANDRA (CONT'D)</span>
 <br /><span class='dialogue'>Would you say you understand</span>
 <br /><span class='dialogue'>Josephine?</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>Yes.  But that's a</span>
 <br /><span class='dialogue'>different...</span>
 <br /><br /><span class='character'>SANDRA</span>
@@ -2252,14 +2234,10 @@ p.page-break {
 <br /><span class='dialogue'>I've been your mother.  You</span>
 <br /><span class='dialogue'>can't discount that.</span>
 <br /><br /><span class='character'>WILL</span>
-<br /><span class='dialogue'>True.</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>70.</p>
-<span class='character'>WILL (CONT'D)</span>
-<br /><span class='dialogue'>But I've known him my whole</span>
-<br /><span class='dialogue'>life, and I don't feel like I</span>
-<br /><span class='dialogue'>know him at all.  Or ever</span>
-<br /><span class='dialogue'>will.</span>
+<br /><span class='dialogue'>True.  But I've known him my</span>
+<br /><span class='dialogue'>whole life, and I don't feel</span>
+<br /><span class='dialogue'>like I know him at all.  Or</span>
+<br /><span class='dialogue'>ever will.</span>
 <br /><br /><span class='action'>With a look, Sandra acknowledges the stakes.</span>
 <br /><br /><span class='character'>SANDRA</span>
 <br /><span class='dialogue'>I know it's not easy.  Just</span>
@@ -2275,7 +2253,8 @@ p.page-break {
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>But I understand you, Mom.  I</span>
 <br /><span class='dialogue'>always have.</span>
-<br /><br /><span class='character'>SANDRA</span>
+<br /><br /><br />
+<span class='character'>SANDRA</span>
 <br /><span class='dialogue'>Well, clearly you don't.  But</span>
 <br /><span class='dialogue'>I'm not the mystery you're</span>
 <br /><span class='dialogue'>trying to solve right now.</span>
@@ -2286,8 +2265,7 @@ p.page-break {
 <br /><span class='action'>her 50's is getting her change.  Though she's Sandra's</span>
 <br /><span class='action'>generation, she carries herself like a much younger</span>
 <br /><span class='action'>woman, with blue jeans and sneakers.</span>
-<p class='page-break'>71.</p>
-<span class='action'>She accidentally makes eye contact with Will as he</span>
+<br /><br /><span class='action'>She accidentally makes eye contact with Will as he</span>
 <br /><span class='action'>passes.  We HOLD ON the woman, who tracks Will as he</span>
 <br /><span class='action'>reaches Sandra.  It's hard to read her reaction:  does</span>
 <br /><span class='action'>she recognize him, or just find him attractive?</span>
@@ -2318,7 +2296,7 @@ p.page-break {
 <br /><span class='dialogue'>Do you know who that is?</span>
 <br /><br /><span class='action'>The Cashier turns to look.  He can only get a profile</span>
 <br /><span class='action'>as the woman leaves.</span>
-<p class='page-break'>72.</p>
+<br /><br /><br />
 <span class='character'>CASHIER</span>
 <br /><span class='dialogue'>Never seen her before.</span>
 <br /><span class='dialogue'>Pretty, though.</span>
@@ -2348,9 +2326,9 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I don't usually remember</span>
 <br /><span class='dialogue'>unless they're especially</span>
-<br /><span class='dialogue'>portentous.</span>
-<p class='page-break'>73.</p>
-<span class='action'>She shakes her head.</span>
+<br /><span class='dialogue'>portentous.  You know what</span>
+<br /><span class='dialogue'>that word means, portentous?</span>
+<br /><br /><span class='action'>She shakes her head.</span>
 <br /><br /><span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>Means when you dream about</span>
 <br /><span class='dialogue'>something that's going to</span>
@@ -2360,11 +2338,14 @@ p.page-break {
 <br /><span class='dialogue'>where this crow came and told</span>
 <br /><span class='dialogue'>me, "Your Aunt is going to</span>
 <br /><span class='dialogue'>die."  I was so scared I woke</span>
-<br /><span class='dialogue'>up my parents.  They told me</span>
-<br /><span class='dialogue'>it was just a dream, to go</span>
-<br /><span class='dialogue'>back to bed.  But the next</span>
-<br /><span class='dialogue'>morning, my Aunt Stacy was</span>
-<br /><span class='dialogue'>dead.</span>
+<br /><span class='dialogue'>up my parents.</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (CONT'D) (CONT'D)</span>
+<br /><span class='dialogue'>They told me it was just a</span>
+<br /><span class='dialogue'>dream, to go back to bed.</span>
+<br /><span class='dialogue'>But the next morning, my Aunt</span>
+<br /><span class='dialogue'>Stacy was dead.</span>
 <br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>That's terrible.</span>
 <br /><br /><span class='character'>EDWARD</span>
@@ -2385,9 +2366,9 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>For the next couple weeks, I</span>
 <br /><span class='dialogue'>didn't have another dream.</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>74.</p>
-<span class='character'>EDWARD (CONT'D) (CONT'D)</span>
+<br /><span class='dialogue'>Until one night the crow came</span>
+<br /><span class='dialogue'>back and said, "Your Daddy is</span>
+<br /><span class='dialogue'>going to die.</span>
 <br /><span class='parenthetical'>(beat)</span>
 <br /><span class='dialogue'>Well, I didn't know what to</span>
 <br /><span class='dialogue'>do.  But finally I told my</span>
@@ -2410,6 +2391,9 @@ p.page-break {
 <br /><span class='dialogue'>to my mother, "Good God.  I</span>
 <br /><span class='dialogue'>just had the worst day of my</span>
 <br /><span class='dialogue'>life.</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (CONT'D) (CONT'D)</span>
 <br /><span class='parenthetical'>(beat)</span>
 <br /><span class='dialogue'>"You think <u>you've</u> had a</span>
 <br /><span class='dialogue'>bad day," she said.  "This</span>
@@ -2423,8 +2407,7 @@ p.page-break {
 <br /><span class='dialogue'>banging the milkman.</span>
 <br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>No, I understand.</span>
-<p class='page-break'>75.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>He was slipping her a little</span>
 <br /><span class='dialogue'>extra cream.</span>
 <br /><br /><span class='action'>She nods, a bit more of a laugh.</span>
@@ -2450,10 +2433,10 @@ p.page-break {
 <br /><span class='dialogue'>Cracking the eggs and making</span>
 <br /><span class='dialogue'>an omelet.</span>
 <br /><br /><span class='action'>With that, he stops.  She regains her composure.</span>
-<br /><br /><span class='character'>EDWARD (CONT'D)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>Spooning the sherbet.</span>
-<p class='page-break'>76.</p>
-<span class='character'>JOSEPHINE</span>
+<br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='parenthetical'>(interrupting)</span>
 <br /><span class='dialogue'>Can I take your picture?</span>
 <br /><br /><span class='character'>EDWARD</span>
@@ -2483,18 +2466,18 @@ p.page-break {
 <br /><span class='action'>good job masking the pain.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>That's because we didn't have</span>
-<br /><span class='dialogue'>a wedding.</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>77.</p>
-<span class='character'>EDWARD (CONT'D)</span>
-<br /><span class='dialogue'>Your mother-in-law was never</span>
-<br /><span class='dialogue'>supposed to marry me.  She</span>
-<br /><span class='dialogue'>was engaged to somebody else.</span>
+<br /><span class='dialogue'>a wedding.  Your mother-in-</span>
+<br /><span class='dialogue'>law was never supposed to</span>
+<br /><span class='dialogue'>marry me.  She was engaged to</span>
+<br /><span class='dialogue'>somebody else.</span>
 <br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='parenthetical'>(loading film)</span>
 <br /><span class='dialogue'>I never knew.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Will never told you that?</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='parenthetical'>(she shakes her</span>
 <br /><span class='parenthetical'>head)</span>
 <br /><span class='dialogue'>Probably just as well.  He</span>
@@ -2512,8 +2495,7 @@ p.page-break {
 <br /><br /><span class='action'>held by a LITTLE BOY.  He's slumped over his FATHER's</span>
 <br /><span class='action'>shoulder, being carried towards a big-top tent.  We</span>
 <br /><span class='action'>are...</span>
-<p class='page-break'>78.</p>
-<span class='scene-heading'>EXT.  OLYMPIA CIRCUS - NIGHT</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  OLYMPIA CIRCUS - NIGHT</span>
 <br /><br /><span class='action'>...where the second-rate carnival is parked for the</span>
 <br /><span class='action'>moment in an Alabama field.  To the left, we spot</span>
 <br /><span class='action'>Edward, 20-ish, halfway through a bag of peanuts.</span>
@@ -2534,7 +2516,8 @@ p.page-break {
 <br /><span class='action'>ringmaster AMOS CALLOWAY (50) approaches the stands.</span>
 <br /><span class='action'>He may only be four feet tall, but Amos has a titanic</span>
 <br /><span class='action'>presence.</span>
-<br /><br /><span class='character'>AMOS</span>
+<br /><br /><br />
+<span class='character'>AMOS</span>
 <br /><span class='dialogue'>Ladies and Gentlemen, you may</span>
 <br /><span class='dialogue'>think you've seen the</span>
 <br /><span class='dialogue'><u>unusual</u>.  You may think</span>
@@ -2546,8 +2529,7 @@ p.page-break {
 <br /><span class='dialogue'>this.</span>
 <br /><br /><span class='action'>From behind Amos, CARNIES start rolling a massive ball</span>
 <br /><span class='action'>towards the crowd.</span>
-<p class='page-break'>79.</p>
-<span class='character'>AMOS (CONT'D)</span>
+<br /><br /><span class='character'>AMOS (CONT'D)</span>
 <br /><span class='dialogue'>When I found this man, he was</span>
 <br /><span class='dialogue'>picking oranges in Florida.</span>
 <br /><span class='dialogue'>His fellow workers called him</span>
@@ -2584,7 +2566,7 @@ p.page-break {
 <br /><br /><span class='action'>As the drum beat intensifies, a second foot breaks</span>
 <br /><span class='action'>out.  Followed by hands.  Shoulders.  Finally, the</span>
 <br /><span class='action'>head.  This is COLOSSUS.</span>
-<p class='page-break'>80.</p>
+<br /><br /><br />
 <span class='action'>From a very LOW ANGLE, we look up to see just how</span>
 <br /><span class='action'>massive he is.  He seems to fill the Heavens.  With</span>
 <br /><span class='action'>his shaved head and giant club, he seems more ogre</span>
@@ -2614,8 +2596,7 @@ p.page-break {
 <br /><br /><span class='character'>AMOS</span>
 <br /><span class='dialogue'>What's his name?  Does he</span>
 <br /><span class='dialogue'>talk?  It's not important.</span>
-<p class='page-break'>81.</p>
-<span class='character'>KARL</span>
+<br /><br /><span class='character'>KARL</span>
 <br /><span class='dialogue'>Karl.</span>
 <br /><br /><span class='character'>AMOS</span>
 <br /><span class='dialogue'>Tell me Karl, have you ever</span>
@@ -2625,7 +2606,8 @@ p.page-break {
 <br /><br /><span class='character'>AMOS (CONT'D)</span>
 <br /><span class='dialogue'>"Unconscionable contract?</span>
 <br /><br /><span class='action'>Nope.</span>
-<br /><br /><span class='character'>AMOS (CONT'D)</span>
+<br /><br /><br />
+<span class='character'>AMOS (CONT'D)</span>
 <br /><span class='dialogue'>Great, great.  That's</span>
 <br /><span class='dialogue'>fantastic.</span>
 <br /><br /><span class='character'>EDWARD (V.O.)</span>
@@ -2643,8 +2625,7 @@ p.page-break {
 <br /><span class='action'>place.  A spilled box of popcorn hangs in mid-air,</span>
 <br /><span class='action'>each kernel like a snowflake.  Even the elephant is</span>
 <br /><span class='action'>mid-poop.</span>
-<p class='page-break'>82.</p>
-<span class='action'>Only Edward is free to move, winding his way between</span>
+<br /><br /><span class='action'>Only Edward is free to move, winding his way between</span>
 <br /><span class='action'>the frozen bodies, ducking underneath arms to get</span>
 <br /><span class='action'>closer and closer to this woman.</span>
 <br /><br /><span class='character'>EDWARD (V.O.)(CONT'D)</span>
@@ -2666,13 +2647,13 @@ p.page-break {
 <br /><br /><span class='action'>THE EMPTY LOT</span>
 <br /><br /><span class='action'>Colossus is thumbing for a ride.  The last pickup</span>
 <br /><span class='action'>truck stops and lets him climb in back.</span>
-<br /><br /><span class='action'>As the truck pulls out, it passes a dejected Edward.</span>
+<br /><br /><br />
+<span class='action'>As the truck pulls out, it passes a dejected Edward.</span>
 <br /><span class='action'>He'll never find that girl, the love of his life.</span>
 <br /><br /><br /><span class='scene-heading'>INT.  BIG-TOP - NIGHT</span>
 <br /><br /><span class='action'>Amos leans over so Karl can sign a contract on his</span>
 <br /><span class='action'>back.  He spots Edward walking back into the tent.</span>
-<p class='page-break'>83.</p>
-<span class='character'>AMOS</span>
+<br /><br /><span class='character'>AMOS</span>
 <br /><span class='dialogue'>Hey kid!  Your friend just</span>
 <br /><span class='dialogue'>made himself a star.</span>
 <br /><br /><span class='character'>EDWARD</span>
@@ -2703,10 +2684,12 @@ p.page-break {
 <br /><span class='dialogue'>Tough break.  Most men have</span>
 <br /><span class='dialogue'>to get married before they</span>
 <br /><span class='dialogue'>lose their wives.</span>
-<p class='page-break'>84.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='parenthetical'>(with absolute</span>
 <br /><span class='parenthetical'>conviction)</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>I'm going to spend the rest</span>
 <br /><span class='dialogue'>of my life looking for her.</span>
 <br /><span class='dialogue'>That or die alone.</span>
@@ -2736,9 +2719,10 @@ p.page-break {
 <br /><span class='dialogue'>back in Hickville, but here</span>
 <br /><span class='dialogue'>in the real world, you got</span>
 <br /><span class='dialogue'>squat. You don't have a plan.</span>
-<br /><span class='dialogue'>You don't have a job.</span>
-<p class='page-break'>85.</p>
-<span class='character'>EDWARD</span>
+<br /><span class='dialogue'>You don't have a job.  You</span>
+<br /><span class='dialogue'>don't have anything but the</span>
+<br /><span class='dialogue'>clothes on your back.</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I've got a whole backpack</span>
 <br /><span class='dialogue'><u>full</u> of clothes!</span>
 <br /><br /><span class='action'>He points to the bleachers, where no backpack is to be</span>
@@ -2746,7 +2730,8 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='parenthetical'>(realizing)</span>
 <br /><span class='dialogue'>Someone stole my backpack.</span>
-<br /><br /><span class='character'>AMOS</span>
+<br /><br /><br />
+<span class='character'>AMOS</span>
 <br /><span class='dialogue'>Kid, you were a big fish in a</span>
 <br /><span class='dialogue'>small pond.  This here is the</span>
 <br /><span class='dialogue'>ocean, and you're drowning.</span>
@@ -2771,8 +2756,7 @@ p.page-break {
 <br /><br /><span class='character'>AMOS</span>
 <br /><span class='dialogue'>Sorry, kid.  I don't do</span>
 <br /><span class='dialogue'>charity.</span>
-<p class='page-break'>86.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I'll work night and day, and</span>
 <br /><span class='dialogue'>you won't have to pay me.</span>
 <br /><span class='dialogue'>You just have to tell me who</span>
@@ -2791,7 +2775,8 @@ p.page-break {
 <br /><span class='action'>he's holding it in a MASSIVE LION's open mouth.  The</span>
 <br /><span class='action'>beast's sharp teeth are just poking his skin.  If the</span>
 <br /><span class='action'>lion so much as flinches, Edward is dead.</span>
-<br /><br /><span class='action'>The CROWD applauds, which makes the lion antsy.  Which</span>
+<br /><br /><br />
+<span class='action'>The CROWD applauds, which makes the lion antsy.  Which</span>
 <br /><span class='action'>makes Edward antsier.</span>
 <br /><br /><span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>From that moment on, I did</span>
@@ -2803,8 +2788,7 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>EXT.  THE HYDRA - DAY</span>
 <br /><br /><span class='action'>His eyes droopy from lack of sleep, Edward mans the</span>
 <br /><span class='action'>whirling amusement park ride.</span>
-<p class='page-break'>87.</p>
-<span class='character'>EDWARD (V.O.)</span>
+<br /><br /><span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>The only thing that kept me</span>
 <br /><span class='dialogue'>going was the promise of</span>
 <br /><span class='dialogue'>meeting the girl who would be</span>
@@ -2831,7 +2815,7 @@ p.page-break {
 <br /><span class='dialogue'>Mr. Calloway!  It's been a</span>
 <br /><span class='dialogue'>month today.</span>
 <br /><br /><span class='action'>Amos stops, looks at the young man.  Finally...</span>
-<p class='page-break'>88.</p>
+<br /><br /><br />
 <span class='character'>AMOS</span>
 <br /><span class='dialogue'>This girl, the love of your</span>
 <br /><span class='dialogue'>life.  Her favorite flower is</span>
@@ -2861,13 +2845,13 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>College!  She's going to</span>
 <br /><span class='dialogue'>college!</span>
-<p class='page-break'>89.</p>
-<span class='action'>A sudden EXPLOSION as Edward is shot...</span>
+<br /><br /><span class='action'>A sudden EXPLOSION as Edward is shot...</span>
 <br /><br /><br /><span class='scene-heading'>INT.  BIG TOP - NIGHT [CONTINUOUS]</span>
 <br /><br /><span class='action'>...out of a giant cannon.</span>
 <br /><br /><br /><span class='scene-heading'>INT.  STABLES - NIGHT</span>
 <br /><br /><span class='action'>Under a full moon, Edward feeds the animals.</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='parenthetical'>(to himself)</span>
 <br /><span class='dialogue'>Music!  She likes music.  I</span>
 <br /><span class='dialogue'>like music too!</span>
@@ -2888,8 +2872,7 @@ p.page-break {
 <br /><span class='dialogue'>Mr. Calloway!  It's Edward</span>
 <br /><span class='dialogue'>Bloom.  I need to talk to</span>
 <br /><span class='dialogue'>you.</span>
-<p class='page-break'>90.</p>
-<span class='action'>Suddenly, the rocking and moaning stop.  A beat, then</span>
+<br /><br /><span class='action'>Suddenly, the rocking and moaning stop.  A beat, then</span>
 <br /><span class='action'>the door handle begins to RATTLE.  It seems to be</span>
 <br /><span class='action'>stuck.</span>
 <br /><br /><span class='action'>Edward turns the knob.</span>
@@ -2910,15 +2893,15 @@ p.page-break {
 <br /><br /><span class='action'>The hell hound squares back on its haunches, GROWLING,</span>
 <br /><span class='action'>ready for another leap.  Mr. Soggybottom sheds a clown</span>
 <br /><span class='action'>tear, aiming the revolver at the dog.</span>
-<br /><br /><span class='action'>At the last moment...</span>
+<br /><br /><br />
+<span class='action'>At the last moment...</span>
 <br /><br /><span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>No, wait!</span>
 <br /><br /><span class='action'>Edward moves just as Mr. Soggybottom FIRES.  The</span>
 <br /><span class='action'>bullet catches Edward in the shoulder, knocking him</span>
 <br /><span class='action'>down.</span>
 <br /><br /><span class='action'>The carnies GASP.</span>
-<p class='page-break'>91.</p>
-<span class='action'>Licking its chops, the dog approaches the helpless</span>
+<br /><br /><span class='action'>Licking its chops, the dog approaches the helpless</span>
 <br /><span class='action'>Edward, who feels the ground around him, looking for</span>
 <br /><span class='action'>some kind of weapon.  He finds only a small stick.  He</span>
 <br /><span class='action'>waves it at the dog, ready to strike it.</span>
@@ -2947,7 +2930,7 @@ p.page-break {
 <br /><span class='action'>after it.  It's gone for a long time, long enough that</span>
 <br /><span class='action'>Edward becomes concerned.</span>
 <br /><br /><span class='action'>He follows it into the woods.</span>
-<p class='page-break'>92.</p>
+<br /><br /><br />
 <span class='scene-heading'>INT.  WOODS - DAWN</span>
 <br /><br /><span class='action'>Amos Calloway stands up behind a bush, buck naked and</span>
 <br /><span class='action'>hairy.  He still has the stick in his mouth, which he</span>
@@ -2976,8 +2959,7 @@ p.page-break {
 <br /><span class='dialogue'>you better hurry.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Thank you.</span>
-<p class='page-break'>93.</p>
-<span class='character'>AMOS</span>
+<br /><br /><span class='character'>AMOS</span>
 <br /><span class='dialogue'>Good luck, kid.</span>
 <br /><br /><span class='action'>Edward walks away.  Then starts running.  He has to</span>
 <br /><span class='action'>get there as soon as possible.</span>
@@ -2985,10 +2967,8 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>EXT.  BIG TOP - DAY</span>
 <br /><br /><span class='action'>Edward shakes Karl's giant hand.  They hug.</span>
 <br /><br /><span class='character'>EDWARD (V.O.)</span>
-<br /><span class='dialogue'>After saying my goodbyes, I</span>
-<br /><span class='dialogue'>hopped three trains to get to</span>
-<br /><span class='dialogue'>Auburn that afternoon.</span>
-<br /><br /><br /><span class='scene-heading'>EXT.  AUBURN UNIVERSITY - DAY</span>
+<br /><br /><br />
+<span class='scene-heading'>EXT.  AUBURN UNIVERSITY - DAY</span>
 <br /><br /><span class='action'>We DESCEND ON the main quad, to find Edward Bloom</span>
 <br /><span class='action'>dunking his head in the fountain.</span>
 <br /><br /><span class='action'>He changes out of his grubby shirt into a new one,</span>
@@ -3004,8 +2984,7 @@ p.page-break {
 <br /><span class='action'>reveal the woman of Edward's dreams, Sandra Kay</span>
 <br /><span class='action'>Templeton.  She's effortlessly beautiful, pure and</span>
 <br /><span class='action'>simple as sunlight.</span>
-<p class='page-break'>94.</p>
-<span class='action'>He can't believe he's finally reached her.  He half-</span>
+<br /><br /><span class='action'>He can't believe he's finally reached her.  He half-</span>
 <br /><span class='action'>laughs, nervous.  That makes her laugh, not sure</span>
 <br /><span class='action'>what's going on.</span>
 <br /><br /><span class='character'>EDWARD</span>
@@ -3031,16 +3010,14 @@ p.page-break {
 <br /><span class='dialogue'>I'm sorry.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Don't need to apologize to</span>
-<br /><span class='dialogue'>me.  I mean, I'm the luckiest</span>
-<br /><span class='dialogue'>person you're going to find</span>
-<br /><span class='dialogue'>today...</span>
-<br /><br /><span class='action'>She puts her hand on the door frame.  On her left ring</span>
+<br /><span class='dialogue'>me.</span>
+<br /><br /><br />
+<span class='action'>She puts her hand on the door frame.  On her left ring</span>
 <br /><span class='action'>finger, we see a diamond.</span>
 <br /><br /><span class='character'>SANDRA</span>
 <br /><span class='dialogue'>No I'm sorry, I...I'm engaged</span>
 <br /><span class='dialogue'>to be married.</span>
-<p class='page-break'>95.</p>
-<span class='action'>ON EDWARD as his heart falls 20 floors.  He tries to</span>
+<br /><br /><span class='action'>ON EDWARD as his heart falls 20 floors.  He tries to</span>
 <br /><span class='action'>suppress the reaction, put on a brave front.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Oh.</span>
@@ -3066,12 +3043,12 @@ p.page-break {
 <br /><br /><span class='action'>EXT/INT. SORORITY HOUSE - THE DOORWAY</span>
 <br /><br /><span class='action'>Edward is dumbstruck.  With all the strength he can</span>
 <br /><span class='action'>muster...</span>
-<p class='page-break'>96.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Well.  Congratulations.  I'm</span>
 <br /><span class='dialogue'>sorry to have bothered you.</span>
 <br /><br /><span class='action'>He turns and walks down the front steps.</span>
-<br /><br /><span class='action'>She stays in the doorway for a few beats, feeling</span>
+<br /><br /><br />
+<span class='action'>She stays in the doorway for a few beats, feeling</span>
 <br /><span class='action'>genuinely horrible for what's happened.  But</span>
 <br /><span class='action'>eventually she goes back inside.  We hear GIGGLES from</span>
 <br /><span class='action'>inside as her sorority sisters get to the bottom of</span>
@@ -3099,8 +3076,7 @@ p.page-break {
 <br /><span class='dialogue'>only a fool would continue.</span>
 <br /><br /><span class='action'>A beat.  Edward steps back INTO FRAME, looking at the</span>
 <br /><span class='action'>sorority house.</span>
-<p class='page-break'>97.</p>
-<span class='character'>EDWARD (V.O.) (CONT'D)</span>
+<br /><br /><span class='character'>EDWARD (V.O.) (CONT'D)</span>
 <br /><span class='dialogue'>The truth is, I've always</span>
 <br /><span class='dialogue'>been a fool.</span>
 <br /><br /><span class='action'>We CIRCLE as he shouts:</span>
@@ -3111,7 +3087,8 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>INT.  SORORITY HOUSE FOYER - DAY</span>
 <br /><br /><span class='action'>Sandra and her SISTERS peer out through the curtains.</span>
 <br /><span class='action'>Is this guy crazy?</span>
-<br /><br /><br /><span class='scene-heading'>INT.  LECTURE HALL - DAY</span>
+<br /><br /><br />
+<span class='scene-heading'>INT.  LECTURE HALL - DAY</span>
 <br /><br /><span class='action'>The tweedy ECONOMICS PROFESSOR continues his</span>
 <br /><span class='action'>explanation.  Sandra isn't paying a lot of attention.</span>
 <br /><br /><span class='action'>He switches on the overhead projector without looking</span>
@@ -3125,8 +3102,7 @@ p.page-break {
 <br /><br /><span class='action'>Walking with her books, Sandra shakes her head,</span>
 <br /><span class='action'>disbelieving.  We look up to the blue sky, where a</span>
 <br /><span class='action'>giant sky-written heart floats in the wind.</span>
-<p class='page-break'>98.</p>
-<span class='scene-heading'>INT.  SANDRA'S BEDROOM - [THE NEXT] MORNING</span>
+<br /><br /><br /><span class='scene-heading'>INT.  SANDRA'S BEDROOM - [THE NEXT] MORNING</span>
 <br /><br /><span class='action'>At her Sisters' prompting, a just-woken Sandra looks</span>
 <br /><span class='action'>out the second-story window to find the lawn filled</span>
 <br /><span class='action'>with</span>
@@ -3148,12 +3124,12 @@ p.page-break {
 <br /><span class='dialogue'>states and explained this was</span>
 <br /><span class='dialogue'>the only way I could get my</span>
 <br /><span class='dialogue'>wife to marry me.</span>
-<br /><br /><span class='action'>Out of nowhere, a tear drops down Sandra's cheek.  She</span>
+<br /><br /><br />
+<span class='action'>Out of nowhere, a tear drops down Sandra's cheek.  She</span>
 <br /><span class='action'>wipes it off.</span>
 <br /><br /><span class='character'>SANDRA</span>
 <br /><span class='dialogue'>You don't even know me.</span>
-<p class='page-break'>99.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I have the rest of my life to</span>
 <br /><span class='dialogue'>find out.</span>
 <br /><br /><span class='action'>From down the street...</span>
@@ -3182,14 +3158,14 @@ p.page-break {
 <br /><br /><span class='action'>Don Price decks him, knocking him down.  Edward gets</span>
 <br /><span class='action'>right back up, but makes no move to defend himself.</span>
 <br /><br /><span class='action'>Unfazed, Don slugs him again.</span>
-<p class='page-break'>100.</p>
-<span class='character'>SANDRA</span>
+<br /><br /><span class='character'>SANDRA</span>
 <br /><span class='dialogue'>Stop it!</span>
 <br /><br /><span class='character'>DON PRICE</span>
 <br /><span class='parenthetical'>(ignoring)</span>
 <br /><span class='dialogue'>What the matter, Bloom?  Too</span>
 <br /><span class='dialogue'>scared to fight back?</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I promised I wouldn't.</span>
 <br /><br /><span class='action'>A beat.  Don shrugs, fine.  Then proceeds to kick</span>
 <br /><span class='action'>Edward's ass nine ways to Sunday.</span>
@@ -3211,8 +3187,7 @@ p.page-break {
 <br /><span class='action'>unshittable.  Suddenly, he grasps his chest and</span>
 <br /><span class='action'>collapses face-first on the tile.</span>
 <br /><br /><span class='transition'>MATCH CUT TO:</span>
-<p class='page-break'>101.</p>
-<span class='scene-heading'>EXT.  WITCH'S HOUSE / GATE - NIGHT [FLASHBACK]</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  WITCH'S HOUSE / GATE - NIGHT [FLASHBACK]</span>
 <br /><br /><span class='action'>The same image of Don's dead face on the tile is</span>
 <br /><span class='action'>reflected in The Eye.</span>
 <br /><br /><span class='transition'>RETURNING</span>
@@ -3226,7 +3201,8 @@ p.page-break {
 <br /><br /><span class='action'>Sandra pulls off her engagement ring.  There's an</span>
 <br /><span class='action'>audible AHH! from her sisters, and an OHH! from Don's</span>
 <br /><span class='action'>brothers.</span>
-<br /><br /><span class='character'>SANDRA (CONT'D)</span>
+<br /><br /><br />
+<span class='character'>SANDRA (CONT'D)</span>
 <br /><span class='dialogue'>I will never marry you.</span>
 <br /><br /><span class='action'>A beat.  Don stands stunned, his mind reeling.</span>
 <br /><br /><span class='action'>Edward, whose eyes are swollen almost shut, keeps</span>
@@ -3239,8 +3215,7 @@ p.page-break {
 <br /><span class='dialogue'>prefer him to you.</span>
 <br /><br /><span class='action'>She hands him the ring.  Another beat, then Don storms</span>
 <br /><span class='action'>off.  But not before decking Edward one last time.</span>
-<p class='page-break'>102.</p>
-<span class='action'>Sandra leans over Edward's broken body.  His head lies</span>
+<br /><br /><span class='action'>Sandra leans over Edward's broken body.  His head lies</span>
 <br /><span class='action'>on the daffodils.</span>
 <br /><br /><span class='character'>SANDRA (CONT'D)</span>
 <br /><span class='dialogue'>How can I convince you to</span>
@@ -3259,15 +3234,15 @@ p.page-break {
 <br /><span class='dialogue'>had changed.</span>
 <br /><br /><span class='action'>As the MUSIC reaches a crescendo, we suddenly...</span>
 <br /><br /><span class='transition'>CUT TO:</span>
-<br /><br /><br /><span class='scene-heading'>INT.  GUEST ROOM - NIGHT [PRESENT]</span>
+<br /><br /><br />
+<span class='scene-heading'>INT.  GUEST ROOM - NIGHT [PRESENT]</span>
 <br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>I thought you said you didn't</span>
 <br /><span class='dialogue'>have a church wedding.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Well, we were all set to, but</span>
 <br /><span class='dialogue'>there was a complication.</span>
-<p class='page-break'>103.</p>
-<span class='action'>He reaches for his glass of water, but Josephine</span>
+<br /><br /><span class='action'>He reaches for his glass of water, but Josephine</span>
 <br /><span class='action'>already has it for him.  She watches him while he</span>
 <br /><span class='action'>slowly drinks the entire glass, thirstier than he</span>
 <br /><span class='action'>imagined.  While he's drinking, we...</span>
@@ -3297,10 +3272,10 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I didn't forget.  I was just</span>
 <br /><span class='dialogue'>working on a tangent.</span>
-<p class='page-break'>104.</p>
-<span class='character'>JOSEPHINE</span>
+<br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>I like your stories.</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>And I like you.</span>
 <br /><br /><span class='action'>He doesn't let the moment linger with undue</span>
 <br /><span class='action'>sentimentality.  There's a story to be told.</span>
@@ -3327,8 +3302,7 @@ p.page-break {
 <br /><span class='dialogue'>heart belonged to Sandra, the</span>
 <br /><span class='dialogue'>rest of my body belonged to</span>
 <br /><span class='dialogue'>the U.S. Government.</span>
-<p class='page-break'>105.</p>
-<span class='scene-heading'>INT.  ARMY AIRPLANE - NIGHT</span>
+<br /><br /><br /><span class='scene-heading'>INT.  ARMY AIRPLANE - NIGHT</span>
 <br /><br /><span class='action'>With a buzz cut and paratrooper gear, Edward squats</span>
 <br /><span class='action'>with a dozen other SOLDIERS.  The noise of the ENGINES</span>
 <br /><span class='action'>is deafening, but Edward is engrossed in an Asian</span>
@@ -3339,13 +3313,10 @@ p.page-break {
 <br /><span class='dialogue'>and having waited three years</span>
 <br /><span class='dialogue'>just to meet Sandra, I knew I</span>
 <br /><span class='dialogue'>couldn't survive being away</span>
-<br /><span class='dialogue'>from her that long.  So I</span>
-<br /><span class='dialogue'>took every hazardous</span>
-<br /><span class='dialogue'>assignment I could find, with</span>
-<br /><span class='dialogue'>the hope of getting my time</span>
-<br /><span class='dialogue'>down to less than a year.</span>
+<br /><span class='dialogue'>from her that long.</span>
 <br /><br /><span class='action'>The JUMP LEADER yells...</span>
-<br /><br /><span class='character'>JUMP LEADER</span>
+<br /><br /><br />
+<span class='character'>JUMP LEADER</span>
 <br /><span class='dialogue'>GO!  GO!  GO!</span>
 <br /><br /><span class='action'>One by one the men jump out, their chutes clipped to a</span>
 <br /><span class='action'>main line.  When his time comes, Edward leaps...</span>
@@ -3358,8 +3329,7 @@ p.page-break {
 <br /><br /><span class='action'>Digging a knife out of his pocket, Edward gets to work</span>
 <br /><span class='action'>cutting through the cable.  It finally POPS.  Edward</span>
 <br /><span class='action'>jumps from the plane.</span>
-<p class='page-break'>106.</p>
-<span class='scene-heading'>EXT.  OUTSIDE STAGE - NIGHT</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  OUTSIDE STAGE - NIGHT</span>
 <br /><br /><span class='action'>A THOUSAND CHINESE SOLDIERS sit, bored, watching the</span>
 <br /><span class='action'>equivalent of a U.S.O. show.</span>
 <br /><br /><span class='action'>A CHINESE VENTRILOQUIST is on stage with his Communist</span>
@@ -3384,11 +3354,11 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>EXT. ON STAGE</span>
 <br /><br /><span class='action'>The curtain rises to reveal PING (27) at a microphone.</span>
 <br /><span class='action'>She's as gorgeous a woman as you'll ever see.</span>
-<br /><br /><span class='action'>She stands with her hips turned in profile.  Her body</span>
+<br /><br /><br />
+<span class='action'>She stands with her hips turned in profile.  Her body</span>
 <br /><span class='action'>is a knockout, dress cut to reveal skin.  The soldiers</span>
 <br /><span class='action'>are on their feet, WHISTLING and HOLLERING.</span>
-<p class='page-break'>107.</p>
-<span class='action'>UP ON THE CATWALK, Edward is surprised by an ENEMY</span>
+<br /><br /><span class='action'>UP ON THE CATWALK, Edward is surprised by an ENEMY</span>
 <br /><span class='action'>SOLDIER.  The two men begin to SCUFFLE.</span>
 <br /><br /><span class='action'>MUSIC starts, a vampy torch song.  Ping sings melody</span>
 <br /><span class='action'>while an off-stage voice carries perfect harmony.</span>
@@ -3417,17 +3387,15 @@ p.page-break {
 <br /><br /><span class='action'>Backstage, the two men are still fighting.</span>
 <br /><br /><span class='character'>PING  (CONT'D)</span>
 <br /><span class='parenthetical'>(chorus)</span>
-<br /><span class='dialogue'>Cried double the tears.</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>108.</p>
-<span class='character'>PING  (CONT'D) (CONT'D)</span>
-<br /><span class='dialogue'>Two times the bad times in</span>
-<br /><span class='dialogue'>half the years. Twice the</span>
-<br /><span class='dialogue'>love to give.</span>
+<br /><span class='dialogue'>Cried double the tears. Two</span>
+<br /><span class='dialogue'>times the bad times in half</span>
+<br /><span class='dialogue'>the years. Twice the love to</span>
+<br /><span class='dialogue'>give.</span>
 <br /><br /><span class='action'>For the first time, Ping turns, and now we see why she</span>
 <br /><span class='action'>was standing in profile.  Ping is one-half of</span>
 <br /><br /><span class='action'>SIAMESE TWINS.</span>
-<br /><br /><span class='action'>Her identical twin is JING, who's been singing harmony</span>
+<br /><br /><br />
+<span class='action'>Her identical twin is JING, who's been singing harmony</span>
 <br /><span class='action'>all this time.  They are two separate women who join</span>
 <br /><span class='action'>at the waist, one set of perfect legs beneath them.</span>
 <br /><br /><span class='action'>Edward sees the twins from behind, does a double-take.</span>
@@ -3451,8 +3419,7 @@ p.page-break {
 <br /><br /><span class='action'>Edward slips behind curtains, trying to get away.</span>
 <br /><br /><span class='action'>The soldiers are SHOUTING for an encore, lighters</span>
 <br /><span class='action'>waving.  The curtain slowly lowers, revealing</span>
-<p class='page-break'>109.</p>
-<span class='action'>EDWARD'S PARACHUTE.</span>
+<br /><br /><span class='action'>EDWARD'S PARACHUTE.</span>
 <br /><br /><span class='action'>The APPLAUSE dies, replaced by a concerned RUMBLE.</span>
 <br /><span class='action'>The Emcee yells for the Guards to search.</span>
 <br /><br /><span class='action'>ON STAGE</span>
@@ -3466,7 +3433,8 @@ p.page-break {
 <br /><span class='action'>brash, bitchy and ambitious, while Jing is quiet,</span>
 <br /><span class='action'>sweet and bookish.</span>
 <br /><br /><span class='action'><u>In Chinese, subtitled...</u></span>
-<br /><br /><span class='character'>PING</span>
+<br /><br /><br />
+<span class='character'>PING</span>
 <br /><span class='dialogue'>How could you miss your cue?</span>
 <br /><span class='dialogue'>You make me look like a fool,</span>
 <br /><span class='dialogue'>out there alone.</span>
@@ -3478,8 +3446,7 @@ p.page-break {
 <br /><span class='action'>Ping turns to look.</span>
 <br /><br /><span class='character'>PING</span>
 <br /><span class='dialogue'>Who the hell are you?</span>
-<p class='page-break'>110.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='parenthetical'>(in Chinese)</span>
 <br /><span class='dialogue'>I'm not going to hurt you.</span>
 <br /><br /><span class='character'>PING</span>
@@ -3504,14 +3471,12 @@ p.page-break {
 <br /><span class='action'>Sandra.</span>
 <br /><br /><span class='transition'>CROSSFADE TO:</span>
 <br /><br /><span class='action'>VARIOUS SHOTS</span>
-<br /><br /><span class='character'>EDWARD (V.O.)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>Over the next hour, I</span>
 <br /><span class='dialogue'>described my love for Sandra</span>
 <br /><span class='dialogue'>Kay Templeton, and the ordeal</span>
 <br /><span class='dialogue'>that brought me before them.</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>111.</p>
-<span class='character'>EDWARD (V.O.) (CONT'D)</span>
 <br /><span class='dialogue'>As it had always been, this</span>
 <br /><span class='dialogue'>love was my salvation.  It</span>
 <br /><span class='dialogue'>was destined to be.</span>
@@ -3541,8 +3506,7 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>EXT.  TEMPLETON FAMILY HOUSE - DAY</span>
 <br /><br /><span class='action'>Sandra checks the mail, hoping for a letter from</span>
 <br /><span class='action'>Edward.</span>
-<p class='page-break'>112.</p>
-<span class='character'>EDWARD (V.O.)</span>
+<br /><br /><span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>And so the twins and I began</span>
 <br /><span class='dialogue'>our arduous journey halfway</span>
 <br /><span class='dialogue'>around the world.</span>
@@ -3550,7 +3514,8 @@ p.page-break {
 <br /><span class='dialogue'>way to send a message back to</span>
 <br /><span class='dialogue'>America.</span>
 <br /><br /><span class='action'>A black car pulls up.  Two ARMY OFFICERS get out.</span>
-<br /><br /><span class='character'>EDWARD (V.O.)(CONT'D)</span>
+<br /><br /><br />
+<span class='character'>EDWARD (V.O.)(CONT'D)</span>
 <br /><span class='dialogue'>And so it was no surprise</span>
 <br /><span class='dialogue'>that the Army believed I was</span>
 <br /><span class='dialogue'>dead.</span>
@@ -3571,8 +3536,7 @@ p.page-break {
 <br /><br /><span class='action'>Pulling a dress out of the basket, Sandra looks up to</span>
 <br /><span class='action'>see</span>
 <br /><br /><span class='action'>A MAN'S SILHOUETTE</span>
-<p class='page-break'>113.</p>
-<span class='action'>on the sheet in front of her.  She freezes, watching</span>
+<br /><br /><span class='action'>on the sheet in front of her.  She freezes, watching</span>
 <br /><span class='action'>the shadow ripple across the white fabric, blowing so</span>
 <br /><span class='action'>softly in the breeze.  She knows it can't be him.</span>
 <br /><span class='action'>He's dead.</span>
@@ -3590,7 +3554,8 @@ p.page-break {
 <br /><span class='action'>back.   A beat, then she turns over in bed, revealing</span>
 <br /><span class='action'>her to be</span>
 <br /><br /><span class='action'>JOSEPHINE.</span>
-<br /><br /><span class='action'>She blinks slowly, just waking up.  Will is watching</span>
+<br /><br /><br />
+<span class='action'>She blinks slowly, just waking up.  Will is watching</span>
 <br /><span class='action'>her.  He's been up for a while.  We are actually...</span>
 <br /><br /><br /><span class='scene-heading'>INT.  WILL AND JOSEPHINE'S ROOM - DAY</span>
 <br /><br /><span class='action'>...where the couple stays cocooned under the sheets, a</span>
@@ -3599,8 +3564,7 @@ p.page-break {
 <br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>I talked with your father</span>
 <br /><span class='dialogue'>last night.</span>
-<p class='page-break'>114.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Did you?</span>
 <br /><br /><span class='action'>A look to say, should I be worried?</span>
 <br /><br /><span class='character'>JOSEPHINE</span>
@@ -3630,7 +3594,7 @@ p.page-break {
 <br /><span class='dialogue'>French woman.</span>
 <br /><br /><span class='action'>He moves his head out from under the sheet.  She</span>
 <br /><span class='action'>follows him to the "outside."</span>
-<p class='page-break'>115.</p>
+<br /><br /><br />
 <span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>Do you love your father?</span>
 <br /><br /><span class='character'>WILL</span>
@@ -3664,8 +3628,7 @@ p.page-break {
 <br /><span class='dialogue'>heard my father say a single</span>
 <br /><span class='dialogue'>true thing.</span>
 <br /><br /><span class='action'>Off her silence...</span>
-<p class='page-break'>116.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Look, I know why you like</span>
 <br /><span class='dialogue'>him.  I know why everyone</span>
 <br /><span class='dialogue'>likes him.  But I need you to</span>
@@ -3674,7 +3637,8 @@ p.page-break {
 <br /><span class='dialogue'>You're not.</span>
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>I need you on my side.</span>
-<br /><br /><span class='character'>JOSEPHINE</span>
+<br /><br /><br />
+<span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>I am always on your side.</span>
 <br /><span class='dialogue'>And I think you should talk</span>
 <br /><span class='dialogue'>to him.</span>
@@ -3695,8 +3659,7 @@ p.page-break {
 <br /><br /><span class='character'>WILL  (CONT'D)</span>
 <br /><span class='dialogue'>The maple tree and the Buick.</span>
 <br /><span class='dialogue'>We heard it.</span>
-<p class='page-break'>117.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='parenthetical'>(re:  Josephine)</span>
 <br /><span class='dialogue'>I think someone hasn't.</span>
 <br /><br /><span class='character'>JOSEPHINE</span>
@@ -3715,7 +3678,8 @@ p.page-break {
 <br /><span class='dialogue'>Dad?</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Son?</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>Can we talk?</span>
 <br /><br /><span class='action'>Sandra SNAPS the cap back on the syrup.</span>
 <br /><br /><span class='character'>SANDRA</span>
@@ -3727,8 +3691,7 @@ p.page-break {
 <br /><br /><span class='action'>Will and Edward both smile.  The women clearly want</span>
 <br /><span class='action'>this to happen.  It settles for a beat after they</span>
 <br /><span class='action'>leave.</span>
-<p class='page-break'>118.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Do you know much about</span>
 <br /><span class='dialogue'>icebergs, Dad?</span>
 <br /><br /><span class='character'>EDWARD</span>
@@ -3757,14 +3720,17 @@ p.page-break {
 <br /><span class='parenthetical'>(frustrated)</span>
 <br /><span class='dialogue'>The thing about icebergs is</span>
 <br /><span class='dialogue'>you only see 10 percent of</span>
-<br /><span class='dialogue'>them.  The other 90 percent</span>
-<br /><span class='dialogue'>is below the water where you</span>
-<br /><span class='dialogue'>can't see it.  And that's</span>
-<br /><span class='dialogue'>what it is with you Dad.  I'm</span>
-<br /><span class='dialogue'>only seeing this little bit</span>
-<br /><span class='dialogue'>that sticks above the water.</span>
-<p class='page-break'>119.</p>
-<span class='character'>EDWARD</span>
+<br /><span class='dialogue'>them.</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>WILL (CONT'D)</span>
+<br /><span class='dialogue'>The other 90 percent is below</span>
+<br /><span class='dialogue'>the water where you can't see</span>
+<br /><span class='dialogue'>it.  And that's what it is</span>
+<br /><span class='dialogue'>with you Dad.  I'm only</span>
+<br /><span class='dialogue'>seeing this little bit that</span>
+<br /><span class='dialogue'>sticks above the water.</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='parenthetical'>(joking)</span>
 <br /><span class='dialogue'>What, you're seeing down to</span>
 <br /><span class='dialogue'>my nose?  My chin?</span>
@@ -3798,12 +3764,12 @@ p.page-break {
 <br /><span class='dialogue'>as charming and just as fake.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>You think I'm fake.</span>
-<p class='page-break'>120.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Only on the surface.  But</span>
 <br /><span class='dialogue'>that's all I've ever seen.</span>
 <br /><br /><span class='action'>Edward looks away, angry and disbelieving.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>Dad, I'm about to have a kid</span>
 <br /><span class='dialogue'>of my own here.  It would</span>
 <br /><span class='dialogue'>kill me if he went through</span>
@@ -3830,8 +3796,7 @@ p.page-break {
 <br /><span class='action'>out of the pool, but it's a fool's errand.  The pool</span>
 <br /><span class='action'>has long since gone native, a shiny slick of algae on</span>
 <br /><span class='action'>the surface, slime covering the cemented rocks.</span>
-<p class='page-break'>121.</p>
-<span class='action'>Suddenly, an underwater shape RIPPLES against the</span>
+<br /><br /><span class='action'>Suddenly, an underwater shape RIPPLES against the</span>
 <br /><span class='action'>water's surface.  Will is so startled that he drops</span>
 <br /><span class='action'>the pole, which disappears into the murky water.</span>
 <br /><br /><span class='action'>A beat.  He looks around, relieved that no one saw</span>
@@ -3846,7 +3811,8 @@ p.page-break {
 <br /><br /><span class='action'>Clearing a path, Sandra leads Will to a roll-top desk,</span>
 <br /><span class='action'>its ribs covered in dust.  Two beaten metal file</span>
 <br /><span class='action'>cabinets sit beside it.</span>
-<br /><br /><span class='character'>SANDRA</span>
+<br /><br /><br />
+<span class='character'>SANDRA</span>
 <br /><span class='dialogue'>Your father decided he needed</span>
 <br /><span class='dialogue'>to have an office, and it</span>
 <br /><span class='dialogue'>wouldn't do to have it in the</span>
@@ -3859,8 +3825,7 @@ p.page-break {
 <br /><br /><span class='action'>Will, Sandra and Josephine have worked through two</span>
 <br /><span class='action'>trash bags of papers to throw out.  Looking through a</span>
 <br /><span class='action'>new file, Sandra makes a small sound.  A memory.</span>
-<p class='page-break'>122.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>What is it?</span>
 <br /><br /><span class='action'>Sandra hands Will a yellowed telegram.  He shares it</span>
 <br /><span class='action'>with Josephine.</span>
@@ -3887,11 +3852,11 @@ p.page-break {
 <br /><br /><span class='action'>Looking for a place to put it, he tucks it into a</span>
 <br /><span class='action'>strange mechanical hand on the desk.  It clamps down</span>
 <br /><span class='action'>automatically.</span>
-<br /><br /><span class='action'>Will smiles, a memory.  He hasn't thought about this</span>
+<br /><br /><br />
+<span class='action'>Will smiles, a memory.  He hasn't thought about this</span>
 <br /><span class='action'>device in years.  We slowly PUSH IN on the telegram,</span>
 <br /><span class='action'>held in the hand.</span>
-<p class='page-break'>123.</p>
-<span class='action'>Edward's VOICE begins as a memory...</span>
+<br /><br /><span class='action'>Edward's VOICE begins as a memory...</span>
 <br /><br /><span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>After the war, the sons of</span>
 <br /><span class='dialogue'>Alabama returned home,</span>
@@ -3923,12 +3888,12 @@ p.page-break {
 <br /><span class='action'>like a metal lava lamp.  Like a flower, it unfolds to</span>
 <br /><span class='action'>reveal five fingers and a thumb.  This is the Hand</span>
 <br /><span class='action'>Around the House.(TM)</span>
-<p class='page-break'>124.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Why, with this product you</span>
 <br /><span class='dialogue'>can...</span>
 <br /><br /><span class='action'>QUICK MONTAGE as he demonstrates:</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Open a jar.  Open a letter.</span>
 <br /><span class='dialogue'>Scratch yourself while</span>
 <br /><span class='dialogue'>wearing mittens.  Hold a</span>
@@ -3952,8 +3917,11 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>EXT.  A COUNTRY ROAD - DAY</span>
 <br /><br /><span class='action'>Edward drives, his hand out in the wind.</span>
 <br /><br /><span class='character'>EDWARD (V.O.)</span>
-<p class='page-break'>125.</p>
-<span class='scene-heading'>EXT.  TRAILER PARK - DAY</span>
+<br /><span class='dialogue'>Soon I added other products,</span>
+<br /><span class='dialogue'>and other cities, until my</span>
+<br /><span class='dialogue'>territory stretched from the</span>
+<br /><span class='dialogue'>coast to western Texas.</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  TRAILER PARK - DAY</span>
 <br /><br /><span class='action'>Edward kisses his pregnant wife goodbye, as much in</span>
 <br /><span class='action'>love as ever.</span>
 <br /><br /><span class='character'>EDWARD (V.O.)</span>
@@ -3965,7 +3933,8 @@ p.page-break {
 <br /><span class='dialogue'>a white picket fence.</span>
 <br /><br /><br /><span class='scene-heading'>EXT.  HORIZON SAVINGS & LOAN - DAY</span>
 <br /><br /><span class='action'>Establishing this Texas institution, we come...</span>
-<br /><br /><br /><span class='scene-heading'>INT.  HORIZON SAVINGS & LOAN - DAY</span>
+<br /><br /><br />
+<span class='scene-heading'>INT.  HORIZON SAVINGS & LOAN - DAY</span>
 <br /><br /><span class='action'>The bank is busy with the lunch-hour crowd.  Taking</span>
 <br /><span class='action'>his place in line, Edward fills out a deposit slip.</span>
 <br /><br /><span class='action'>As the line snakes around through the ropes, the man</span>
@@ -3981,8 +3950,7 @@ p.page-break {
 <br /><span class='dialogue'>and Spectre all the way out</span>
 <br /><span class='dialogue'>in Texas.</span>
 <br /><br /><span class='action'>The men shake, disbelieving this lucky coincidence.</span>
-<p class='page-break'>126.</p>
-<span class='character'>EDWARD (CONT'D)</span>
+<br /><br /><span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='dialogue'>I don't believe it!</span>
 <br /><br /><span class='character'>NORTHER WINSLOW</span>
 <br /><span class='dialogue'>I want you to know, when you</span>
@@ -4005,7 +3973,8 @@ p.page-break {
 <br /><span class='dialogue'>I'm robbing this place.</span>
 <br /><br /><span class='action'>Reaching the front of the line, Norther pulls two</span>
 <br /><span class='action'>pistols out of his coat, FIRING both into the ceiling.</span>
-<br /><br /><span class='action'>SCREAMS all around.  The skinny SECURITY GUARD makes a</span>
+<br /><br /><br />
+<span class='action'>SCREAMS all around.  The skinny SECURITY GUARD makes a</span>
 <br /><span class='action'>half-hearted reach for his gun, but Norther waves him</span>
 <br /><span class='action'>off.  The guard takes out his gun and slides it over.</span>
 <br /><br /><span class='character'>NORTHER WINSLOW (CONT'D)</span>
@@ -4015,8 +3984,7 @@ p.page-break {
 <br /><span class='action'>might as well be asking for a Budweiser.  Still,</span>
 <br /><span class='action'>Edward senses it would be best to do as he says.  He</span>
 <br /><span class='action'>takes the guard's gun.</span>
-<p class='page-break'>127.</p>
-<span class='character'>NORTHER WINSLOW (CONT'D)</span>
+<br /><br /><span class='character'>NORTHER WINSLOW (CONT'D)</span>
 <br /><span class='parenthetical'>(to the crowd)</span>
 <br /><span class='dialogue'>Now, I want all of you to lie</span>
 <br /><span class='dialogue'>down.  I'm gonna be cleaning</span>
@@ -4044,7 +4012,7 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>INT.  THE VAULT - DAY</span>
 <br /><br /><span class='action'>The inner sanctum of the Horizon Savings and Loan</span>
 <br /><span class='action'>holds exactly one folding chair.  Nothing else.</span>
-<p class='page-break'>128.</p>
+<br /><br /><br />
 <span class='character'>TELLER WOMAN</span>
 <br /><span class='dialogue'>...there's no money.  We're</span>
 <br /><span class='dialogue'>completely bankrupt.</span>
@@ -4076,8 +4044,7 @@ p.page-break {
 <br /><span class='action'>only a single deposit envelope.  He rips it open,</span>
 <br /><span class='action'>revealing just a little cash inside.  Even some dimes</span>
 <br /><span class='action'>and pennies.</span>
-<p class='page-break'>129.</p>
-<span class='character'>NORTHER WINSLOW (CONT'D)</span>
+<br /><br /><span class='character'>NORTHER WINSLOW (CONT'D)</span>
 <br /><span class='dialogue'>This is it?  The whole vault.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>'Fraid so.</span>
@@ -4085,7 +4052,8 @@ p.page-break {
 <br /><span class='dialogue'>Edward, it's got your deposit</span>
 <br /><span class='dialogue'>slip on it.</span>
 <br /><br /><span class='action'>Caught, Edward has to confess...</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Look, I just didn't want you</span>
 <br /><span class='dialogue'>to go empty-handed.  There's</span>
 <br /><span class='dialogue'>something you should know,</span>
@@ -4108,8 +4076,7 @@ p.page-break {
 <br /><span class='dialogue'>That's where all the money</span>
 <br /><span class='dialogue'>is.</span>
 <br /><br /><span class='action'>Edward looks over at Norther, the reality sinking in.</span>
-<p class='page-break'>130.</p>
-<span class='character'>EDWARD (V.O.)</span>
+<br /><br /><span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>I knew then that while my</span>
 <br /><span class='dialogue'>days as a criminal were over,</span>
 <br /><span class='dialogue'>Norther's were just</span>
@@ -4127,7 +4094,8 @@ p.page-break {
 <br /><span class='dialogue'>check for ten thousand.  I</span>
 <br /><span class='dialogue'>protested, but he said it was</span>
 <br /><span class='dialogue'>my fee as his career advisor.</span>
-<br /><br /><br /><span class='scene-heading'>EXT.  BLOOM HOUSE [MID/LATE '70'S] - DAY</span>
+<br /><br /><br />
+<span class='scene-heading'>EXT.  BLOOM HOUSE [MID/LATE '70'S] - DAY</span>
 <br /><br /><span class='action'>Sandra is watering the garden.  Will (5) runs past her</span>
 <br /><span class='action'>to greet Edward, just returned from another trip.</span>
 <br /><br /><span class='character'>EDWARD (V.O.)</span>
@@ -4138,8 +4106,7 @@ p.page-break {
 <br /><span class='dialogue'>picket fence.</span>
 <br /><br /><span class='action'>We reveal the Bloom house, the nicest one in the</span>
 <br /><span class='action'>neighborhood.  Edward kisses his wife.</span>
-<p class='page-break'>131.</p>
-<span class='character'>EDWARD (V.O.)</span>
+<br /><br /><span class='character'>EDWARD (V.O.)</span>
 <br /><span class='dialogue'>And for that, it was all the</span>
 <br /><span class='dialogue'>riches a man could ever want.</span>
 <br /><br /><span class='action'>Sandra drops the hose, letting it run on the lawn.</span>
@@ -4164,7 +4131,7 @@ p.page-break {
 <br /><br /><span class='action'>sitting on the edge of the tub.  She doesn't seem</span>
 <br /><span class='action'>particularly worried -- her husband has always done</span>
 <br /><span class='action'>this.</span>
-<p class='page-break'>132.</p>
+<br /><br /><br />
 <span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I was drying out.</span>
 <br /><br /><span class='character'>SANDRA</span>
@@ -4191,8 +4158,7 @@ p.page-break {
 <br /><span class='action'>thing in the trash.</span>
 <br /><br /><span class='action'>He's about to toss a file when he stops.  Takes</span>
 <br /><span class='action'>another look. Something doesn't make sense.</span>
-<p class='page-break'>133.</p>
-<span class='scene-heading'>INT.  BLOOM HOUSE / STAIRS - DAY</span>
+<br /><br /><br /><span class='scene-heading'>INT.  BLOOM HOUSE / STAIRS - DAY</span>
 <br /><br /><span class='action'>Will is headed upstairs when his mother comes around</span>
 <br /><span class='action'>the corner with an armful of laundry, including her</span>
 <br /><span class='action'>wet dress.</span>
@@ -4202,7 +4168,8 @@ p.page-break {
 <br /><span class='dialogue'>He just fell asleep.</span>
 <br /><span class='dialogue'>Josephine's with him.</span>
 <br /><br /><span class='action'>She passes him.  He turns.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>Mom?</span>
 <br /><br /><span class='character'>SANDRA</span>
 <br /><span class='dialogue'>Yes?</span>
@@ -4220,10 +4187,11 @@ p.page-break {
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>So you never bought any land.</span>
 <br /><br /><span class='character'>SANDRA</span>
-<br /><span class='dialogue'>Heavens no.</span>
+<br /><span class='dialogue'>Heavens no.  We had a hard</span>
+<br /><span class='dialogue'>enough time keeping the</span>
+<br /><span class='dialogue'>mortgage on this place.</span>
 <br /><br /><span class='action'>Will nods, just curious.  He continues heading up.</span>
-<p class='page-break'>134.</p>
-<span class='scene-heading'>INT.  WILL AND JOSEPHINE'S ROOM - DAY</span>
+<br /><br /><br /><span class='scene-heading'>INT.  WILL AND JOSEPHINE'S ROOM - DAY</span>
 <br /><br /><span class='action'>Will changes his shirt.  Takes his keys off the</span>
 <br /><span class='action'>nightstand.</span>
 <br /><br /><br /><span class='scene-heading'>EXT.  COUNTY ROAD - DAY</span>
@@ -4235,7 +4203,8 @@ p.page-break {
 <br /><br /><span class='action'>Will talks to the ATTENDANT, who points him in a</span>
 <br /><span class='action'>direction, then gestures a series of left, right,</span>
 <br /><span class='action'>left, rights.</span>
-<br /><br /><br /><span class='scene-heading'>EXT.  ROAD - DAY</span>
+<br /><br /><br />
+<span class='scene-heading'>EXT.  ROAD - DAY</span>
 <br /><br /><span class='action'>Will drives down a road that seems somewhat familiar.</span>
 <br /><span class='action'>And then we realize why:  a roadsign reads "Welcome to</span>
 <br /><span class='action'>Spectre!"</span>
@@ -4248,8 +4217,7 @@ p.page-break {
 <br /><span class='action'>grows.  He checks the number:  33.  This is the house.</span>
 <br /><span class='action'>It is surrounded by a white square-picket fence,</span>
 <br /><span class='action'>identical to his mother's.  Will notices this.</span>
-<p class='page-break'>135.</p>
-<span class='action'>Reaching the porch, we hear a PIANO playing inside.</span>
+<br /><br /><span class='action'>Reaching the porch, we hear a PIANO playing inside.</span>
 <br /><span class='action'>Badly.</span>
 <br /><br /><span class='action'>Re-checking the number on a form he's carrying, Will</span>
 <br /><span class='action'>KNOCKS.  The piano stops.</span>
@@ -4273,14 +4241,13 @@ p.page-break {
 <br /><br /><span class='character'>JENNY</span>
 <br /><span class='dialogue'>I am.  And you're Will.  I've</span>
 <br /><span class='dialogue'>seen your picture, that's how</span>
-<br /><span class='dialogue'>I recognize you.  I almost</span>
-<br /><span class='dialogue'>said something at the store,</span>
-<br /><span class='dialogue'>but it would have been</span>
-<br /><span class='dialogue'>awkward.</span>
+<br /><span class='dialogue'>I recognize you.</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>JENNY (CONT'D)</span>
 <br /><span class='parenthetical'>(a beat)</span>
 <br /><span class='dialogue'>Like this.</span>
-<p class='page-break'>136.</p>
-<span class='action'>The PIANO STUDENT, a black boy of eight, has stopped.</span>
+<br /><br /><span class='action'>The PIANO STUDENT, a black boy of eight, has stopped.</span>
 <br /><span class='action'>He's watching the conversation at the door.  Speaking</span>
 <br /><span class='action'>of awkward...</span>
 <br /><br /><span class='character'>JENNY (CONT'D)</span>
@@ -4309,8 +4276,7 @@ p.page-break {
 <br /><span class='dialogue'>the time.  Everyone in town</span>
 <br /><span class='dialogue'>knew him.</span>
 <br /><br /><span class='action'>A beat.  Not flinching...</span>
-<p class='page-break'>137.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Were you and my father having</span>
 <br /><span class='dialogue'>an affair?</span>
 <br /><br /><span class='character'>JENNY</span>
@@ -4319,7 +4285,8 @@ p.page-break {
 <br /><span class='dialogue'>I was expecting to dance</span>
 <br /><span class='dialogue'>around this for another half</span>
 <br /><span class='dialogue'>hour.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>I've seen him with women.  He</span>
 <br /><span class='dialogue'>flirts.  He always has.  On</span>
 <br /><span class='dialogue'>some level, I presumed he was</span>
@@ -4344,8 +4311,7 @@ p.page-break {
 <br /><span class='dialogue'>wrong for me to go and change</span>
 <br /><span class='dialogue'>it.  Especially this late in</span>
 <br /><span class='dialogue'>the game.</span>
-<p class='page-break'>138.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>My father talked about a lot</span>
 <br /><span class='dialogue'>of things he never did, and</span>
 <br /><span class='dialogue'>I'm sure he did a lot of</span>
@@ -4363,7 +4329,8 @@ p.page-break {
 <br /><span class='dialogue'>The second time, he was late.</span>
 <br /><br /><br /><span class='scene-heading'>INT.  EDWARD'S CAR / DRIVING - NIGHT</span>
 <br /><br /><span class='action'>It's late, and Edward is pensive.</span>
-<br /><br /><span class='character'>JENNY (V.O.)</span>
+<br /><br /><br />
+<span class='character'>JENNY (V.O.)</span>
 <br /><span class='dialogue'>Those days, your father was</span>
 <br /><span class='dialogue'>working for himself.  If</span>
 <br /><span class='dialogue'>there was one thing you could</span>
@@ -4377,8 +4344,7 @@ p.page-break {
 <br /><span class='dialogue'>his life.</span>
 <br /><br /><span class='action'>The first raindrops hit the windshield.  Edward turns</span>
 <br /><span class='action'>on the wipers.</span>
-<p class='page-break'>139.</p>
-<span class='scene-heading'>INT. EDWARD'S CAR - NIGHT - [THE STORM]</span>
+<br /><br /><br /><span class='scene-heading'>INT. EDWARD'S CAR - NIGHT - [THE STORM]</span>
 <br /><br /><span class='action'>Suddenly, a deluge descends.  It's not even rain</span>
 <br /><span class='action'>anymore -- there's no space between the drops.  It's</span>
 <br /><span class='action'>like being caught in a waterfall.  It's that loud.</span>
@@ -4402,7 +4368,7 @@ p.page-break {
 <br /><br /><span class='action'>She puts her hand to the windshield.  He puts his up</span>
 <br /><span class='action'>to meet hers.  And smiles.</span>
 <br /><br /><span class='transition'>FLASH CUT TO:</span>
-<p class='page-break'>140.</p>
+<br /><br /><br />
 <span class='scene-heading'>EXT.  FIELD BY DIRT ROAD - DAY</span>
 <br /><br /><span class='action'>It's morning, and the sun shines brightly.  Birds</span>
 <br /><span class='action'>CHIRP.  Trees drip and the grass shines, still wet</span>
@@ -4430,8 +4396,7 @@ p.page-break {
 <br /><span class='action'>of the road, no cars coming from either direction.  He</span>
 <br /><span class='action'>looks up to find his faded shoes still dangling from</span>
 <br /><span class='action'>the power line, along with the rest of the town's.</span>
-<p class='page-break'>141.</p>
-<span class='character'>JENNY (V.O.)</span>
+<br /><br /><span class='character'>JENNY (V.O.)</span>
 <br /><span class='dialogue'>A man sees things differently</span>
 <br /><span class='dialogue'>at different times in his</span>
 <br /><span class='dialogue'>life.  This town didn't seem</span>
@@ -4440,7 +4405,8 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>EXT. TOWN OF SPECTRE - VARIOUS SHOTS</span>
 <br /><br /><span class='action'>We look around the town, on and off Main Street.</span>
 <br /><span class='action'>There are "FOR SALE" signs in many of the windows</span>
-<br /><br /><span class='character'>JENNY (V.O.)</span>
+<br /><br /><br />
+<span class='character'>JENNY (V.O.)</span>
 <br /><span class='dialogue'>A new road had brought the</span>
 <br /><span class='dialogue'>outside world to Spectre, and</span>
 <br /><span class='dialogue'>with it, banks, liens and</span>
@@ -4461,8 +4427,7 @@ p.page-break {
 <br /><span class='dialogue'>way, Spectre would be</span>
 <br /><span class='dialogue'>destroyed.</span>
 <br /><br /><span class='action'>Edward raises his hand.</span>
-<p class='page-break'>142.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Fifty-thousand!</span>
 <br /><br /><span class='action'>Everyone turns to look at this new bidder.</span>
 <br /><br /><span class='character'>JENNY (V.O.)</span>
@@ -4479,7 +4444,8 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>INT./EXT.  VARIOUS LOCATIONS - DAY</span>
 <br /><br /><span class='action'>VARIOUS SHOTS:  Expressive and passionate as always,</span>
 <br /><span class='action'>Edward talks to Ping, Jing and Amos Calloway.</span>
-<br /><br /><span class='character'>JENNY (V.O.)</span>
+<br /><br /><br />
+<span class='character'>JENNY (V.O.)</span>
 <br /><span class='dialogue'>Most of them had never seen</span>
 <br /><span class='dialogue'>Spectre -- they only had</span>
 <br /><span class='dialogue'>Edward's words to describe</span>
@@ -4492,8 +4458,7 @@ p.page-break {
 <br /><span class='dialogue'>of property.  It's all or</span>
 <br /><span class='dialogue'>nothing.</span>
 <br /><br /><span class='action'>As Edward takes notes...</span>
-<p class='page-break'>143.</p>
-<span class='character'>JENNY (V.O.)</span>
+<br /><br /><span class='character'>JENNY (V.O.)</span>
 <br /><span class='dialogue'>So first he bought the farms.</span>
 <br /><span class='dialogue'>Then he bought the houses.</span>
 <br /><span class='dialogue'>Then he bought the stores.</span>
@@ -4523,7 +4488,7 @@ p.page-break {
 <br /><br /><span class='action'>We hear a PIANO playing from inside the shack.  Edward</span>
 <br /><span class='action'>KNOCKS on the half-hung door, which swings open by</span>
 <br /><span class='action'>itself.</span>
-<p class='page-break'>144.</p>
+<br /><br /><br />
 <span class='scene-heading'>INT.  SHACK - DAY</span>
 <br /><br /><span class='action'>The inside is nicer than you'd think, a real home.  A</span>
 <br /><span class='action'>fire burns in the stove, and curtains hang in the</span>
@@ -4555,9 +4520,11 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>I'll offer you more than it's</span>
 <br /><span class='dialogue'>worth.  And you know you</span>
-<br /><span class='dialogue'>won't have to move.</span>
-<p class='page-break'>145.</p>
-<span class='action'>Jenny stops playing, her piece not quite finished.</span>
+<br /><span class='dialogue'>won't have to move.  Nothing</span>
+<br /><span class='dialogue'>will change except the name</span>
+<br /><span class='dialogue'>on the deed, you have my</span>
+<br /><span class='dialogue'>word.</span>
+<br /><br /><span class='action'>Jenny stops playing, her piece not quite finished.</span>
 <br /><span class='action'>She turns to face him.  Edward still doesn't recognize</span>
 <br /><span class='action'>her.</span>
 <br /><br /><span class='character'>JENNY</span>
@@ -4565,11 +4532,14 @@ p.page-break {
 <br /><span class='dialogue'>You'll buy the swamp from me,</span>
 <br /><span class='dialogue'>but I'll stay in it.  You'll</span>
 <br /><span class='dialogue'>own the house, but it'll</span>
-<br /><span class='dialogue'>still be mine.  I'll be here,</span>
-<br /><span class='dialogue'>and you'll come and go as you</span>
-<br /><span class='dialogue'>please to one place or</span>
-<br /><span class='dialogue'>another.  Do I have that</span>
-<br /><span class='dialogue'>right?</span>
+<br /><span class='dialogue'>still be mine.</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>JENNY (CONT'D)</span>
+<br /><span class='dialogue'>I'll be here, and you'll come</span>
+<br /><span class='dialogue'>and go as you please to one</span>
+<br /><span class='dialogue'>place or another.  Do I have</span>
+<br /><span class='dialogue'>that right?</span>
 <br /><br /><span class='action'>Strange to hear it put that way, but --</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>In so many words, yes.</span>
@@ -4590,9 +4560,10 @@ p.page-break {
 <br /><br /><span class='character'>JENNY</span>
 <br /><span class='dialogue'>Mr. Bloom, why are you buying</span>
 <br /><span class='dialogue'>this land?  Some sort of</span>
-<br /><span class='dialogue'>midlife crisis?</span>
-<p class='page-break'>146.</p>
-<span class='action'>He looks at her, puzzled and surprised.  No one has</span>
+<br /><span class='dialogue'>midlife crisis?  Instead of</span>
+<br /><span class='dialogue'>buying a convertible, you buy</span>
+<br /><span class='dialogue'>a town?</span>
+<br /><br /><span class='action'>He looks at her, puzzled and surprised.  No one has</span>
 <br /><span class='action'>really asked before.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Helping people makes me</span>
@@ -4606,10 +4577,9 @@ p.page-break {
 <br /><br /><span class='action'>She finally turns to face him.</span>
 <br /><br /><span class='character'>JENNY</span>
 <br /><span class='dialogue'>No, you did exactly what you</span>
-<br /><span class='dialogue'>promised.  You came back.  I</span>
-<br /><span class='dialogue'>was just expecting you</span>
-<br /><span class='dialogue'>sooner.</span>
-<br /><br /><span class='transition'>FLASHBACK TO:</span>
+<br /><span class='dialogue'>promised.  You came back.</span>
+<br /><br /><br />
+<span class='transition'>FLASHBACK TO:</span>
 <br /><br /><br /><span class='scene-heading'>EXT.  SPECTRE - NIGHT</span>
 <br /><br /><span class='action'>Young Jenny Hill watches barefoot Edward leave Spectre</span>
 <br /><span class='action'>for the first time.</span>
@@ -4619,9 +4589,6 @@ p.page-break {
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>You're Beamen's daughter.</span>
 <br /><span class='dialogue'>Your last name is different.</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>147.</p>
-<span class='character'>EDWARD (CONT'D)</span>
 <br /><span class='parenthetical'>(realizing)</span>
 <br /><span class='dialogue'>You married.</span>
 <br /><br /><span class='character'>JENNY</span>
@@ -4649,7 +4616,7 @@ p.page-break {
 <br /><span class='dialogue'>I'm sorry.</span>
 <br /><br /><span class='action'>He tries to lean the door against the frame, but it</span>
 <br /><span class='action'>keeps slipping.</span>
-<p class='page-break'>148.</p>
+<br /><br /><br />
 <span class='character'>JENNY</span>
 <br /><span class='dialogue'>It's okay, just leave it.</span>
 <br /><br /><span class='character'>EDWARD</span>
@@ -4678,8 +4645,7 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>EXT.  SWAMP SHACK ROAD - ANOTHER DAY</span>
 <br /><br /><span class='action'>With Karl the Giant's help, Edward unloads a brand new</span>
 <br /><span class='action'>door from a pickup truck.</span>
-<p class='page-break'>149.</p>
-<span class='scene-heading'>EXT.  SHACK - DAY</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  SHACK - DAY</span>
 <br /><br /><span class='action'>While Jenny watches, half-annoyed, half-amused, Edward</span>
 <br /><span class='action'>tries to set the door square.  Karl pushes against the</span>
 <br /><span class='action'>side of the house until it fits.</span>
@@ -4687,7 +4653,8 @@ p.page-break {
 <br /><br /><span class='action'>Holding nails between his lips, Edward puts in new</span>
 <br /><span class='action'>windows himself.  Jenny is making soup, laughing at</span>
 <br /><span class='action'>the story he's telling.</span>
-<br /><br /><span class='character'>JENNY (V.O.)</span>
+<br /><br /><br />
+<span class='character'>JENNY (V.O.)</span>
 <br /><span class='dialogue'>As the months passed, he</span>
 <br /><span class='dialogue'>found more and more things to</span>
 <br /><span class='dialogue'>fix, until the shack no</span>
@@ -4704,8 +4671,7 @@ p.page-break {
 <br /><br /><span class='action'>Edward is screwing a hat rack into the wall in the</span>
 <br /><span class='action'>foyer.  Jenny leans against the doorframe listening to</span>
 <br /><span class='action'>his story.  And watching him with deepest affection.</span>
-<p class='page-break'>150.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Of course, the best part was</span>
 <br /><span class='dialogue'>creating new material.  By</span>
 <br /><span class='dialogue'>the time the twins and I got</span>
@@ -4727,7 +4693,8 @@ p.page-break {
 <br /><br /><span class='action'>She comes closer.  Edward holds his ground.  She takes</span>
 <br /><span class='action'>his hand, lifting his hat up to the peg.  She's very</span>
 <br /><span class='action'>close -- just a half-inch from kissing him when --</span>
-<br /><br /><span class='action'>-- Edward gently holds her back.</span>
+<br /><br /><br />
+<span class='action'>-- Edward gently holds her back.</span>
 <br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>No.</span>
 <br /><br /><span class='action'>She freezes, stunned and humiliated.  She pulls away.</span>
@@ -4735,9 +4702,6 @@ p.page-break {
 <br /><span class='dialogue'>Don't.  Don't be embarrassed.</span>
 <br /><span class='dialogue'>I should never have let you</span>
 <br /><span class='dialogue'>think that...</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>151.</p>
-<span class='character'>EDWARD  (CONT'D) (CONT'D)</span>
 <br /><span class='parenthetical'>(beat)</span>
 <br /><span class='dialogue'>I am in love with my wife.</span>
 <br /><br /><span class='character'>JENNY</span>
@@ -4763,13 +4727,13 @@ p.page-break {
 <br /><span class='dialogue'>and never returned to the</span>
 <br /><span class='dialogue'>town he'd saved.</span>
 <br /><br /><span class='action'>He climbs in his car and starts the engine.</span>
-<p class='page-break'>152.</p>
-<span class='scene-heading'>EXT.  JENNY HILL'S HOUSE - DAY TO NIGHT</span>
+<br /><br /><br /><span class='scene-heading'>EXT.  JENNY HILL'S HOUSE - DAY TO NIGHT</span>
 <br /><br /><span class='action'>As we watch, the swamp begins to overtake the house,</span>
 <br /><span class='action'>swallowing it in a tangle of vines and mossy branches.</span>
 <br /><span class='action'>Shoots burst up through the planks in the porch.</span>
 <br /><span class='action'>Snakes slither through the marsh.</span>
-<br /><br /><span class='action'>Day becomes night.</span>
+<br /><br /><br />
+<span class='action'>Day becomes night.</span>
 <br /><br /><span class='character'>JENNY (V.O.)(CONT'D)</span>
 <br /><span class='dialogue'>As for the girl, the common</span>
 <br /><span class='dialogue'>belief was that she'd become</span>
@@ -4795,8 +4759,7 @@ p.page-break {
 <br /><span class='dialogue'>him, there's only two women:</span>
 <br /><span class='dialogue'>your mother and everyone</span>
 <br /><span class='dialogue'>else.</span>
-<p class='page-break'>153.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>You didn't become crazy.</span>
 <br /><br /><span class='character'>JENNY</span>
 <br /><span class='dialogue'>Well, therapy.  And one day I</span>
@@ -4812,10 +4775,9 @@ p.page-break {
 <br /><span class='dialogue'>They are kind and</span>
 <br /><span class='dialogue'>unbelievably cruel at the</span>
 <br /><span class='dialogue'>same moment.  Like me, now.</span>
-<br /><span class='dialogue'>I'm not sure I should have</span>
-<br /><span class='dialogue'>told you any of this.</span>
 <br /><br /><span class='action'>Her composure is starting to break.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>No, I wanted to know.  I'm</span>
 <br /><span class='dialogue'>glad I know.</span>
 <br /><br /><span class='action'>A long beat, both staring at their iced tea.  Jenny is</span>
@@ -4829,15 +4791,12 @@ p.page-break {
 <br /><span class='dialogue'>you when you were at</span>
 <br /><span class='dialogue'>Missouri, that award you won.</span>
 <br /><span class='dialogue'>Congratulations,</span>
-<br /><span class='dialogue'>incidentally.</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>154.</p>
-<span class='character'>JENNY (CONT'D)</span>
-<br /><span class='dialogue'>And when you got the job at</span>
-<br /><span class='dialogue'>the A.P., everything, he was</span>
-<br /><span class='dialogue'>so proud of you.  I mean,</span>
-<br /><span class='dialogue'>that's the thing.  Every</span>
-<br /><span class='dialogue'>moment he loved you.</span>
+<br /><span class='dialogue'>incidentally.  And when you</span>
+<br /><span class='dialogue'>got the job at the A.P.,</span>
+<br /><span class='dialogue'>everything, he was so proud</span>
+<br /><span class='dialogue'>of you.  I mean, that's the</span>
+<br /><span class='dialogue'>thing.  Every moment he loved</span>
+<br /><span class='dialogue'>you.</span>
 <br /><br /><span class='action'>She's fighting tears, not the first ones she's shed</span>
 <br /><span class='action'>over this.</span>
 <br /><br /><span class='character'>JENNY (CONT'D)</span>
@@ -4861,7 +4820,7 @@ p.page-break {
 <br /><br /><span class='action'>Will walks up the front steps.  There's a subtle</span>
 <br /><span class='action'>change to his expression, a dark cloud lifted.  He</span>
 <br /><span class='action'>unlocks the door.</span>
-<p class='page-break'>155.</p>
+<br /><br /><br />
 <span class='scene-heading'>INT.  BLOOM HOUSE FOYER - DUSK</span>
 <br /><br /><span class='action'>It's half-dark and quiet in the house, no talking, no</span>
 <br /><span class='action'>TV.  Will sets his keys on the table.</span>
@@ -4886,15 +4845,15 @@ p.page-break {
 <br /><br /><span class='action'>The hospital is so new, it's not even finished --</span>
 <br /><span class='action'>thick plastic hangs from exposed framing.  There's no</span>
 <br /><span class='action'>one at the information desk, so Will forges ahead.</span>
-<p class='page-break'>156.</p>
-<span class='scene-heading'>INT.  HOSPITAL HALLWAY - NIGHT</span>
+<br /><br /><br /><span class='scene-heading'>INT.  HOSPITAL HALLWAY - NIGHT</span>
 <br /><br /><span class='action'>Will reads a directory board, trying to decide the</span>
 <br /><span class='action'>best place to start.  Then, behind him --</span>
 <br /><br /><span class='character'>JOSEPHINE (O.S.)</span>
 <br /><span class='dialogue'>Will!</span>
 <br /><br /><span class='action'>He turns to see his wife at a payphone.  She hangs up.</span>
 <br /><span class='action'>She was calling him.</span>
-<br /><br /><span class='character'>WILL</span>
+<br /><br /><br />
+<span class='character'>WILL</span>
 <br /><span class='dialogue'>What happened?</span>
 <br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>Your father had a stroke.</span>
@@ -4914,8 +4873,7 @@ p.page-break {
 <br /><span class='dialogue'>No.  He won't.  I'm sorry.</span>
 <br /><br /><span class='action'>And like that, it's done.  We HOLD ON Will, reeling</span>
 <br /><span class='action'>from the news.</span>
-<p class='page-break'>157.</p>
-<span class='scene-heading'>INT.  HOSPITAL ROOM - NIGHT</span>
+<br /><br /><br /><span class='scene-heading'>INT.  HOSPITAL ROOM - NIGHT</span>
 <br /><br /><span class='action'>Edward sleeps peacefully, just an oxygen tube under</span>
 <br /><span class='action'>his nose.  There are no beeping monitors, no blinking</span>
 <br /><span class='action'>lights.  It's mercifully quiet.</span>
@@ -4934,7 +4892,8 @@ p.page-break {
 <br /><span class='dialogue'>I'll stay.  Why don't you go</span>
 <br /><span class='dialogue'>home with Josephine and I'll</span>
 <br /><span class='dialogue'>stay tonight.</span>
-<br /><br /><span class='character'>SANDRA</span>
+<br /><br /><br />
+<span class='character'>SANDRA</span>
 <br /><span class='parenthetical'>(to Dr. Bennett)</span>
 <br /><span class='dialogue'>That's okay?</span>
 <br /><br /><span class='character'>DR. BENNETT</span>
@@ -4945,8 +4904,7 @@ p.page-break {
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>I will.  I'll call.</span>
 <br /><br /><span class='action'>A beat.</span>
-<p class='page-break'>158.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Mom, do you want some time</span>
 <br /><span class='dialogue'>with Dad?</span>
 <br /><br /><span class='character'>SANDRA</span>
@@ -4972,11 +4930,11 @@ p.page-break {
 <br /><span class='dialogue'>I was carrying Will.  Like</span>
 <br /><span class='dialogue'>clockwork.</span>
 <br /><br /><span class='action'>The two women start to walk, no hurry.</span>
-<br /><br /><span class='character'>SANDRA</span>
+<br /><br /><br />
+<span class='character'>SANDRA</span>
 <br /><span class='dialogue'>Do you like it, being</span>
 <br /><span class='dialogue'>pregnant?</span>
-<p class='page-break'>159.</p>
-<span class='character'>JOSEPHINE</span>
+<br /><br /><span class='character'>JOSEPHINE</span>
 <br /><span class='dialogue'>I do.</span>
 <br /><br /><span class='character'>SANDRA</span>
 <br /><span class='dialogue'>I loved it.  It sounds</span>
@@ -5006,8 +4964,7 @@ p.page-break {
 <br /><span class='action'>the crossword puzzle.  A KNOCK as Dr. Bennett enters</span>
 <br /><span class='action'>with his overcoat and bag, ready to leave for the</span>
 <br /><span class='action'>night.</span>
-<p class='page-break'>160.</p>
-<span class='character'>DR. BENNETT</span>
+<br /><br /><span class='character'>DR. BENNETT</span>
 <br /><span class='dialogue'>Glad to see you're not trying</span>
 <br /><span class='dialogue'>to have a heartfelt talk.</span>
 <br /><span class='dialogue'>It's one of my greatest</span>
@@ -5017,7 +4974,8 @@ p.page-break {
 <br /><span class='dialogue'>My father and I have an</span>
 <br /><span class='dialogue'>advantage.  We never talk.</span>
 <br /><br /><span class='action'>Dr. Bennett smiles as he checks Edward's chart.</span>
-<br /><br /><span class='character'>WILL  (CONT'D)</span>
+<br /><br /><br />
+<span class='character'>WILL  (CONT'D)</span>
 <br /><span class='dialogue'>How long have you known my</span>
 <br /><span class='dialogue'>father?</span>
 <br /><br /><span class='character'>DR. BENNETT</span>
@@ -5037,8 +4995,7 @@ p.page-break {
 <br /><br /><span class='character'>DR. BENNETT (CONT'D)</span>
 <br /><span class='dialogue'>Did your father ever tell you</span>
 <br /><span class='dialogue'>about the day you were born?</span>
-<p class='page-break'>161.</p>
-<span class='character'>WILL</span>
+<br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>A thousand times.  He caught</span>
 <br /><span class='dialogue'>an uncatchable fish.</span>
 <br /><br /><span class='character'>DR. BENNETT</span>
@@ -5058,6 +5015,9 @@ p.page-break {
 <br /><span class='dialogue'>were born a week early, but</span>
 <br /><span class='dialogue'>there were no complications.</span>
 <br /><span class='dialogue'>It was a perfect delivery.</span>
+<br /><span class='character'>(MORE)</span>
+<br /><br /><br />
+<span class='character'>DR. BENNETT (CONT'D)</span>
 <br /><span class='dialogue'>Now, your father was sorry to</span>
 <br /><span class='dialogue'>miss it, but it wasn't the</span>
 <br /><span class='dialogue'>custom for the men to be in</span>
@@ -5071,9 +5031,6 @@ p.page-break {
 <br /><span class='action'>doctors being paged.</span>
 <br /><br /><span class='character'>DR. BENNETT (CONT'D)</span>
 <br /><span class='dialogue'>Not very exciting, is it?</span>
-<br /><span class='character'>(MORE)</span>
-<p class='page-break'>162.</p>
-<span class='character'>DR. BENNETT (CONT'D) (CONT'D)</span>
 <br /><span class='dialogue'>And I suppose if I had to</span>
 <br /><span class='dialogue'>choose between the true</span>
 <br /><span class='dialogue'>version and an elaborate one</span>
@@ -5100,7 +5057,7 @@ p.page-break {
 <br /><br /><span class='action'>He cracks his neck, crooked from sleeping on it wrong.</span>
 <br /><span class='action'>What woke him up?</span>
 <br /><br /><span class='action'>He looks to his right.  Holds his gaze for a breath.</span>
-<p class='page-break'>163.</p>
+<br /><br /><br />
 <span class='character'>WILL</span>
 <br /><span class='dialogue'>Dad?</span>
 <br /><br /><span class='action'>His father is awake, silently GASPING for breath.  His</span>
@@ -5131,8 +5088,7 @@ p.page-break {
 <br /><span class='dialogue'>Tell me how it happens.</span>
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>How what happens?</span>
-<p class='page-break'>164.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>How I go.</span>
 <br /><br /><span class='action'>ON WILL, realizing...</span>
 <br /><br /><span class='character'>WILL</span>
@@ -5140,7 +5096,8 @@ p.page-break {
 <br /><span class='dialogue'>Eye?</span>
 <br /><br /><span class='action'>Edward nods.  Yes, that's what he was trying to say.</span>
 <br /><br /><span class='action'>A long beat.</span>
-<br /><br /><span class='character'>WILL  (CONT'D)</span>
+<br /><br /><br />
+<span class='character'>WILL  (CONT'D)</span>
 <br /><span class='dialogue'>I don't know that story, Dad.</span>
 <br /><span class='dialogue'>You never told me that one.</span>
 <br /><br /><span class='action'>Will pushes his fingers under his father's heavy hand,</span>
@@ -5160,8 +5117,7 @@ p.page-break {
 <br /><span class='action'>He looks to the nurse call button.  He really wants to</span>
 <br /><span class='action'>press it.</span>
 <br /><br /><span class='action'>ON EDWARD, waiting for Will to begin.</span>
-<p class='page-break'>165.</p>
-<span class='character'>WILL  (CONT'D)</span>
+<br /><br /><span class='character'>WILL  (CONT'D)</span>
 <br /><span class='dialogue'>Okay.  It's morning, and you</span>
 <br /><span class='dialogue'>and I are in the hospital.</span>
 <br /><span class='dialogue'>I'd fallen asleep in the</span>
@@ -5179,7 +5135,8 @@ p.page-break {
 <br /><span class='dialogue'>Dad?</span>
 <br /><br /><span class='action'>We LOOK OVER to find a nimble Edward sitting up in</span>
 <br /><span class='action'>bed, combing his hair.</span>
-<br /><br /><span class='character'>EDWARD</span>
+<br /><br /><br />
+<span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Let's get out of here.</span>
 <br /><br /><span class='character'>WILL (V.O.)</span>
 <br /><span class='dialogue'>Somehow, you're better.</span>
@@ -5189,8 +5146,7 @@ p.page-break {
 <br /><span class='dialogue'>Dad, you're in no condition</span>
 <br /><span class='dialogue'>to...</span>
 <br /><br /><span class='action'>But Edward throws back the covers.</span>
-<p class='page-break'>166.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>There's a fold-up wheelchair</span>
 <br /><span class='dialogue'>in the bathroom.  Wrap a</span>
 <br /><span class='dialogue'>blanket around me.  As soon</span>
@@ -5217,7 +5173,7 @@ p.page-break {
 <br /><span class='action'>catch up with him.</span>
 <br /><br /><span class='action'>The Heavyset Nurse leans out of Edward's hospital</span>
 <br /><span class='action'>room.</span>
-<p class='page-break'>167.</p>
+<br /><br /><br />
 <span class='character'>NURSE</span>
 <br /><span class='dialogue'>Security!  Stop them!</span>
 <br /><br /><span class='action'>DOWN THE HALL</span>
@@ -5242,8 +5198,7 @@ p.page-break {
 <br /><span class='dialogue'>weigh anything.  I can't</span>
 <br /><span class='dialogue'>explain it.</span>
 <br /><br /><span class='action'>Will sets him in the passenger seat.</span>
-<p class='page-break'>168.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='dialogue'>Water.  I need water.</span>
 <br /><br /><span class='action'>Scrambling in back, Will finds a liter of Arrowhead.</span>
 <br /><span class='action'>Hands it off.  Edward unscrews the cap, but instead of</span>
@@ -5254,7 +5209,8 @@ p.page-break {
 <br /><span class='dialogue'>Leave it!  We won't need it.</span>
 <br /><br /><span class='action'>TIRES SMOKE as the car peals out.</span>
 <br /><br /><span class='transition'>BACK TO:</span>
-<br /><br /><br /><span class='scene-heading'>INT.  HOSPITAL ROOM - DAY [REALITY]</span>
+<br /><br /><br />
+<span class='scene-heading'>INT.  HOSPITAL ROOM - DAY [REALITY]</span>
 <br /><br /><span class='action'>TIGHT ON Will, trying to hold back tears as he talks.</span>
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>And we have to take Glenville</span>
@@ -5268,8 +5224,7 @@ p.page-break {
 <br /><br /><span class='transition'>BACK TO:</span>
 <br /><br /><br /><span class='scene-heading'>EXT.  GLENVILLE BLVD. - DAY [STORY VERSION]</span>
 <br /><br /><span class='action'>The Chevy slaloms through the Sunday-morning traffic.</span>
-<p class='page-break'>169.</p>
-<span class='character'>WILL (O.S.)</span>
+<br /><br /><span class='character'>WILL (O.S.)</span>
 <br /><span class='dialogue'>Where are we headed?</span>
 <br /><br /><span class='character'>WILL (V.O.)</span>
 <br /><span class='dialogue'>You say...</span>
@@ -5289,17 +5244,16 @@ p.page-break {
 <br /><br /><span class='character'>WILL (V.O.)</span>
 <br /><span class='dialogue'>As we get closer to the</span>
 <br /><span class='dialogue'>river, we see everybody's</span>
-<br /><span class='dialogue'>already there.  And I mean</span>
-<br /><span class='dialogue'>everybody.</span>
-<br /><br /><span class='action'>Amos Calloway is here with the circus folk, including</span>
+<br /><span class='dialogue'>already there.</span>
+<br /><br /><br />
+<span class='action'>Amos Calloway is here with the circus folk, including</span>
 <br /><span class='action'>Mr. Soggybottom.  We also find Edward's Mother and</span>
 <br /><span class='action'>Father, the Mayor, and many others from along the way.</span>
 <br /><span class='action'>No one has aged a day since we saw them last.</span>
 <br /><br /><span class='action'>While Ping scans the horizon, Jing nuzzles with her</span>
 <br /><span class='action'>boyfriend, Norther Winslow.  It's Ping who first spots</span>
 <br /><span class='action'>the Chevrolet.</span>
-<p class='page-break'>170.</p>
-<span class='character'>PING</span>
+<br /><br /><span class='character'>PING</span>
 <br /><span class='dialogue'>He's here!</span>
 <br /><br /><span class='action'>The crowd CHEERS.  The Ashton marching band PLAYS.</span>
 <br /><span class='action'>Jenny Hill smiles.  So does the Old Woman.</span>
@@ -5323,12 +5277,12 @@ p.page-break {
 <br /><br /><span class='action'>Edward pulls off his shoes, tying the laces together.</span>
 <br /><span class='action'>He hands them to Josephine.  She throws them up at the</span>
 <br /><span class='action'>powerline.  They loop over.  APPLAUSE and CHEERS.</span>
-<p class='page-break'>171.</p>
-<span class='action'>The crowd parts to let Will and Edward get to the</span>
+<br /><br /><span class='action'>The crowd parts to let Will and Edward get to the</span>
 <br /><span class='action'>river.  As he passes, Edward shakes some hands, pats</span>
 <br /><span class='action'>some people on the cheek, and gives others a good poke</span>
 <br /><span class='action'>in the ribs.</span>
-<br /><br /><span class='character'>WILL (V.O.)</span>
+<br /><br /><br />
+<span class='character'>WILL (V.O.)</span>
 <br /><span class='dialogue'>And the strange thing is,</span>
 <br /><span class='dialogue'>there's not a sad face to be</span>
 <br /><span class='dialogue'>found.  Everyone's just so</span>
@@ -5356,8 +5310,7 @@ p.page-break {
 <br /><br /><span class='action'>As the kiss ends, Edward tries to pull off his wedding</span>
 <br /><span class='action'>ring.  But it's stuck.  Finally, he sucks on it,</span>
 <br /><span class='action'>pulling it free with his teeth.</span>
-<p class='page-break'>172.</p>
-<span class='action'>A look to Will, a smile with a glint of gold.  Will</span>
+<br /><br /><span class='action'>A look to Will, a smile with a glint of gold.  Will</span>
 <br /><span class='action'>takes the ring out of his mouth.</span>
 <br /><br /><span class='action'>Edward suddenly drops out of Will's arms with a</span>
 <br /><span class='action'>SPLASH.  For he's no longer a man, but rather</span>
@@ -5370,7 +5323,8 @@ p.page-break {
 <br /><span class='action'>Josephine is back on the shore, along with the entire</span>
 <br /><span class='action'>crowd.</span>
 <br /><br /><span class='action'>MUSIC BUILDS to a climax, then...</span>
-<br /><br /><span class='action'>Down the river, a GIANT FISH suddenly jumps out of the</span>
+<br /><br /><br />
+<span class='action'>Down the river, a GIANT FISH suddenly jumps out of the</span>
 <br /><span class='action'>water, cutting a beautiful arc across the sunset.  It</span>
 <br /><span class='action'>then dives back under with a SPLASH.</span>
 <br /><br /><span class='transition'>CROSSFADE</span>
@@ -5383,8 +5337,7 @@ p.page-break {
 <br /><span class='parenthetical'>(he smiles)</span>
 <br /><span class='dialogue'>And that's the way it</span>
 <br /><span class='dialogue'>happens.</span>
-<p class='page-break'>173.</p>
-<span class='character'>EDWARD</span>
+<br /><br /><span class='character'>EDWARD</span>
 <br /><span class='parenthetical'>(a whisper)</span>
 <br /><span class='dialogue'>Yes.  Exactly.</span>
 <br /><br /><span class='action'>Edward smiles, proud of both of them.   His eyes are</span>
@@ -5409,7 +5362,7 @@ p.page-break {
 <br /><br /><br /><span class='scene-heading'>INT.  HOSPITAL RECEPTION - DAY</span>
 <br /><br /><span class='action'>Will waits at reception as Sandra and Josephine come</span>
 <br /><span class='action'>off the elevator.</span>
-<p class='page-break'>174.</p>
+<br /><br /><br />
 <span class='scene-heading'>INT.  GUEST ROOM - DAY</span>
 <br /><br /><span class='action'>Josephine opens the curtains, letting white sunlight</span>
 <br /><span class='action'>in.  She strips the bed.</span>
@@ -5437,14 +5390,14 @@ p.page-break {
 <br /><span class='action'>barely visible over the door.  He shuts it to reveal</span>
 <br /><span class='action'>himself to be 70.</span>
 <br /><br /><span class='action'>It's Amos Calloway.  Will doesn't recognize him.</span>
-<p class='page-break'>175.</p>
-<span class='action'>The Driver climbs out, a size 15 foot on the gravel.</span>
+<br /><br /><span class='action'>The Driver climbs out, a size 15 foot on the gravel.</span>
 <br /><span class='action'>We TILT UP to see this man is huge.</span>
 <br /><br /><span class='action'>This man is KARL, now 55.  He's not 12 feet tall, but</span>
 <br /><span class='action'>at least six-eight.</span>
 <br /><br /><span class='action'>CLOSE ON Will, bewildered to see that this man really</span>
 <br /><span class='action'>exists.</span>
-<br /><br /><br /><span class='scene-heading'>EXT.  CEMETERY / GRAVESIDE - DAY</span>
+<br /><br /><br />
+<span class='scene-heading'>EXT.  CEMETERY / GRAVESIDE - DAY</span>
 <br /><br /><span class='action'>As the service gets ready to begin, Will guides his</span>
 <br /><span class='action'>mother to a seat near the grave.</span>
 <br /><br /><span class='action'>Sitting beside Will, Josephine spots a stunning ASIAN</span>
@@ -5465,8 +5418,7 @@ p.page-break {
 <br /><span class='action'>they're telling stories.  They're telling Edward's</span>
 <br /><span class='action'>stories.</span>
 <br /><br /><span class='action'>We find Will watching them.</span>
-<p class='page-break'>176.</p>
-<span class='character'>WILL (V.O.)</span>
+<br /><br /><span class='character'>WILL (V.O.)</span>
 <br /><span class='dialogue'>Have you ever heard a joke so</span>
 <br /><span class='dialogue'>many times you've forgotten</span>
 <br /><span class='dialogue'>why it's funny?  But then you</span>
@@ -5483,7 +5435,8 @@ p.page-break {
 <br /><br /><span class='action'>Will sits on the porch with Sandra and Josephine,</span>
 <br /><span class='action'>watching his SON play in the pool with two NEIGHBOR</span>
 <br /><span class='action'>KIDS.</span>
-<br /><br /><span class='character'>SON</span>
+<br /><br /><br />
+<span class='character'>SON</span>
 <br /><span class='parenthetical'>(to the other</span>
 <br /><span class='parenthetical'>boys)</span>
 <br /><span class='dialogue'>So he said he'd fight the</span>
@@ -5496,8 +5449,7 @@ p.page-break {
 <br /><span class='dialogue'>Dad, that's right, isn't it?</span>
 <br /><br /><span class='character'>WILL</span>
 <br /><span class='dialogue'>Something like that.</span>
-<p class='page-break'>177.</p>
-<span class='character'>SON</span>
+<br /><br /><span class='character'>SON</span>
 <br /><span class='dialogue'>See.  So he was a giant but</span>
 <br /><span class='dialogue'>my grampa was going to fight</span>
 <br /><span class='dialogue'>him because he wasn't afraid</span>
@@ -5521,6 +5473,6 @@ p.page-break {
 <br /><span class='dialogue'>immortal.</span>
 <br /><br /><span class='action'>The fish passes us with a SPLASH.</span>
 <br /><br /><span class='transition'>CUT TO BLACK.</span>
-<br /><br /><span class='action'><strong><u>THE END</strong></u></span>
-</div></body>
+<br /><br /><span class='action'><strong><u>THE END</u></strong></span>
+<br /></div></body>
 </html>
