@@ -8,6 +8,8 @@ import sys
 import os
 import copy
 
+# *** TODO: Split handle multi-line formatting character codes
+
 CHAR_BOLD = u"\u2BD2"
 CHAR_BOLDITAL = u"\u2BD3"
 CHAR_BOLDITALUNDER = u"\u2BD4"
@@ -15,6 +17,7 @@ CHAR_ITAL = u"\u2BD5"
 CHAR_ITALUNDER = u"\u2BD6"
 CHAR_BOLDUNDER = u"\u2BD7"
 CHAR_UNDER = u"\u2BD8"
+CHAR_COMMENT = u"\u2BD9"
 
 
 class Font:
@@ -41,7 +44,7 @@ class Page:
 
 
 def inchesForElement(elm):
-    if elm.elmType == "Action" or elm.elmType == "General" or elm.elmType == "Scene Heading":
+    if elm.elmType == "Action" or elm.elmType == "General" or elm.elmType == "Scene Heading" or elm.elmType == "Comment":
         return 6
     if elm.elmType == "Character" or elm.elmType == "Dialogue":
         return 3.3
@@ -54,7 +57,7 @@ def inchesForElement(elm):
     return 0
 
 def leftMarginForElement(elm):
-    if elm.elmType == "Action" or elm.elmType == "General" or elm.elmType == "Scene Heading":
+    if elm.elmType == "Action" or elm.elmType == "General" or elm.elmType == "Scene Heading" or elm.elmType == "Comment":
         return 1.5
     if elm.elmType == "Character":
         return 4.2
@@ -72,14 +75,14 @@ def rightMarginForElement(elm):
     return 0
 
 def lineBeforeElement(elm, font):
-    s = set(["Action", "General", "Character", "Transition"])
+    s = set(["Action", "General", "Character", "Transition", "Comment"])
     if elm.elmType == "Scene Heading":
         return 2
     if elm.elmType in s:
         return 1
     return 0
 
-def preProcessElmText(elm):
+def preProcessElmText(elm, enableComments):
     text = elm.elmText
 
     if elm.elmType == "Character" and elm.dualDlg:
@@ -105,7 +108,13 @@ def preProcessElmText(elm):
     text = re.sub(fparser.PATTERN_UNDERLINE, CHAR_UNDER + r"\2/" + CHAR_UNDER, text)
 
     # Strip comments [[...]]
-    text = re.sub("\\[{2}(.*?)\\]{2}", "", text)
+    if enableComments:
+        text = re.sub("\\[{2}(.*?)\\]{2}", CHAR_COMMENT + r"{[[ \1 ]]}/" + CHAR_COMMENT, text)
+    else:
+        text = re.sub("\\[{2}(.*?)\\]{2}", "", text)
+
+    if elm.elmType == "Comment":
+        text = "{[[ "+text+" ]]}"
 
     return text
 
@@ -127,16 +136,19 @@ def pushElement(retln, elm, font):
 
 
 
-def splitScriptText(parse, page, font):
+def splitScriptText(parse, page, font, enableComments):
 
     for ie in range(0, len(parse.elms)):
-        parse.elms[ie].elmText = preProcessElmText(parse.elms[ie])
+        parse.elms[ie].elmText = preProcessElmText(parse.elms[ie], enableComments)
 
     retpgs = []
     retln = []
     pi = 0
 
-    ignoringTypes = set(["Boneyard", "Comment", "Synopsis", "Section Heading"])
+    ignoringTypes = set(["Boneyard", "Synopsis", "Section Heading"])
+    if not enableComments:
+        ignoringTypes.add("Comment")
+
     dualDialogueCharacterCount = 0
 
     ypos = 0

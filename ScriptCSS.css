@@ -85,6 +85,11 @@ body > p:first-child {
 	margin-left: 2.1in;
 }
 
+.comment {
+	text-decoration: underline;
+	background-color: #FAFAD2;
+}
+
 .lyrics {
 	margin-left: 1.7in;
 	font-style: italic;

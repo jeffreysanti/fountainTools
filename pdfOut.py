@@ -105,6 +105,8 @@ def processPDFLine(canvas, type, text, lineno, page, font, width, height):
     text = re.sub("("+CHAR_ITAL+")([^/]+)(/"+CHAR_ITAL+")", r"<font name=CourierPrimeI size=12>\2</font>", text)
     text = re.sub("("+CHAR_UNDER+")([^/]+)(/"+CHAR_UNDER+")", r"<u>\2</u>", text)
 
+    text = re.sub("("+CHAR_COMMENT+")([^/]+)(/"+CHAR_COMMENT+")", r"</para><para bg=#FAFAD2><u>\2</u></para><para>", text)
+
     elm = fparser.fromTypeTextToElm(type, text)
     marginLeft = leftMarginForElement(elm)
     marginRight = rightMarginForElement(elm)
@@ -114,6 +116,8 @@ def processPDFLine(canvas, type, text, lineno, page, font, width, height):
         text = "<font name=CourierPrimeB size=12>" + text + "</font>"
     if elm.elmType == "Lyrics":
         text = "<font name=CourierPrimeI size=12>" + text + "</font>"
+    if elm.elmType == "Comment":
+        text = "</para><para bg=#FAFAD2><u>" + text + "</u></para><para>"
 
     if elm.elmType == "Transition": # right align
         para = Paragraph(text, pstyleRight)
@@ -128,14 +132,14 @@ def processPDFLine(canvas, type, text, lineno, page, font, width, height):
 
 
 
-def pdfout(parse, outfl):
+def pdfout(parse, outfl, enableComments):
     c = Canvas(outfl, pagesize=letter)
     width, height = letter
     c.setFont('CourierPrime', 12)
 
     page = Page()
     font = Font()
-    pgs = splitScriptText(parse, page, font)
+    pgs = splitScriptText(parse, page, font, enableComments)
 
     if len(parse.titlePage) > 0:
         pdfTitlePage(c, parse, page, font)
@@ -167,7 +171,10 @@ def pdfout(parse, outfl):
     c.save()
 
 
+enableComments = False
+if "comments" in sys.argv:
+    enableComments = True
 
 s = sys.argv[1]
 parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
-html = pdfout(parse, s+".pdf")
+html = pdfout(parse, s+".pdf", enableComments)

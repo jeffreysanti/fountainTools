@@ -64,6 +64,8 @@ def processHTMLLine(type, text):
     text = re.sub("("+CHAR_ITAL+")([^/]+)(/"+CHAR_ITAL+")", r"<em>\2</em>", text)
     text = re.sub("("+CHAR_UNDER+")([^/]+)(/"+CHAR_UNDER+")", r"<u>\2</u>", text)
 
+    text = re.sub("("+CHAR_COMMENT+")([^/]+)(/"+CHAR_COMMENT+")", r'<u><span style="background-color:#FAFAD2;">\2</span></u>', text)
+
     html = ""
     if text != "":
         html = html + "<span class='"
@@ -74,14 +76,14 @@ def processHTMLLine(type, text):
 
     return html
 
-def htmlBody(parse):
+def htmlBody(parse, enableComments):
     html = ""
     page = Page()
     font = Font()
     page.textLines = 43
     font.charsPerInch = 9
 
-    pgs = splitScriptText(parse, page, font)
+    pgs = splitScriptText(parse, page, font, enableComments)
 
     if len(parse.titlePage) > 0:
         html = html + htmlTitlePage(parse)
@@ -103,7 +105,7 @@ def htmlBody(parse):
 
 
 
-def htmlout(parse):
+def htmlout(parse, enableComments):
 
     cssDir = os.path.dirname(os.path.realpath(sys.argv[0])) + "/"
 
@@ -116,7 +118,7 @@ def htmlout(parse):
     htmlText = htmlText + "</style>\n"
     htmlText = htmlText + "</head>\n"
     htmlText = htmlText + "<body><div width='100%'>\n"
-    htmlText = htmlText + htmlBody(parse)
+    htmlText = htmlText + htmlBody(parse, enableComments)
     htmlText = htmlText + "</div></body>\n"
     htmlText = htmlText + "</html>"
     #print(htmlText)
@@ -124,8 +126,13 @@ def htmlout(parse):
 
 
 s = sys.argv[1]
+
+enableComments = False
+if "comments" in sys.argv:
+    enableComments = True
+
 parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
-html = htmlout(parse)
+html = htmlout(parse, enableComments)
 
 fl = open(s+".html", "w")
 fl.write(html)
