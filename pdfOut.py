@@ -112,6 +112,8 @@ def processPDFLine(canvas, type, text, lineno, page, font, width, height):
     # Styling Additions
     if elm.elmType == "Scene Heading":
         text = "<font name=CourierPrimeB size=12>" + text + "</font>"
+    if elm.elmType == "Lyrics":
+        text = "<font name=CourierPrimeI size=12>" + text + "</font>"
 
     if elm.elmType == "Transition": # right align
         para = Paragraph(text, pstyleRight)

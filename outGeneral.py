@@ -45,6 +45,8 @@ def inchesForElement(elm):
         return 6
     if elm.elmType == "Character" or elm.elmType == "Dialogue":
         return 3.3
+    if elm.elmType == "Lyrics":
+        return 4.3
     if elm.elmType == "Parenthetical":
         return 2
     if elm.elmType == "Transition":
@@ -58,6 +60,8 @@ def leftMarginForElement(elm):
         return 4.2
     if elm.elmType == "Dialogue":
         return 2.9
+    if elm.elmType == "Lyrics":
+        return 3.2
     if elm.elmType == "Parenthetical":
         return 3.6
     return 0
@@ -132,7 +136,6 @@ def splitScriptText(parse, page, font):
     retln = []
     pi = 0
 
-    dialogueTypes = set(["Character", "Dialogue", "Parenthetical"]);
     ignoringTypes = set(["Boneyard", "Comment", "Synopsis", "Section Heading"])
     dualDialogueCharacterCount = 0
 
@@ -187,7 +190,7 @@ def splitScriptText(parse, page, font):
             elmno = elmno + 1
 
             # Absord entire cue's contents:
-            s = set(["Dialogue", "Parenthetical"])
+            s = set(["Dialogue", "Parenthetical","Lyrics"])
             j = ie
             enext = e
             queue = []
@@ -245,7 +248,11 @@ def splitScriptText(parse, page, font):
                             usableLines = usableLines - 1
 
                     # Split by Sentence
-                    sentences = [m.group(1) for m in re.finditer("(.+?[\\.\\?\\!]+\\s*)", de.elmText) if m]
+                    sentences = [m.group(1) for m in re.finditer("(.+?[\\.\\?\\!]+\\s*)", de.elmText+".") if m]
+                    if len(sentences) > 0:
+                        sentences[len(sentences) -1] = sentences[len(sentences) -1][:-1] # remove "."
+                        if sentences[len(sentences) -1] == "":
+                            sentences = sentences[:-1]
                     maxSentences = len(sentences)
 
                     # Count Sentences We can Fit
@@ -277,6 +284,7 @@ def splitScriptText(parse, page, font):
 
                     # Add Dialog:
                     preBreakDialogue = fparser.newElmDialogue(dialogueBeforeBreak)
+                    preBreakDialogue.elmType = de.elmType
                     pushElement(retln, preBreakDialogue, font)
                     ypos = ypos + lineHeightForElm(preBreakDialogue, font)
                     ypos = ypos + lineBeforeElement(preBreakDialogue, font)
@@ -304,6 +312,9 @@ def splitScriptText(parse, page, font):
 
         # All other types:
         spaceBefore = lineBeforeElement(e, font)
+        if e.elmType == "Lyrics" and ie > 0 and elms[ie-1].elmType != "Lyrics":
+            spaceBefore = 1
+
         elmHeight = lineHeightForElm(e, font)
         if elmHeight <= 0:
             continue
@@ -317,6 +328,8 @@ def splitScriptText(parse, page, font):
             enext = elms[ie+1]
             nextHeight = lineHeightForElm(enext, font)
             nextHeight = nextHeight + lineBeforeElement(enext, font)
+            if enext.elmType == "Lyrics":
+                nextHeight = nextHeight + 1
 
             if blockHeight + ypos + nextHeight >= page.usableHeight(font) and nextHeight >= 1:
                 retpgs.append(retln)
@@ -333,6 +346,9 @@ def splitScriptText(parse, page, font):
 
         # Recalculate space required - in case "Scene Heading" changed it
         spaceBefore = lineBeforeElement(e, font)
+        if e.elmType == "Lyrics" and ie > 0 and elms[ie-1].elmType != "Lyrics":
+            spaceBefore = 1
+
         elmHeight = lineHeightForElm(e, font)
         if elmHeight <= 0:
             continue
@@ -350,6 +366,9 @@ def splitScriptText(parse, page, font):
 
         # Recalculate space required - in case page changed
         spaceBefore = lineBeforeElement(e, font)
+        if e.elmType == "Lyrics" and ie > 0 and elms[ie-1].elmType != "Lyrics":
+            spaceBefore = 1
+
         elmHeight = lineHeightForElm(e, font)
         if elmHeight <= 0:
             continue
