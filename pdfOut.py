@@ -37,6 +37,64 @@ pstyleRight.fontSize = 12
 pstyleRight.fontName = "CourierPrime"
 
 
+def drawMultiString(canvas, x, y, s):
+    for ln in s.split('\n'):
+        canvas.drawString(x, y, ln)
+        y -= canvas._leading
+    return y
+def drawMultiStringRight(canvas, x, y, s):
+    for ln in s.split('\n'):
+        canvas.drawRightString(x, y, ln)
+        y -= canvas._leading
+    return y
+def drawMultiStringCentred(canvas, x, y, s):
+    for ln in s.split('\n'):
+        canvas.drawCentredString(x, y, ln)
+        y -= canvas._leading
+    return y
+
+def pdfTitlePage(canvas, parse, page, font):
+    ypos = 9*inch
+    if "title" in parse.titlePage:
+        ypos = drawMultiStringCentred(canvas, page.width*0.5*inch, ypos, "\n".join(parse.titlePage["title"]))
+    else:
+        ypos = drawMultiStringCentred(canvas, page.width*0.5*inch, ypos, "Untitled")
+    ypos = ypos - 2 * font.lineHeight*font.heightEM
+
+    if "credit" in parse.titlePage or "authors" in parse.titlePage:
+        if "credit" in parse.titlePage:
+            ypos = drawMultiStringCentred(canvas, page.width*0.5*inch, ypos, "\n".join(parse.titlePage["credit"]))
+        else:
+            ypos = drawMultiStringCentred(canvas, page.width*0.5*inch, ypos, "written by")
+        ypos = ypos - 0.5 * font.lineHeight*font.heightEM
+        if "authors" in parse.titlePage:
+            ypos = drawMultiStringCentred(canvas, page.width*0.5*inch, ypos, "\n".join(parse.titlePage["authors"]))
+        else:
+            ypos = drawMultiStringCentred(canvas, page.width*0.5*inch, ypos, "\n".join(parse.titlePage["Anonymous"]))
+        ypos = ypos - 2 * font.lineHeight*font.heightEM
+
+    if "source" in parse.titlePage:
+        ypos = drawMultiStringCentred(canvas, page.width*0.5*inch, ypos, "\n".join(parse.titlePage["source"]))
+        ypos = ypos - 2 * font.lineHeight*font.heightEM
+
+    if "draft date" in parse.titlePage:
+        ypos = drawMultiStringCentred(canvas, page.width*0.5*inch, ypos, "\n".join(parse.titlePage["draft date"]))
+        ypos = ypos - 2 * font.lineHeight*font.heightEM
+
+
+    if "copyright" in parse.titlePage:
+        ypos = ypos - 3 * font.lineHeight*font.heightEM
+        ypos = drawMultiString(canvas, page.marginLeft*inch, ypos, "\n".join(parse.titlePage["copyright"]))
+
+    contactPos = 0
+    if "contact" in parse.titlePage:
+        contactPos = page.marginBottom*inch + font.lineHeight*font.heightEM * len(parse.titlePage["contact"])
+        drawMultiString(canvas, page.marginLeft*inch, contactPos, "\n".join(parse.titlePage["contact"]))
+
+    if "notes" in parse.titlePage:
+        y = contactPos + (len(parse.titlePage["notes"])+2)*font.lineHeight*font.heightEM
+        drawMultiStringRight(canvas, (page.width-page.marginRight) * inch, y, "\n".join(parse.titlePage["notes"]))
+
 def processPDFLine(canvas, type, text, lineno, page, font, width, height):
 
     text = re.sub("("+CHAR_BOLDITALUNDER+")([^/]+)(/"+CHAR_BOLDITALUNDER+")", r"<font name=CourierPrimeBI size=12><u>\2</u></font>", text)
@@ -71,20 +129,25 @@ def processPDFLine(canvas, type, text, lineno, page, font, width, height):
 def pdfout(parse, outfl):
     c = Canvas(outfl, pagesize=letter)
     width, height = letter
-    print(str(width))
     c.setFont('CourierPrime', 12)
-
-    if len(parse.titlePage) > 0:
-        # TODO: Title Page
-        c.showPage()
 
     page = Page()
     font = Font()
     pgs = splitScriptText(parse, page, font)
 
+    if len(parse.titlePage) > 0:
+        pdfTitlePage(c, parse, page, font)
+        c.showPage()
+
+    title = "UNTITLED"
+    if "title" in parse.titlePage:
+        title = " ".join(parse.titlePage["title"]).upper()
+
     for pgno in range(0, len(pgs)):
+        c.setFont('CourierPrime', 12)
         if pgno > 0:
             c.drawRightString((page.width - page.marginRight) * inch, height - 0.5*inch, str(pgno+1)+".")
+            c.drawString(page.marginLeft*inch, height - 0.5*inch, title)
 
         lineno = 0
         for e in pgs[pgno]:
@@ -99,8 +162,6 @@ def pdfout(parse, outfl):
 
 
 
-
-    c.showPage()
     c.save()
 
 
