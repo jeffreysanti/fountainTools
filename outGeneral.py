@@ -29,22 +29,34 @@ class Font:
         self.charsPerInch = 10
 
 class Page:
-    def __init__(self):
-        self.name = "Letter"
-        self.width = 8.5
-        self.height = 11
-        self.marginLeft = 1.5
-        self.marginRight = 1
-        self.marginTop = 0.7
-        self.marginBottom = 0.7
+    def __init__(self, name):
+        self.name = name
+        if self.name == "A4" or self.name == "a4":
+            self.name = "A4"
+            self.width = 8.3
+            self.height = 11.7
+            self.marginLeft = 1.5
+            self.marginRight = 1
+            self.marginTop = 0.7
+            self.marginBottom = 0.7
+        else:
+            self.name = "Letter"
+            self.width = 8.5
+            self.height = 11
+            self.marginLeft = 1.5
+            self.marginRight = 1
+            self.marginTop = 0.7
+            self.marginBottom = 0.7
 
     def usableHeight(self, font):
         m = math.floor((self.height - self.marginTop - self.marginBottom)*72 / (font.lineHeight * font.heightEM))
         return m
 
 
-def inchesForElement(elm):
+def inchesForElement(elm, page):
     if elm.elmType == "Action" or elm.elmType == "General" or elm.elmType == "Scene Heading" or elm.elmType == "Comment":
+        if page.name == "A4":
+            return 5.8
         return 6
     if elm.elmType == "Character" or elm.elmType == "Dialogue":
         return 3.3
@@ -56,7 +68,7 @@ def inchesForElement(elm):
         return 1.5
     return 0
 
-def leftMarginForElement(elm):
+def leftMarginForElement(elm, page):
     if elm.elmType == "Action" or elm.elmType == "General" or elm.elmType == "Scene Heading" or elm.elmType == "Comment":
         return 1.5
     if elm.elmType == "Character":
@@ -69,7 +81,7 @@ def leftMarginForElement(elm):
         return 3.6
     return 0
 
-def rightMarginForElement(elm):
+def rightMarginForElement(elm, page):
     if elm.elmType == "Transition":
         return 1.5
     return 0
@@ -118,15 +130,15 @@ def preProcessElmText(elm, enableComments):
 
     return text
 
-def lineHeightForElm(elm, font):
-    maxchars = math.floor(inchesForElement(elm) * font.charsPerInch)
+def lineHeightForElm(elm, font, page):
+    maxchars = math.floor(inchesForElement(elm, page) * font.charsPerInch)
     if maxchars <= 0:
         return 0
     s = textwrap.wrap(elm.elmText, maxchars)
     return len(s)
 
-def pushElement(retln, elm, font):
-    maxchars = math.floor(inchesForElement(elm) * font.charsPerInch)
+def pushElement(retln, elm, font, page):
+    maxchars = math.floor(inchesForElement(elm, page) * font.charsPerInch)
     if maxchars <= 0:
         return
     s = textwrap.wrap(elm.elmText, maxchars)
@@ -175,11 +187,11 @@ def splitScriptText(parse, page, font, enableComments):
 
         if e.elmType == "Character":
             spaceBefore = lineBeforeElement(e, font)
-            elmHeight = lineHeightForElm(e, font)
+            elmHeight = lineHeightForElm(e, font, page)
 
             # Initial character tag
             spaceBefore = lineBeforeElement(e, font)
-            elmHeight = lineHeightForElm(e, font)
+            elmHeight = lineHeightForElm(e, font, page)
             blockHeight = elmHeight
             if elmno > 0: # Need spacing first
                 blockHeight = blockHeight + spaceBefore
@@ -197,7 +209,7 @@ def splitScriptText(parse, page, font, enableComments):
             if elmno > 0:
                 for z in range(0, spaceBefore):
                     retln.append(["/", ""])
-            pushElement(retln, e, font)
+            pushElement(retln, e, font, page)
             ypos = ypos + blockHeight
             elmno = elmno + 1
 
@@ -218,12 +230,12 @@ def splitScriptText(parse, page, font, enableComments):
                 de = queue[dei]
                 spaceAvail = page.usableHeight(font) - ypos
 
-                height_needed = lineHeightForElm(de, font)
+                height_needed = lineHeightForElm(de, font, page)
                 if elmno > 0:
                     height_needed = height_needed + lineBeforeElement(de, font)
 
                 if spaceAvail < 3 or (spaceAvail < 3+height_needed and de.elmType == "Parenthetical"):
-                    pushElement(retln, fparser.newElmCharacter("(MORE)"), font)
+                    pushElement(retln, fparser.newElmCharacter("(MORE)"), font, page)
 
                     # new page
                     retpgs.append(retln)
@@ -235,12 +247,12 @@ def splitScriptText(parse, page, font, enableComments):
                     # (CONT'D)
                     characterCueElm = copy.copy(queue[0])
                     characterCueElm.elmText = characterCueElm.elmText + " (CONT'D)"
-                    ypos = lineHeightForElm(characterCueElm, font)
-                    pushElement(retln, characterCueElm, font)
+                    ypos = lineHeightForElm(characterCueElm, font, page)
+                    pushElement(retln, characterCueElm, font, page)
                     elmno = 1
 
                 spaceAvail = page.usableHeight(font) - ypos
-                height_needed = lineHeightForElm(de, font)
+                height_needed = lineHeightForElm(de, font, page)
                 if elmno > 0:
                     height_needed = height_needed + lineBeforeElement(de, font)
 
@@ -248,7 +260,7 @@ def splitScriptText(parse, page, font, enableComments):
                     if elmno > 0:
                         for z in range(0, lineBeforeElement(de, font)):
                             retln.append(["/", ""])
-                    pushElement(retln, de, font)
+                    pushElement(retln, de, font, page)
                     ypos = ypos + height_needed
                     elmno = elmno + 1
                 else:
@@ -277,7 +289,7 @@ def splitScriptText(parse, page, font, enableComments):
                         tmpElm = fparser.FElement()
                         tmpElm.elmText = text
                         tmpElm.elmType = de.elmType
-                        dialogueHeight = lineHeightForElm(tmpElm, font)
+                        dialogueHeight = lineHeightForElm(tmpElm, font, page)
                         dialogueHeight = dialogueHeight + lineBeforeElement(fparser.newElmDialogue(text), font)
 
                         if dialogueHeight < usableLines:
@@ -297,12 +309,12 @@ def splitScriptText(parse, page, font, enableComments):
                     # Add Dialog:
                     preBreakDialogue = fparser.newElmDialogue(dialogueBeforeBreak)
                     preBreakDialogue.elmType = de.elmType
-                    pushElement(retln, preBreakDialogue, font)
-                    ypos = ypos + lineHeightForElm(preBreakDialogue, font)
+                    pushElement(retln, preBreakDialogue, font, page)
+                    ypos = ypos + lineHeightForElm(preBreakDialogue, font, page)
                     ypos = ypos + lineBeforeElement(preBreakDialogue, font)
 
                     if queue[dei].elmText != "": # Need to continue this block
-                        pushElement(retln, fparser.newElmCharacter("(MORE)"), font)
+                        pushElement(retln, fparser.newElmCharacter("(MORE)"), font, page)
 
                         # new page
                         retpgs.append(retln)
@@ -314,8 +326,8 @@ def splitScriptText(parse, page, font, enableComments):
                         # (CONT'D)
                         characterCueElm = copy.copy(queue[0])
                         characterCueElm.elmText = characterCueElm.elmText + " (CONT'D)"
-                        ypos = lineHeightForElm(characterCueElm, font)
-                        pushElement(retln, characterCueElm, font)
+                        ypos = lineHeightForElm(characterCueElm, font, page)
+                        pushElement(retln, characterCueElm, font, page)
                         elmno = 1
 
                         dei = dei - 1
@@ -327,7 +339,7 @@ def splitScriptText(parse, page, font, enableComments):
         if e.elmType == "Lyrics" and ie > 0 and elms[ie-1].elmType != "Lyrics":
             spaceBefore = 1
 
-        elmHeight = lineHeightForElm(e, font)
+        elmHeight = lineHeightForElm(e, font, page)
         if elmHeight <= 0:
             continue
         blockHeight = elmHeight
@@ -338,7 +350,7 @@ def splitScriptText(parse, page, font, enableComments):
         # Don't want scene heading last entry on page
         if e.elmType == "Scene Heading" and ie+1 < len(elms):
             enext = elms[ie+1]
-            nextHeight = lineHeightForElm(enext, font)
+            nextHeight = lineHeightForElm(enext, font, page)
             nextHeight = nextHeight + lineBeforeElement(enext, font)
             if enext.elmType == "Lyrics":
                 nextHeight = nextHeight + 1
@@ -361,7 +373,7 @@ def splitScriptText(parse, page, font, enableComments):
         if e.elmType == "Lyrics" and ie > 0 and elms[ie-1].elmType != "Lyrics":
             spaceBefore = 1
 
-        elmHeight = lineHeightForElm(e, font)
+        elmHeight = lineHeightForElm(e, font, page)
         if elmHeight <= 0:
             continue
         blockHeight = elmHeight
@@ -381,7 +393,7 @@ def splitScriptText(parse, page, font, enableComments):
         if e.elmType == "Lyrics" and ie > 0 and elms[ie-1].elmType != "Lyrics":
             spaceBefore = 1
 
-        elmHeight = lineHeightForElm(e, font)
+        elmHeight = lineHeightForElm(e, font, page)
         if elmHeight <= 0:
             continue
         blockHeight = elmHeight
@@ -394,7 +406,7 @@ def splitScriptText(parse, page, font, enableComments):
                 retln.append(["/", ""])
 
         # Now -- The Element
-        pushElement(retln, e, font)
+        pushElement(retln, e, font, page)
         ypos = ypos + blockHeight
         elmno = elmno + 1
 

@@ -78,7 +78,7 @@ def processHTMLLine(type, text):
 
 def htmlBody(parse, enableComments):
     html = ""
-    page = Page()
+    page = Page("letter")
     font = Font()
     page.textLines = 43
     font.charsPerInch = 9

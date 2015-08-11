@@ -2,6 +2,7 @@
 
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import A4
 import fparser
 from outGeneral import *
 from reportlab.pdfbase import pdfmetrics
@@ -108,8 +109,8 @@ def processPDFLine(canvas, type, text, lineno, page, font, width, height):
     text = re.sub("("+CHAR_COMMENT+")([^/]+)(/"+CHAR_COMMENT+")", r"</para><para bg=#FAFAD2><u>\2</u></para><para>", text)
 
     elm = fparser.fromTypeTextToElm(type, text)
-    marginLeft = leftMarginForElement(elm)
-    marginRight = rightMarginForElement(elm)
+    marginLeft = leftMarginForElement(elm, page)
+    marginRight = rightMarginForElement(elm, page)
 
     # Styling Additions
     if elm.elmType == "Scene Heading":
@@ -132,13 +133,16 @@ def processPDFLine(canvas, type, text, lineno, page, font, width, height):
 
 
 
-def pdfout(parse, outfl, enableComments):
-    c = Canvas(outfl, pagesize=letter)
-    width, height = letter
+def pdfout(parse, outfl, enableComments, font, page):
+    if page.name == "A4":
+        c = Canvas(outfl, pagesize=A4)
+        width, height = A4
+    else:
+        c = Canvas(outfl, pagesize=letter)
+        width, height = letter
+
     c.setFont('CourierPrime', 12)
 
-    page = Page()
-    font = Font()
     pgs = splitScriptText(parse, page, font, enableComments)
 
     if len(parse.titlePage) > 0:
@@ -160,10 +164,6 @@ def pdfout(parse, outfl, enableComments):
             processPDFLine(c, e[0], e[1], lineno, page, font, width, height)
             lineno = lineno + 1
 
-        # Strip off last <br />
-        #if len(pgs[pgno]) > 0:
-        #    html = html[:-6]
-
         c.showPage()
 
 
@@ -175,6 +175,13 @@ enableComments = False
 if "comments" in sys.argv:
     enableComments = True
 
+if "A4" in sys.argv or "a4" in sys.argv:
+    page = Page("A4")
+else:
+    page = Page("letter")
+
+font = Font()
+
 s = sys.argv[1]
 parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
-html = pdfout(parse, s+".pdf", enableComments)
+html = pdfout(parse, s+".pdf", enableComments, font, page)
