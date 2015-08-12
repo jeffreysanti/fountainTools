@@ -37,7 +37,7 @@ class CharacterCard:
             self.osLines = self.osLines + 1
 
 
-def characterCards(elms):
+def characterCards(elms, prefix):
     char = ""
     vo = False
     os = False
@@ -69,7 +69,7 @@ def characterCards(elms):
                 chars[char].addLine(e.elmText, vo, os)
 
     for k in chars:
-        fl = open("char."+chars[k].name+".txt", 'w')
+        fl = open(prefix+"char."+chars[k].name+".txt", 'w')
         fl.write(chars[k].name + "\n")
         fl.write("WORDS: "+str(chars[k].words) + "\n")
         fl.write("WORDS (V.O.): "+str(chars[k].voWords) + "\n")
@@ -88,6 +88,7 @@ def characterCards(elms):
 
         fl.close()
 
-s = sys.argv[1]
-parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
-characterCards(parse.elms)
+if __name__ == '__main__':
+    s = sys.argv[1]
+    parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
+    characterCards(parse.elms, "")

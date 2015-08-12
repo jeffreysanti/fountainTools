@@ -36,10 +36,12 @@ def semanticLineFeed(s):
 
     return final
 
-s = sys.argv[1]
-txt = open(s, "r", encoding="utf-8").read()
-txt = semanticLineFeed(txt)
 
-fl = open(s+".slf", "w")
-fl.write(txt)
-fl.close()
+if __name__ == '__main__':
+    s = sys.argv[1]
+    txt = open(s, "r", encoding="utf-8").read()
+    txt = semanticLineFeed(txt)
+
+    fl = open(s+".slf", "w")
+    fl.write(txt)
+    fl.close()

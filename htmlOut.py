@@ -125,17 +125,16 @@ def htmlout(parse, enableComments):
     return htmlText
 
 
-s = sys.argv[1]
+if __name__ == '__main__':
+    s = sys.argv[1]
 
-enableComments = False
-if "comments" in sys.argv:
-    enableComments = True
+    enableComments = False
+    if "comments" in sys.argv:
+        enableComments = True
 
-parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
-html = htmlout(parse, enableComments)
+    parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
+    html = htmlout(parse, enableComments)
 
-fl = open(s+".html", "w")
-fl.write(html)
-fl.close()
-
-#characterCards(parse.elms)
+    fl = open(s+".html", "w")
+    fl.write(html)
+    fl.close()

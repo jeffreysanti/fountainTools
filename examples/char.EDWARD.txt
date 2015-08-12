@@ -1,6 +1,6 @@
 EDWARD
-WORDS: 4708
-WORDS (V.O.): 1335
+WORDS: 4711
+WORDS (V.O.): 1338
 WORDS (O.S.): 13
 LINES: 307
 LINES (V.O.): 50
@@ -8,10 +8,10 @@ LINES (O.S.): 1
 
 
 V.O.
-There are some fish that cannot be caught.  It's not that they're faster or stronger than other fish.  They're just touched by something extra.  Call it luck.  Call it grace.  One such fish was The Beast.
+There are some fish that cannot be caught.  It's not that they're faster or stronger than other fish. [[How is this?]]  They're just touched by something extra.  Call it luck.  Call it grace.  One such fish was The Beast.
 
 V.O.
-By the time I was born, he was already a legend.  He'd taken more hundred-dollar lures than any fish in Alabama. Some said that fish was the ghost of Henry Walls, a thief who'd drowned in that river 60 years before.   Others claimed he was a lesser dinosaur, left over from the Cretaceous period.
+By the time I was born, he was already a legend.  He'd taken more hundred-dollar lures [[than any fish in Alabama. Some said that fish was the ghost of Henry Walls, a thief who'd drowned in that river 60]] years before.   Others claimed he was a lesser dinosaur, left over from the Cretaceous period.
 
 I didn't put any stock into such speculation or superstition.  All I knew was I'd been trying to catch that fish since I was a boy no bigger than you.
 

@@ -171,17 +171,18 @@ def pdfout(parse, outfl, enableComments, font, page):
     c.save()
 
 
-enableComments = False
-if "comments" in sys.argv:
-    enableComments = True
+if __name__ == '__main__':
+    enableComments = False
+    if "comments" in sys.argv:
+        enableComments = True
 
-if "A4" in sys.argv or "a4" in sys.argv:
-    page = Page("A4")
-else:
-    page = Page("letter")
+    if "A4" in sys.argv or "a4" in sys.argv:
+        page = Page("A4")
+    else:
+        page = Page("Letter")
 
-font = Font()
+    font = Font()
 
-s = sys.argv[1]
-parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
-html = pdfout(parse, s+".pdf", enableComments, font, page)
+    s = sys.argv[1]
+    parse = fparser.FParser(open(s, "r", encoding="utf-8").read())
+    html = pdfout(parse, s+".pdf", enableComments, font, page)
