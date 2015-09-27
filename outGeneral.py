@@ -230,6 +230,8 @@ def splitScriptText(parse, page, font, enableComments):
                 de = queue[dei]
                 spaceAvail = page.usableHeight(font) - ypos
 
+
+
                 height_needed = lineHeightForElm(de, font, page)
                 if elmno > 0:
                     height_needed = height_needed + lineBeforeElement(de, font)
@@ -264,8 +266,7 @@ def splitScriptText(parse, page, font, enableComments):
                     ypos = ypos + height_needed
                     elmno = elmno + 1
                 else:
-                    isLastElm = (de == queue[:-1])
-                    usableLines = spaceAvail - 1
+                    usableLines = spaceAvail - 1 # Leaves 1 line for (CONT'D)
                     if elmno > 0:
                         for z in range(0, lineBeforeElement(de, font)):
                             retln.append(["/", ""])
@@ -283,7 +284,8 @@ def splitScriptText(parse, page, font, enableComments):
                     dialogueBeforeBreak = ""
                     dialogueHeight = 0
                     sentenceIndex = -1
-                    while sentenceIndex < maxSentences - 1:
+                    allSentencesFit = True
+                    while sentenceIndex+1 < maxSentences:
                         sentenceIndex = sentenceIndex + 1
                         text = dialogueBeforeBreak + sentences[sentenceIndex]
                         tmpElm = fparser.FElement()
@@ -292,16 +294,18 @@ def splitScriptText(parse, page, font, enableComments):
                         dialogueHeight = lineHeightForElm(tmpElm, font, page)
                         dialogueHeight = dialogueHeight + lineBeforeElement(fparser.newElmDialogue(text), font)
 
-                        if dialogueHeight < usableLines:
+                        # Second case only considered when this is the last sentence
+                        if (dialogueHeight < usableLines) or False: #(dialogueHeight<=usableLines+1 and sentenceIndex==maxSentences-1 and ):
                             dialogueBeforeBreak = dialogueBeforeBreak + sentences[sentenceIndex]
                         else:
+                            allSentencesFit = False
                             break
 
                     # Prepare rest of dialog -> we want to redo this element with updated text
                     if sentenceIndex < 0:
                         sentenceIndex = 0
                     dialogueAfterBreak = ""
-                    if sentenceIndex < maxSentences - 1:
+                    if not allSentencesFit:
                         for z in range(sentenceIndex, maxSentences):
                             dialogueAfterBreak = dialogueAfterBreak + sentences[z]
                     queue[dei].elmText = dialogueAfterBreak
