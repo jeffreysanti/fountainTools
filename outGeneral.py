@@ -295,7 +295,7 @@ def splitScriptText(parse, page, font, enableComments):
                         dialogueHeight = dialogueHeight + lineBeforeElement(fparser.newElmDialogue(text), font)
 
                         # Second case only considered when this is the last sentence
-                        if (dialogueHeight < usableLines) or False: #(dialogueHeight<=usableLines+1 and sentenceIndex==maxSentences-1 and ):
+                        if (dialogueHeight < usableLines) or (dialogueHeight<=usableLines+1 and sentenceIndex==maxSentences-1 and dei+1==len(queue)):
                             dialogueBeforeBreak = dialogueBeforeBreak + sentences[sentenceIndex]
                         else:
                             allSentencesFit = False
